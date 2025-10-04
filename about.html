@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About US - Property First</title>
+  <link href="/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Tailwind CSS (CDN for quick start) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Felipa&family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Praise&family=Vidaloka&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9ecff',
+              500: '#2563eb',
+              600: '#1d4ed8'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+
+  <style>
+    /* Simple video ratio helper when not using Tailwind aspect-ratio plugin */
+    .video-frame { position: relative; padding: 45% 0 15px 0; }
+    .video-frame > iframe,
+    .video-frame > video { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .autoshow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+  }
+
+  @keyframes autoShowAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.3);
+
+    }to{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+  }
+
+
+  .autoround{
+    animation: autoAnimation;
+    animation-timeline: view();
+  }
+
+  @keyframes autoAnimation {
+    from {
+      transition: rotate(0deg);
+
+    }to{
+      transition: rotate(360deg);
+    }
+    
+  }
+
+  .swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important; /* default is 20-24px */
+}
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+  <script src="./script.js" defer></script>
+</head>
+
+<body class="antialiased text-slate-800">
+
+  <!-- ============================= -->
+  <!-- Navbar -->
+  <!-- ============================= -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/50 backdrop-blur">
+    <nav class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
+
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex items-center gap-6 bg-gray-100 p-4 rounded-2xl">
+          <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
+          <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
+          <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-sky-600">News</a></li>
+          <li><a href="./careers.html" class="hover:text-sky-600">Career</a></li>
+<li><a href="./contact.html" class="hover:text-sky-600">Contact</a></li>         
+        </ul>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
+          <span class="sr-only">Open Menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" 
+     class="hidden md:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
+            py-2 border-t border-slate-200 overflow-auto 
+            transform transition-all duration-300 ease-in-out 
+            origin-top scale-y-0 opacity-0 z-50">
+  <a href="./index.html" class="block px-4 py-2 hover:text-sky-600">Home</a>
+  <a href="./about.html" class="block px-4 py-2 hover:text-sky-600">About Us</a>
+  <a href="./awards.html" class="block px-4 py-2 hover:text-sky-600">Awards</a>
+  <a href="./news.html" class="block px-4 py-2 hover:text-sky-600">News</a>
+  <a href="./careers.html" class="block px-4 py-2 hover:text-sky-600">Career</a>
+  <a href="./contact.html" class="block px-4 py-2 hover:text-sky-600">Contact</a>
+</div>
+
+    </nav>
+  </header>
+
+  <!-- ============================= -->
+  <!-- Banner Video -->
+  <!-- ============================= -->
+ <section id="banner-video" class="text-white w-full">
+  <div class="relative h-[full] md:h-[70vh] w-full">
+    <img src="./assets/images/gallery/35.png" class="w-full object-cover h-full"/>
+  </div>
+</section>
+
+
+<section class="w-full px-2 md:px-12 py-4 md:py-12 bg-cover bg-center bg-no-repeat">
+  <div class="flex flex-col justify-center items-center gap-4 px-2 md:px-6">
+    <p class="text-[13px] md:text-sm text-center md:text-left">
+      Property First has been awarded as Real Estate Consultant of the year by Economic Times Realty in 2024 and 2025. Property First is a top channel partner with Grade A developers in Bangalore (Corporate Office), Dubai, Delhi NCR, Mumbai, Pune, Goa, Hyderabad, Chennai.   </p>
+    
+    <p class="text-[13px] md:text-sm text-center md:text-left">
+      Property First uses its experience and connect in the industry to get the best deals and inventory for the clients in their chosen locality/ Project. Currently, Property First has its presence in Bangalore (Corporate Office), Mumbai, Pune, Goa, Dubai, Hyderabad, Chennai, Delhi NCR and has aggressive expansion plans. Property First is one of the top channel partner firms with most reputed developers and was recently awarded South India’s best luxury real estate consulting firm by Int’l Brand Equity. Property First is growing exponentially every year with a fantastic team with high standards of professionalism and ethics and had been awarded as topmost consulting firm by Total Environment, Prestige Group, Sobha, L&T Realty, Phoenix, Puravankara, Century, Karle, Assetz, Shapoorji Pallonji, SNN, Valmark and many other developers. Property First recommends only such properties to their clients that are free of any encumbrances, have good appreciation potential and get these properties at a great value for their clients. 
+      <span class="font-bold">
+      PROPERTY FIRST IS ALSO A GREAT PLACE TO WORK CERTIFIED.
+      </span>
+    </p>
+    
+    <!-- <p class="text-center bg-sky-500 p-3 rounded-xl text-white font-bold">
+      PROPERTY FIRST IS ALSO A GREAT PLACE TO WORK CERTIFIED
+    </p> -->
+  </div>
+</section>
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 p-2 md:p-6">
+  <!-- Card 1 -->
+  <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <a href="./awards.html" class="block text-[13px] md:text-md text-center p-2 bg-sky-500 text-white font-semibold">
+      Check Out Our Awards
+    </a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <a href="./news.html" class="block text-[13px] md:text-md text-center p-2 bg-sky-500 text-white font-semibold">
+      Check Out Property First In NEWS
+    </a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <a href="./careers.html" class="block text-[13px] md:text-md text-center p-2 bg-sky-500 text-white font-semibold">
+      Apply For JOB
+    </a>
+  </div>
+</section>
+
+<section class="flex flex-wrap justify-center items-center gap-2 py-4 bg-gray-100">
+  <!-- Image 1 -->
+  <div class="w-[48%] sm:w-1/3 md:w-1/4 lg:w-[24%] overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <img src="./assets/images/1.png" 
+         alt="Image 1" 
+         class="w-full h-40 sm:h-60 md:h-72 lg:h-80 object-cover transition-transform duration-500 hover:scale-110" />
+  </div>
+
+  <!-- Image 2 -->
+  <div class="w-[48%] sm:w-1/3 md:w-1/4 lg:w-[24%] overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <img src="./assets/images/Untitled-1.png" 
+         alt="Image 2" 
+         class="w-full h-40 sm:h-60 md:h-72 lg:h-80 object-cover transition-transform duration-500 hover:scale-110" />
+  </div>
+
+  <!-- Image 3 -->
+  <div class="w-[48%] sm:w-1/3 md:w-1/4 lg:w-[24%] overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <img src="./assets/images/2.png" 
+         alt="Image 3" 
+         class="w-full h-40 sm:h-60 md:h-72 lg:h-80 object-cover transition-transform duration-500 hover:scale-110" />
+  </div>
+
+  <!-- Image 4 -->
+  <div class="w-[48%] sm:w-1/3 md:w-1/4 lg:w-[24%] overflow-hidden rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <img src="./assets/images/3.png" 
+         alt="Image 4" 
+         class="w-full h-40 sm:h-60 md:h-72 lg:h-80 object-cover transition-transform duration-500 hover:scale-110" />
+  </div>
+</section>
+
+
+
+<!-- Vision Mission Values Section -->
+<section class="w-full px-4 md:px-12 py-8 md:py-16 bg-gradient-to-r from-blue-50 to-blue-100">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Vision -->
+    <div 
+      class="bg-white p-2 rounded-2xl shadow-lg text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      data-aos="fade-up" data-aos-delay="100">
+      <!-- Icon -->
+      <div class="flex justify-center items-center mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5c-7.5 0-9 7.5-9 7.5s1.5 7.5 9 7.5 9-7.5 9-7.5-1.5-7.5-9-7.5z" />
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+        </svg>
+         <h3 class="text-lg md:text-xl font-bold text-blue-600">VISION</h3>
+      </div>
+      <!-- <h3 class="text-xl font-bold text-blue-600 mb-2">VISION</h3> -->
+      <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed">
+        To be the best Real Estate Consulting firm in country with the highest loyal customer base.
+      </p>
+    </div>
+
+    <!-- Mission -->
+    <div 
+      class="bg-white p-2 rounded-2xl shadow-lg text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      data-aos="fade-up" data-aos-delay="200">
+      <!-- Icon -->
+      <div class="flex justify-center items-center mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V6m0 0l-6 6m6-6l6 6" />
+        </svg>
+         <h3 class="text-lg md:text-xl font-bold text-green-600">MISSION</h3>
+      </div>
+     
+      <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed">
+        To help our clients find the best property matching their requirements, providing deep insights and getting it at the best price for our clients.
+      </p>
+    </div>
+
+    <!-- Values -->
+    <div 
+      class="bg-white p-2 rounded-2xl shadow-lg text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      data-aos="fade-up" data-aos-delay="300">
+      <!-- Icon -->
+      <div class="flex justify-center items-center mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-4 4m4-4l-4-4" />
+        </svg>
+        <h3 class=" text-lg md:text-xl font-bold text-purple-600">VALUES</h3>
+      </div>
+      
+      <p class="text-gray-600 text-[13px] md:text-sm leading-relaxed">
+        We believe in building strong and lasting relationships.
+Our foundation is transparency and unwavering ethics in every action.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+
+
+
+<section class="w-full px-4 md:px-16 py-4 md:py-12 bg-white">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- LEFT SIDE -->
+    <div class="relative flex justify-center items-start">
+        
+      <!-- Image -->
+      <div class="sticky top-28">
+      <img src="./assets/images/bk sir new.png" alt="Founder" 
+           class="rounded-lg shadow-lg w-full max-w-sm object-cover">
+    </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class=" space-y-4">
+      <div>
+        <h2 class="text-center text-2xl font-semibold mb-1">Hi, I’m Bhavesh Kothari</h2>
+        <h2 class="text-center text-lg font-semibold mb-8">Founder & CEO</h2>
+      </div>
+        <p class="text-gray-700 text-[13px] md:text-sm text-center md:text-left leading-relaxed mb-8">
+        Founded in 2017 by Mr Bhavesh Kothari, a seasoned real estate professional with over 13 years of experience in real estate, Property First is a real estate consulting firm that believes in establishing life term relations with its clients by helping them find the right property with right insights and at right price which can be noted with the fact that 70% of its clients are repeat customers.
+      </p> 
+      <p class="text-gray-700 text-[13px] md:text-sm text-center md:text-left leading-relaxed mb-8">
+        Property First uses its experience and connect in the industry to get the best deals and inventory for the clients in their chosen locality/ Project. Properties are carefully selected based on their appreciation potential, builder reputation and liveability index of the community. This careful selection of properties is the sole reason that most clients make a average return of 25- 30% per year on these investments and on some Properties, even upto 100% in a year. This is the sole reason why clients and investors prefer Property First and 70% of its clients are repeat customers <a href="index.html#testimonial" class="text-blue-500 hover:underline">
+  (Do check out our customer testimonial videos)
+</a>.
+      </p>
+      <p class="text-gray-700 text-[13px] md:text-sm text-center md:text-left leading-relaxed mb-8">
+        Property First has very high standards while hiring and RMs go through a rigorous training to become an expert. Currently, Property First has its presence in Bangalore (Corporate Office), Dubai (selling Dubai properties), Mumbai, Pune, Goa, Dubai, Hyderabad, Chennai, Delhi NCR and has aggressive expansion plans to other geographies as well. 
+      </p>
+      <p class="text-gray-700 text-[13px] md:text-sm text-center md:text-left leading-relaxed mb-8">
+        Property First is a CRISIL rated firm and one of the top channel partner firms with most reputed developers <a href="awards.html" class="text-blue-500 hover:underline">(do check out awards section by clicking here)</a> and has won Jury recommendation for Best real estate consulting Firm (National) at the Economic Times Real Estate Conclave 2024 and 2025. Property First has also been awarded South India’s best luxury real estate consulting firm by Int’l Brand Equity in 2019-20, and again in 2020-2021. Property First has been nominated by RICS (Royal Institute for Chartered Surveyors) as India’s best real estate consulting firm in years 2023 & again in 2024.      </p>
+      <p class="text-gray-700 text-[13px] md:text-sm text-center md:text-left leading-relaxed mb-8">
+       We still believe we have a long way to go achieve our vision of being the most trusted real estate brand in the geographies we are present. If you have a passion for real estate and wish to join us in building the most trusted brand in real estate and be a part of this amazing journey where we enjoy and learn everyday, <a href="careers.html" class="text-blue-500 hover:underline">check out our careers section here</a>.     </p>
+      
+      <!-- Button -->
+       <div class="flex justify-center">
+      <a href="#contact" 
+         class="open-modal inline-block bg-sky-500 hover:bg-sky-600 text-white font-semibold px-3 md:px-6 py-1 md:py-3 rounded-lg shadow-md">
+        Contact With Me
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 py-4 md:py-12">
+
+    <!-- Profile 1 -->
+    <div class="flex flex-col items-center gap-8 transform transition duration-500 hover:scale-105 shadow-md pb-6 rounded-lg">
+      <!-- Image -->
+      <img src="./assets/images/MANJU SIR (3).png" 
+           alt="Founder" 
+           class="rounded-2xl shadow-lg w-72 h-72 object-cover">
+      <!-- Content -->
+      <div class="space-y-2 text-center">
+        <h2 class="text-2xl font-bold text-gray-900">Manjunath M </h2>
+        <p class="text-gray-600">Assitant Vice President</p>
+        <!-- <p class="text-gray-700 leading-relaxed">
+          Drives the company’s vision, strategy and growth with a
+          “never say no” attitude. Known in luxury real estate for closing deals
+          that are unheard of.
+        </p> -->
+        <a href="#contact" 
+           class="open-modal inline-block bg-sky-600 hover:bg-sky-700 text-white px-2 md:px-5 py-1 md:py-2 rounded-full font-semibold shadow-md transition">
+          Connect
+        </a>
+      </div>
+    </div>
+
+    <!-- Profile 2 -->
+    <div class="flex flex-col items-center  gap-8 transform transition duration-500 hover:scale-105 shadow-md pb-6 rounded-lg">
+      <!-- Image -->
+      <img src="./assets/images/PSN06661_1.JPG" 
+           alt="Co-Founder" 
+           class="rounded-2xl shadow-lg w-72 h-72 object-cover">
+      <!-- Content -->
+      <div class="space-y-2 text-center">
+        <h2 class="text-2xl font-bold text-gray-900">Sachin Kumar</h2>
+        <p class="text-gray-600">Assitant Vice President</p>
+        <!-- <p class="text-gray-700 leading-relaxed">
+          Passionate leader with years of experience in real estate and consulting.
+          Brings strategic expertise and innovative thinking to the company.
+        </p> -->
+        <a href="#contact" 
+           class="open-modal inline-block bg-sky-600 hover:bg-sky-700 text-white px-2 md:px-5 py-1 md:py-2 rounded-full font-semibold shadow-md transition">
+          Connect
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+ 
+<section id="gallery" class="bg-white pt-2 hidden md:block">
+ 
+  <div class="container mx-auto px-4 py-6 top-0 z-10 text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold text-slate-800">Gallery</h2>
+  </div>
+
+  <div class="horizontal-scroll-container overflow-hidden relative">
+    <div id="horizontal-scroll-content" class="flex w-max px-4 py-12 relative">
+        
+<div class=" w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center items-center relative group overflow-hidden cursor-pointer bg-white shrink-0 px-6 py-8"
+        >
+       
+          <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-2 my-20">
+  <!-- RIGHT (2/3 width) -->
+<!-- <div class="col-span-2 grid grid-rows-1 sm:grid-rows-2 gap-4 h-full"> -->
+<!-- LEFT (1/3 width) -->
+<div class="col-span-1 flex items-center justify-center p-8 rounded-2xl"
+     data-aos="fade-up"
+     data-aos-offset="300"
+     data-aos-duration="900">
+
+
+    <p class="paragraph text-xl md:text-2xl font-semibold leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+      We conduct training<br> sessions focused on<br><span class="text-sky-400 text-3xl italic"> building and enhancing personal branding</span>.
+    </p>
+  
+</div>
+
+
+  <div class="col-span-2 flex items-center justify-center p-8 rounded-xl w-full">
+  <!-- Center vertically -->
+  <div class="flex flex-col items-center justify-center gap-2 h-full w-full">
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/54.png" 
+           class="w-full h-[300px] object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/55.png" 
+           class="w-full h-[370px] object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/56.png" 
+           class="w-full h-[300px] object-cover" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center items-center relative group overflow-hidden cursor-pointer bg-slate-900 shrink-0 px-6 py-8"x
+        >
+       
+          <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-2 mb-20">
+
+  <!-- LEFT (1/3 width) -->
+<div class="col-span-1 flex items-center justify-center p-8 rounded-2xl">
+
+<p class="paragraph text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-md" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;" 
+data-aos="fade-right"  
+data-aos-delay="100">
+   We’re a leading<br>
+  <span class="text-sky-400 text-3xl italic" >Real Estate Firm</span><br>
+  <span> and a </span><br>
+  <span class="text-sky-400 text-3xl italic">Great Place to Work,</span> <br>
+  <span>driven by trust, growth,</span><br>
+  and innovation.
+</p>
+
+</div>
+
+
+  <!-- RIGHT (2/3 width) -->
+<div class="col-span-2 grid grid-rows-1 sm:grid-rows-2 gap-4">
+
+  <!-- First row: 2 side-by-side images -->
+  <div class="flex justify-center items-end gap-4">
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-1/2">
+      <img src="./assets/images/gallery/34.png" 
+           class="gallery-img w-full h-full object-cover transition-transform duration-500" loading="lazy"
+     alt="Image"/>
+    </div>
+
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-1/2">
+      <img src="./assets/images/gallery/36.png" 
+           class="gallery-img w-full h-full object-cover transition-transform duration-500"
+            loading="lazy"
+     alt="Image" />
+    </div>
+  </div>
+
+  <!-- Second row: 1 full-width image -->
+  <div class="flex justify-center items-start">
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-full h-2/3">
+      <img src="./assets/images/gallery/35.png" 
+           loading="lazy"
+     alt="Image" class="gallery-img w-full h-full object-cover transition-transform duration-500" />
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+</div>
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center items-center relative group overflow-hidden cursor-pointer bg-white shrink-0 px-6 py-4"
+        >
+         <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-2">
+  <!-- Left (50%) -->
+  <div class="col-span-1 flex flex-col gap-1">
+    <div class="relative group overflow-hidden shadow-lg h-[180px]">
+      <img src="./assets/images/gallery/34-min-1.png" 
+           class="w-full h-auto object-cover" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+    <div class="relative group overflow-hidden shadow-lg h-[180px]">
+      <img src="./assets/images/gallery/35-min-1.png" 
+           class="w-full h-auto object-cover" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+    <div class="relative group overflow-hidden shadow-lg h-[180px]">
+      <img src="./assets/images/gallery/36-min-1.png" 
+           class="w-full h-auto object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+   
+   
+  </div>
+
+  <!-- Right (50%) -->
+<div class="col-span-1 flex flex-col gap-2">
+
+  <!-- First row -->
+  
+    <div class="relative flex items-center justify-center overflow-hidden rounded-xl shadow-lg w-full h-[320px]">
+      <img src="./assets/images/gallery/37-min.png" 
+           class="w-full h-auto object-contain" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+
+
+  <!-- Second row -->
+  <div class="relative flex items-center justify-center overflow-hidden rounded-xl shadow-lg h-[200px]">
+    <img src="./assets/images/gallery/38-min.png" 
+         class="w-full h-auto object-contain"
+          loading="lazy"
+     alt="Image" />
+  </div>
+
+</div>
+
+<div class="col-span-1 flex items-center justify-center p-8 rounded-2xl">
+
+<p class="paragraph text-xl md:text-2xl font-semibold leading-relaxed max-w-md" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;"> Our people make<br><span class="text-sky-400 text-3xl italic">Our workplace a vibrant hub</span>. Where ideas ignite, creativity thrives,<br> and passion drives something<br><span class="text-sky-400 text-3xl italic">truly extraordinary</span> .
+</p>
+
+</div>
+</div>
+
+</div>
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-col justify-center items-start relative group overflow-hidden cursor-pointer shrink-0 bg-slate-900 px-6 py-16"
+        >
+      <div class="col-span-1 flex items-center justify-start p-8 rounded-2xl"
+     data-aos="zoom-in-up"
+     data-aos-offset="300"
+     data-aos-duration="900">
+
+  <p class="paragraph text-left text-xl md:text-2xl font-semibold text-white leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+    With us,<br> <span class="text-sky-400 text-3xl italic">Every birthday is more than personal</span>.<br> It’s a celebration for the whole team.
+  </p>
+</div>
+
+
+
+  <!-- BOTTOM: 2/3 images -->
+  <div class="flex justify-center items-center gap-4 h-2/3">
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-1/4 h-full">
+      <img src="./assets/images/gallery/42-min.png"
+           class="w-full h-full object-cover transition-transform duration-500 scale-125" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-1/4 h-full">
+      <img src="./assets/images/gallery/43-min.png"
+           class="w-full h-full object-cover transition-transform duration-500 scale-125" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-1/4 h-full">
+      <img src="./assets/images/gallery/44-min.png"
+           class="w-full h-full object-cover transition-transform duration-500 scale-125" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+
+    <div class="relative group overflow-hidden rounded-xl shadow-lg w-1/4 h-full">
+      <img src="./assets/images/gallery/45-min.png"
+           class="w-full h-full object-cover transition-transform duration-500 scale-125" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+  </div>
+</div>      
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center items-center relative group overflow-hidden cursor-pointer shrink-0 bg-white px-6 py-8"
+        >
+       
+          <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-2 my-20  w-full">
+  <!-- RIGHT (2/3 width) -->
+<!-- <div class="col-span-2 grid grid-rows-1 sm:grid-rows-2 gap-4 h-full"> -->
+<div class="col-span-2 flex items-center justify-center p-8 rounded-xl w-full relative">
+  
+  <!-- Background vertical image -->
+  <!-- <div class="absolute top-0 right-4 h-full w-[400px] shadow-lg">
+    <img src="./assets/images/page 3/39.png" 
+         class="w-full h-full object-cover rounded-xl" />
+  </div> -->
+
+  <!-- Foreground stacked images -->
+  <div class="flex flex-col items-start justify-center gap-1 h-full w-full relative z-10">
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full" data-aos="fade-right"
+       data-aos-offset="200"
+       data-aos-duration="600">
+      <img src="./assets/images/gallery/39-min.png" 
+           class="w-full h-[300px] object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full" data-aos="fade-left"
+     data-aos-offset="250"
+     data-aos-duration="700">
+      <img src="./assets/images/gallery/41-min.png" 
+           class="w-full h-full object-cover" 
+            loading="lazy"
+     alt="Image"/>
+    </div>
+ 
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full"
+     data-aos="zoom-in"
+     data-aos-offset="300"
+     data-aos-duration="800">
+      <img src="./assets/images/gallery/40-min.png" 
+           class="w-full h-[340px] object-cover"  loading="lazy"
+     alt="Image" />
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- LEFT (1/3 width) -->
+  <div class="col-span-1 flex items-center justify-center p-8 rounded-2xl relative overflow-hidden"
+     data-aos="zoom-in"
+     data-aos-offset="300"
+     data-aos-duration="800">
+
+  <!-- Decorative background pattern -->
+  <!-- <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div> -->
+
+  <!-- Content -->
+  <p class="paragraph relative z-10 text-xl md:text-2xl font-semibold leading-relaxed max-w-xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+    At <span class="font-bold">Property First</span>,<br>
+    We believe<br>
+    <span  class="text-sky-400 text-3xl italic">Festivals are more than just Occasions.</span><br>
+    They’re moments of<br>
+     <span  class="text-sky-400 text-3xl italic">togetherness</span>.<br>  
+    Together, We transform<br>
+    <span class="text-sky-400 text-3xl italic">every celebration</span><br>
+     into a beautiful expression of  
+    unity, joy, and shared happiness.
+  </p>
+</div>
+
+</div>
+</div>
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center items-center relative group overflow-hidden cursor-pointer bg-slate-900 shrink-0 px-6 py-8"
+        >
+       
+          <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2 my-20">
+  <!-- RIGHT (2/3 width) -->
+<!-- <div class="col-span-2 grid grid-rows-1 sm:grid-rows-2 gap-4 h-full"> -->
+  <div class="col-span-2 flex items-center justify-center p-4 rounded-xl w-full">
+  <!-- Center vertically -->
+  <div class="flex flex-col items-center justify-center gap-2 h-full w-full">
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/46-min.png" 
+           class="w-full h-full object-cover"
+           loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/48-min.png" 
+           class="w-full h-[300px] object-cover" 
+           loading="lazy"
+     alt="Image"/>
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/47-min.png" 
+           class="w-full h-full object-cover" 
+           loading="lazy"
+     alt="Image"/>
+    </div>
+  </div>
+</div>
+
+
+  <!-- LEFT (1/3 width) -->
+  <div class="col-span-1 flex items-center justify-center p-8 rounded-2xl"
+     data-aos="fade-up"
+     data-aos-offset="300"
+     data-aos-duration="900">
+
+  <p class="paragraph text-xl md:text-2xl font-semibold text-white leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+   At <span class="font-bold">Property First</span>,<br>
+   <span class="text-sky-400 text-3xl italic"> We embark on every journey together supporting</span>,<br> inspiring, and growing as one team at every step.
+  </p>
+</div>
+
+</div>
+</div>
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center items-center relative group overflow-hidden cursor-pointer shrink-0 bg-white px-6 py-8"
+        >
+          <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+      <div class="grid grid-cols-1 md:grid-cols-2 p-2 my-8">
+<div class="col-span-1 flex flex-col justify-center p-4 my-8 rounded-xl gap-8 h-full">
+  <!-- Text Block -->
+
+
+  <p class="paragraph text-xl md:text-2xl font-semibold" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+     At<span class="font-bold"> Property First</span>,<br> We honor commitment and performance with<br>
+     <span class="text-sky-400 text-3xl italic"> monthly incentives and annual recognition</span>.
+  </p>
+
+  <!-- <p class="text-center text-xl md:text-2xl font-semibold text-white flex-1 flex items-center justify-center"> At Property First, we honor commitment and performance with monthly incentives and annual recognition. </p> -->
+
+
+  <!-- Images Block -->
+  <div class="flex flex-row items-stretch justify-center gap-2 flex-1 w-full">
+    <div class="relative group overflow-hidden shadow-lg flex-1">
+     <picture>
+   
+
+    <!-- Default fallback -->
+    <img src="./assets/images/gallery/53.png" 
+         class="w-full h-full object-cover"
+         loading="lazy"
+         alt="Image description" />
+  </picture>
+    </div>
+    <div class="relative group overflow-hidden shadow-lg flex-1">
+      <img src="./assets/images/gallery/52.png" 
+           class="w-full h-full object-cover" 
+            loading="lazy"
+         alt="Image description" />
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="col-span-1 flex items-center justify-center p-8 rounded-xl w-full">
+  <!-- Center vertically -->
+  <div class="flex flex-col items-center justify-center gap-2 h-full w-full">
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/51-min.png" 
+           class="w-full h-full object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/49-min.png" 
+           class="w-full h-[300px] object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/50-min.png" 
+           class="w-full h-full object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="w-[100vw] md:min-w-[700px] md:h-[100vh] flex flex-row justify-center relative group overflow-hidden cursor-pointer bg-slate-900 shrink-0 px-4 pb-8"
+        >
+          <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-16"> -->
+      <div class="grid grid-cols-1 md:grid-cols-2 p-2 my-2">
+<div class="col-span-1 flex flex-col gap-8 p-4 rounded-xl h-full">
+  <!-- Text Block -->
+  
+    <p class="paragraph text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+      Honored as a <br> <span class="text-sky-400 text-3xl italic"> Top performer</span>, <span class="text-3xl italic font-bold">Property First</span><br> has earned recognition from the<br><span class="text-sky-400 text-3xl italic"> Industry’s leading builders</span>.
+    </p>
+  
+
+  <!-- Images Block -->
+  <div class="flex flex-row items-stretch justify-center gap-2 flex-1 w-full">
+    <div class="relative group overflow-hidden shadow-lg flex-1">
+      <img src="./assets/images/gallery/59.png" 
+           class="w-full h-full object-cover"
+           loading="lazy"
+     alt="Image" />
+    </div>
+    <div class="relative group overflow-hidden shadow-lg flex-1">
+      <img src="./assets/images/gallery/60.png" 
+           class="w-full h-full object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="col-span-1 flex items-center justify-center rounded-xl w-full">
+  <!-- Center vertically -->
+  <div class="flex flex-col items-center justify-center gap-2 h-full w-full">
+   
+    <div class="relative group overflow-hidden shadow-lg h-[400px] w-full">
+      <img src="./assets/images/gallery/57.png" 
+           class="w-full h-full object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+
+    <div class="relative group overflow-hidden shadow-lg h-[200px] w-full">
+      <img src="./assets/images/gallery/58.png" 
+           class="w-full h-full object-cover"
+            loading="lazy"
+     alt="Image" />
+    </div>
+  </div>
+</div>
+</div>
+</div>
+        </div>
+  </div>
+
+  
+  <style>
+  #horizontal-scroll-content {
+    direction: rtl; 
+  }
+
+  .horizontal-scroll-container {
+  /* overflow-x: auto; */
+  overflow-y: hidden;
+  /* white-space: nowrap; */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+  #horizontal-scroll-content > div {
+    direction: ltr; 
+  }
+
+ .scroll-reveal .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  clip-path: inset(0 0 0 100%); 
+  transition: clip-path 4s ease-out;
+  z-index: 2;
+  pointer-events: none;
+}
+.reveal {
+  clip-path: inset(0 0 0 100%); /* start fully hidden */
+  transform: scale(1.2);       /* start slightly zoomed in */
+  transition: clip-path 0.6s ease-out, transform 0.6s ease-out;
+}
+
+</style>
+
+<script>
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+  const revealItems = document.querySelectorAll('.scroll-reveal');
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollDown = scrollTop > lastScrollTop;
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+  revealItems.forEach(contain => {
+    const image = contain.querySelector('img');
+    const rect = contain.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      const scrollProgress = 1 - (rect.left/ windowHeight);
+
+      // Adjust based on scroll direction
+      let clipLeft;
+
+      if (scrollDown) {
+        // console.log("Hi");
+        // Scroll Down: Reveal from left to right
+        clipLeft = Math.max(0, 100 - scrollProgress * 100);
+      } else {
+        // Scroll Up: Cover back from right to left
+        clipLeft = Math.min(100, scrollProgress * 100);
+      }
+
+      image.style.clipPath = `inset(0 0 0 ${clipLeft}%)`;
+    }
+  });
+});
+</script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("load", () => {
+    const scrollContainer = document.querySelector("#horizontal-scroll-content");
+    const section = document.querySelector(".horizontal-scroll-container");
+
+    const totalScrollWidth = scrollContainer.scrollWidth;
+    const viewportWidth = window.innerWidth;
+    const scrollDistance = totalScrollWidth - viewportWidth;
+
+    gsap.to(scrollContainer, {
+      x: -scrollDistance,
+      ease: "none",  
+      scrollTrigger: {
+        trigger: section,
+        start: "top 2%",
+        end: () => `+=${scrollDistance}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+      }
+    });
+  });
+</script>
+
+</section>
+
+<!-- Vertical Scroll Section (hidden on mobile, visible on desktop) -->
+<section id="gallery-vertical" class="block md:hidden bg-white">
+  <div class="container mx-auto px-4 py-2">
+    <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 text-center">
+      Gallery
+    </h2>
+  </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+  <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+     <p class="paragraph text-md text-white font-semibold leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+      Honored as a <span class="text-sky-400 text-xl italic"> Top performer</span>, <span class="text-xl italic font-bold">Property First</span> has earned recognition from the<span class="text-sky-400 text-xl italic"> Industry’s leading builders</span>.
+    </p>
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/57.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/58.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+     <div class="flex overflow-hidden rounded-xl shadow-lg">
+  <img src="./assets/images/gallery/59.png" 
+       alt="Image" 
+       class="w-1/2 h-full object-cover" />
+  <img src="./assets/images/gallery/60.png" 
+       alt="Image" 
+       class="w-1/2 h-full object-cover" />
+</div>
+
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+    <p class="paragraph text-md text-white md:text-2xl font-semibold" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+     At<span class="font-bold"> Property First</span>, We honor commitment and performance with
+     <span class="text-sky-400 text-xl italic"> monthly incentives and annual recognition</span>.
+  </p>
+
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/49-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/50-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/51-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+     <div class="flex overflow-hidden rounded-xl shadow-lg">
+  <img src="./assets/images/gallery/53.png" 
+       alt="Image" 
+       class="w-1/2 h-full object-cover" />
+  <img src="./assets/images/gallery/52.png" 
+       alt="Image" 
+       class="w-1/2 h-full object-cover" />
+</div>
+   
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+    <p class="paragraph text-md md:text-2xl font-semibold text-white leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+   At <span class="font-bold">Property First</span>,
+   <span class="text-sky-400 text-xl italic"> We embark on every journey together supporting</span>, inspiring, and growing as one team at every step.
+  </p>
+
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/46-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/47-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/48-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+    <p class="paragraph relative z-10 text-md text-white md:text-2xl font-semibold leading-relaxed max-w-xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+    At <span class="font-bold">Property First</span>,
+    We believe
+    <span  class="text-sky-400 text-xl italic">Festivals are more than just Occasions.</span>
+    They’re moments of
+     <span  class="text-sky-400 text-xl italic">togetherness</span>.
+    Together, We transform
+    <span class="text-sky-400 text-xl italic">every celebration</span>
+     into a beautiful expression of  
+    unity, joy, and shared happiness.
+  </p>
+
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/39-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/40-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/41-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+   <p class="paragraph text-left text-md md:text-2xl font-semibold text-white leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+    With us, <span class="text-sky-400 text-xl italic">Every birthday is more than personal</span>. It’s a celebration for the whole team.
+  </p>
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/42-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/43-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/44-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+     <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/45-min.png" 
+           alt="Image" 
+           class="w-full h-[300px] object-cover" />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+   <p class="paragraph text-md text-white md:text-2xl font-semibold leading-relaxed max-w-md" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;"> Our people make<span class="text-sky-400 text-xl italic">Our workplace a vibrant hub</span>. Where ideas ignite, creativity thrives, and passion drives something<span class="text-sky-400 text-xl italic">truly extraordinary</span> .
+</p>
+  </div>
+
+     <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/37-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+     <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/38-min.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <!-- <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/34-min-1.png" 
+           alt="Image" 
+           class="w-full h-[300px] object-cover" />
+    </div> -->
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/35-min-1.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/36-min-1.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+   <p class="paragraph text-md md:text-2xl text-white font-semibold leading-relaxed max-w-md" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;" 
+data-aos="fade-right"  
+data-aos-delay="100">
+   We’re a leading
+  <span class="text-sky-400 text-xl italic" >Real Estate Firm</span>
+  <span> and a </span>
+  <span class="text-sky-400 text-xl italic">Great Place to Work,</span>
+  <span>driven by trust, growth,</span>
+  and innovation.
+</p>
+  </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/34.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/35.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/36.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+     <div class="overflow-hidden rounded-xl shadow-lg bg-slate-900 p-3">
+  <p class="paragraph text-md text-white md:text-2xl font-semibold leading-relaxed max-w-2xl" style="font-family: 'Newsreader', serif; font-weight: 400; font-style: normal;">
+      We conduct training sessions focused on<span class="text-sky-400 text-xl italic"> building and enhancing personal branding</span>.
+    </p>
+  </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/54.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/55.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg">
+      <img src="./assets/images/gallery/56.png" 
+           alt="Image" 
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Globe (interactive 3D)      -->
+<!-- ============================= -->
+
+
+
+  <!-- ============================= -->
+  <!-- Footer -->
+  <!-- ============================= -->
+ <footer id="footer" class="bg-slate-900 text-slate-200">
+    <div class="container mx-auto md:py-8 flex md:flex-row flex-col justify-between gap-8">
+      <div class="bg-white flex flex-col gap-3 items-center justify-center p-4">
+        <!-- <h3 class="font-semibold">About</h3> -->
+        <!-- <p class="mt-3 text-slate-400">Short description about your company.</p> -->
+           <img src="/assets/images/LOGO.png" alt="Company Logo" style="width:120px; height:auto;">
+           <img src="/assets/images/GPTW logo.png" alt="Company Logo" style="width:120px; height:auto;">
+
+      </div>
+      <div class="bg-slate-900 mx-4 space-y-2">
+        <h3 class="font-semibold">Quick Links</h3>
+        <ul class="mt-3 space-y-2 text-slate-400 ">
+          <!-- <li><a href="#properties" class="hover:text-white">Home</a></li> -->
+          <li><a href="./about.html" class="hover:text-white">About US</a></li>
+          <li><a href="./awards.html" class="hover:text-white">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-white">News</a></li>
+          <li><a href="./careers.html" class="hover:text-white">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+        <div class="bg-slate-900 pt-4">
+        <h3 class="font-semibold">Follow Us</h3>
+        <div class="flex space-x-4 mt-4 text-slate-400">
+    <a href="https://www.facebook.com/propertyfirstrealtyofficial" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://www.instagram.com/propertyfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/property-first-realty-llp/posts/?feedView=all" target="_blank" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.youtube.com/@propertyfirstrealtyllp" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+  </div>
+      </div>
+      </div>
+     
+
+     <!-- Font Awesome (include in <head> if not already) -->
+
+<div class="bg-slate-900 mx-4 md:w-[250px] rounded-lg">
+  <h3 class="font-semibold text-lg">Contact</h3>
+  <ul class="mt-3 space-y-3 text-slate-400">
+    <!-- Phone -->
+    <li>
+      <a href="tel:08043700346" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-phone mr-2"></i> 080 43700346
+      </a>
+    </li>
+    <!-- Email -->
+    <li>
+      <a href="mailto:info@property-first.com" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-envelope mr-2"></i>info@property-first.com 
+      </a>
+    </li>
+    <!-- Address -->
+    <li class="">
+      <i class="fa-solid fa-location-dot mr-2 mt-1"></i>
+      <span class="font-semibold"> Bangalore (Corporate Office):</span> Art Arcade, 4th Floor, 80ft Road, Near Sony World, Koramangala, Bengaluru-34
+      
+    </li>
+  </ul>
+</div>
+
+     <div class="bg-gray-800 py-2 md:w-[375px]">
+  <div class="max-w-2xl mx-auto px-4">
+    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Contact Now</h3>
+
+    <form class="contactForm flex flex-col space-y-2">
+      <input type="text" name="name" placeholder="Enter your name" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input type="email" name="email" placeholder="Enter your email" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input id="" type="tel" name="mobile" placeholder="Enter your phone number" required pattern="[0-9]{10}"
+        class="phone w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <textarea name="message" placeholder="Write your message" required rows="3"
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
+
+     
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container mx-auto px-4 py-6 text-center text-slate-500 text-sm">
+        © <span id="year"></span> Your Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Small JS for mobile menu + dynamic year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+     slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      },
+      1024: {
+        slidesPerView: 3
+      }
+    }
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".scroll-animate img");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("scale-110", "opacity-0");
+        entry.target.classList.add("scale-100", "opacity-100");
+      }
+    });
+  }, { threshold: 0.3 }); // Trigger when 30% visible
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+       duration: 1000, // animation duration in ms
+    easing: 'ease-in-out', // default easing
+    once: false,
+    mirror: true
+    });
+    });
+  </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Element is in view → animate in
+        entry.target.classList.add("visible");
+      } else {
+        // Element is out of view → reset (so it animates again next time)
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".paragraph").forEach(p => {
+    observer.observe(p);
+  });
+
+  const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");  // zoom in
+    } else {
+      entry.target.classList.remove("visible"); // zoom out
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".gallery-img").forEach(img => {
+  imgObserver.observe(img);
+});
+</script>
+
+
+
+<!-- Global Modal -->
+<!-- Modal -->
+<div id="globalModal" 
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 
+            transition-opacity duration-300 ease-out opacity-0">
+  
+  <!-- Modal Box -->
+  <div class="bg-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative 
+              transform scale-95 opacity-0 transition-all duration-300 ease-out">
+    
+    <!-- Close Button -->
+    <button onclick="closeModal()" 
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">
+      &times;
+    </button>
+
+    <!-- Company Logo -->
+    <div class="flex justify-center mb-4">
+      <img src="./assets/images/logo.png" alt="Company Logo" class="h-16 w-auto">
+    </div>
+
+    <!-- Form -->
+    <!-- <h2 class="text-2xl font-bold mb-4 text-center text-blue-700">Contact Form</h2> -->
+    <form class="contactForm space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" name="name"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" name="email"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Mobile</label>
+        <input type="tel" name="mobile" pattern="[0-9]{10}"
+               class="phone w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition" 
+               placeholder="Enter 10-digit mobile number" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Message</label>
+        <textarea name="message"
+          class="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition"
+          placeholder="Your message..." required></textarea>
+      </div>
+
+      <button type="submit" 
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2 rounded-lg hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

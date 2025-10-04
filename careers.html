@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career - Property First</title>
+  <link href="/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Tailwind CSS (CDN for quick start) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Felipa&family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Praise&family=Vidaloka&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9ecff',
+              500: '#2563eb',
+              600: '#1d4ed8'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+
+  <style>
+    /* Simple video ratio helper when not using Tailwind aspect-ratio plugin */
+    .video-frame { position: relative; padding: 45% 0 15px 0; }
+    .video-frame > iframe,
+    .video-frame > video { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .autoshow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+  }
+
+  @keyframes autoShowAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.3);
+
+    }to{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+  }
+
+
+  .autoround{
+    animation: autoAnimation;
+    animation-timeline: view();
+  }
+
+  @keyframes autoAnimation {
+    from {
+      transition: rotate(0deg);
+
+    }to{
+      transition: rotate(360deg);
+    }
+    
+  }
+
+  .swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important; /* default is 20-24px */
+}
+  </style>
+  <!-- <script src="./script.js" defer></script> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+</head>
+<body class="antialiased text-slate-800">
+
+  <!-- ============================= -->
+  <!-- Navbar -->
+  <!-- ============================= -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/80 backdrop-blur">
+    <nav class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
+
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex items-center gap-6 bg-gray-100 p-4 rounded-2xl">
+                    <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
+          <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
+          <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-sky-600">News</a></li>
+          <!-- <li><a href="./contact.html" class="hover:text-brand-600">Contact</a></li> -->
+          <li><a href="./careers.html" class="hover:text-sky-600">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-sky-600">Contact</a></li>
+         
+        </ul>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
+          <span class="sr-only">Open Menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" 
+     class="hidden md:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
+            py-2 border-t border-slate-200 overflow-auto 
+            transform transition-all duration-300 ease-in-out 
+            origin-top scale-y-0 opacity-0 z-50">
+  <a href="./index.html" class="block px-4 py-2 hover:text-sky-600">Home</a>
+  <a href="./about.html" class="block px-4 py-2 hover:text-sky-600">About Us</a>
+  <a href="./awards.html" class="block px-4 py-2 hover:text-sky-600">Awards</a>
+  <a href="./news.html" class="block px-4 py-2 hover:text-sky-600">News</a>
+  <a href="./careers.html" class="block px-4 py-2 hover:text-sky-600">Career</a>
+  <a href="./contact.html" class="block px-4 py-2 hover:text-sky-600">Contact</a>
+</div>
+
+      <!-- <div id="mobileMenu" class="hidden md:hidden py-2 border-t border-slate-200 h-full overflow-auto">
+        <a href="./index.html" class="block hover:text-sky-600">Home</a>
+          <a href="./about.html" class="block hover:text-sky-600">About Us</a>
+          <a href="./awards.html" class="block hover:text-sky-600">Awards</a>
+          <a href="./news.html" class="block hover:text-sky-600">News</a>
+         <a href="./careers.html" class="block hover:text-sky-600">Career</a>
+         <a href="./contact.html" class="block hover:text-sky-600">Contact</a>
+      </div> -->
+    </nav>
+  </header>
+
+  <!-- ============================= -->
+  <!-- Banner Video -->
+  <!-- ============================= -->
+<section id="banner-video" class="text-white w-full">
+  <div class="relative h-full w-full">
+    <img src="./assets/images/Career page banner.jpg" class="hidden md:block w-full full"/>
+    <img src="./assets/images/career page---mobile.png" class="block md:hidden w-full h-[500px]"/>
+  </div>
+</section>
+
+<section class="w-full px-6 mx-auto py-12 bg-gray-50">
+  <style>
+    .form {
+  display: none;
+}
+.modal {
+  z-index: 1000;
+}
+  </style>
+  <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Career Opportunities</h2>
+
+
+  <div class="relative grid grid-cols-1 md:grid-cols-4 gap-6" id="career-grid"></div>
+  <div id="careerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-xl p-2 md:p-6 m-4 max-w-4xl w-[900px] h-[100vh] md:h-[600px] overflow-y-auto relative">
+
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 font-bold hover:text-black">✕</button>
+
+    <h3 id="modalTitle" class="text-xl md:text-2xl  font-bold text-gray-800"></h3>
+    <p id="modalLocation" class="sm:text-md text-gray-600 mt-2"></p>
+    <p id="modalExperience" class="text-gray-600 mt-1"></p>
+    <p id="modalDescription" class="text-gray-700 mt-4"></p>
+
+    <div class="mt-6">
+      <p class="text-gray-600 text-sm">If you are interested, please drop us an email on:</p>
+      <a href="mailto:career@property-first.com " 
+         class="text-sky-600 font-medium hover:underline">
+        career@property-first.com
+      </a>
+      /
+      <a href="mailto:sangeetha@property-first.com" 
+         class="text-sky-600 font-medium hover:underline">
+        sangeetha@property-first.com
+      </a>
+      <p class="text-gray-600 text-sm">along with your CV or contact us on 8951708664 and add a brief cover letter on why you are interested in this position for more details, </p>
+    </div>
+    <!-- Button -->
+<div class="flex justify-center mt-4">
+  <button class="bg-sky-500 text-gray-100 p-2 font-semibold rounded-lg" id="openFormBtn">Apply Now</button>
+</div>
+
+
+  </div>
+</div>
+
+<div id="formModal" class="modal form fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+  <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg w-full max-w-md md:max-w-lg lg:max-w-xl max-h-[90vh] overflow-y-auto relative">
+    
+    <button id="closeFormBtn" class="absolute top-2 right-2 text-red-500 font-bold text-lg hover:text-red-700">X</button>
+    
+    <h2 class="text-xl md:text-2xl font-semibold mb-4 text-center">Job Application</h2>
+    
+    <form id="jobForm" class="jobForm" enctype="multipart/form-data" method="POST">
+      
+      <label class="block mb-2">Name:
+        <input type="text" placeholder="Name" name="name" required class="border w-full p-2 rounded" />
+      </label>
+
+      <label class="block mb-2">Email:
+        <input type="email" placeholder="Email" name="email" required class="border w-full p-2 rounded" />
+      </label>
+
+      <label class="block mb-2">Phone:
+        <input type="tel" placeholder="Phone" name="phone" pattern="[0-9]{10}" required class="phone border w-full p-2 rounded" />
+      </label>
+
+      <label class="block mb-2">Years of Experience:
+        <input type="number" placeholder="YOE" name="experience" min="0" required class="border w-full p-2 rounded" />
+      </label>
+
+      <label class="block mb-2">Position Applying For:
+        <select name="position" required class="border w-full p-2 rounded">
+          <option value="">Select Position</option>
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Full Stack Developer</option>
+          <option value="data-scientist">Data Scientist</option>
+        </select>
+      </label>
+
+      <label class="block mb-4">Google Drive link for Resume:
+        <input type="text" name="link" placeholder="Resume Link"  required class="border w-full p-2 rounded" />
+      </label>
+
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full md:w-auto">Submit</button>
+    </form>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+<section class="w-full md:p-6">
+  <img 
+    src="./assets/images/WEBSITE BANNER HIRING.jpg" 
+    alt="We are Hiring Banner" 
+    class="w-full h-auto object-cover rounded-lg shadow-md"
+    loading="lazy"
+  />
+</section>
+
+    <!-- ============================= -->
+  <!-- Footer -->
+  <!-- ============================= -->
+ <footer id="footer" class="bg-slate-900 text-slate-200">
+    <div class="container mx-auto md:py-8 flex md:flex-row flex-col justify-between gap-8">
+      <div class="bg-white flex flex-col gap-3 items-center justify-center p-4">
+        <!-- <h3 class="font-semibold">About</h3> -->
+        <!-- <p class="mt-3 text-slate-400">Short description about your company.</p> -->
+           <img src="/assets/images/LOGO.png" alt="Company Logo" style="width:120px; height:auto;">
+           <img src="/assets/images/GPTW logo.png" alt="Company Logo" style="width:120px; height:auto;">
+
+      </div>
+      <div class="bg-slate-900 mx-4 space-y-2">
+        <h3 class="font-semibold">Quick Links</h3>
+        <ul class="mt-3 space-y-2 text-slate-400 ">
+          <!-- <li><a href="#properties" class="hover:text-white">Home</a></li> -->
+          <li><a href="./about.html" class="hover:text-white">About US</a></li>
+          <li><a href="./awards.html" class="hover:text-white">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-white">News</a></li>
+          <li><a href="./careers.html" class="hover:text-white">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+        <div class="bg-slate-900 pt-4">
+        <h3 class="font-semibold">Follow Us</h3>
+        <div class="flex space-x-4 mt-4 text-slate-400">
+    <a href="https://www.facebook.com/propertyfirstrealtyofficial" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://www.instagram.com/propertyfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/property-first-realty-llp/posts/?feedView=all" target="_blank" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.youtube.com/@propertyfirstrealtyllp" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+  </div>
+      </div>
+      </div>
+     
+
+     <!-- Font Awesome (include in <head> if not already) -->
+
+<div class="bg-slate-900 mx-4 md:w-[250px] rounded-lg">
+  <h3 class="font-semibold text-lg">Contact</h3>
+  <ul class="mt-3 space-y-3 text-slate-400">
+    <!-- Phone -->
+    <li>
+      <a href="tel:08043700346" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-phone mr-2"></i> 080 43700346
+      </a>
+    </li>
+    <!-- Email -->
+    <li>
+      <a href="mailto:info@property-first.com" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-envelope mr-2"></i>info@property-first.com 
+      </a>
+    </li>
+    <!-- Address -->
+    <li class="">
+      <i class="fa-solid fa-location-dot mr-2 mt-1"></i>
+      <span class="font-semibold"> Bangalore (Corporate Office):</span> Art Arcade, 4th Floor, 80ft Road, Near Sony World, Koramangala, Bengaluru-34
+      
+    </li>
+  </ul>
+</div>
+
+     <div class="bg-gray-800 py-2 md:w-[375px]">
+  <div class="max-w-2xl mx-auto px-4">
+    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Contact Now</h3>
+
+    <form class="contactForm flex flex-col space-y-2">
+      <input type="text" name="name" placeholder="Enter your name" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input type="email" name="email" placeholder="Enter your email" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input type="tel" name="mobile" placeholder="Enter your phone number" required pattern="[0-9]{10}"
+        class="phone w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <textarea name="message" placeholder="Write your message" required rows="3"
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
+
+     
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container mx-auto px-4 py-6 text-center text-slate-500 text-sm">
+        © <span id="year"></span> Your Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small JS for mobile menu + dynamic year -->
+  <script>
+   
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+       duration: 1000, // animation duration in ms
+    easing: 'ease-in-out', // default easing
+    once: false,
+    mirror: true
+    });
+    });
+  </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Element is in view → animate in
+        entry.target.classList.add("visible");
+      } else {
+        // Element is out of view → reset (so it animates again next time)
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".paragraph").forEach(p => {
+    observer.observe(p);
+  });
+
+  const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");  // zoom in
+    } else {
+      entry.target.classList.remove("visible"); // zoom out
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".gallery-img").forEach(img => {
+  imgObserver.observe(img);
+});
+</script>
+
+<script src="./script.js" defer></script>
+</body>
+</html>

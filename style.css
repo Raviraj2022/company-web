@@ -1,0 +1,81 @@
+body {
+  font-family: 'poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+#scrollContainer {
+    scroll-snap-type: y mandatory;
+  }
+  .prop-row {
+    scroll-snap-align: start;
+  }
+
+
+  .horizontal-scroll-container {
+  scroll-behavior: smooth;
+}
+
+.gallery-img {
+  transform: scale(1);
+  opacity: 0.6;
+  transition: all 0.8s ease-out;
+}
+.gallery-img.visible {
+  transform: scale(1.1);
+  opacity: 1;
+}
+ 
+  .paragraph {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+  .paragraph.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+    .active {
+    color: #0c93bd; /* Tailwind's blue-700 */
+    font-weight: 600;
+    position: relative;
+  }
+
+  /* Underline animation */
+  .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #0c93bd;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .active:hover::after {
+    transform: scaleX(1);
+  }
+
+
+
+
+
+  .iti__country-list {
+  max-height: 250px;
+  width: 340px;   /* limit height */
+  overflow-y: auto;    /* add scrollbar */
+  z-index: 9999;       /* keep it above other elements */
+}
+
+
+.iti__flag-box, .iti__country-name {
+    /* margin-right: 6px; */
+    color: darkslateblue;
+}

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awards - Property First</title>
+  <link href="/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Tailwind CSS (CDN for quick start) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Felipa&family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Praise&family=Vidaloka&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9ecff',
+              500: '#2563eb',
+              600: '#1d4ed8'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+
+  <style>
+    /* Simple video ratio helper when not using Tailwind aspect-ratio plugin */
+    .video-frame { position: relative; padding: 45% 0 15px 0; }
+    .video-frame > iframe,
+    .video-frame > video { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .autoshow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+  }
+
+  @keyframes autoShowAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.3);
+
+    }to{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+  }
+
+
+  .autoround{
+    animation: autoAnimation;
+    animation-timeline: view();
+  }
+
+  @keyframes autoAnimation {
+    from {
+      transition: rotate(0deg);
+
+    }to{
+      transition: rotate(360deg);
+    }
+    
+  }
+
+  .swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important; /* default is 20-24px */
+}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+<script src="./script.js" defer></script>
+</head>
+
+<body class="antialiased text-slate-800 bg-slate-900">
+
+  <!-- ============================= -->
+  <!-- Navbar -->
+  <!-- ============================= -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/80 backdrop-blur">
+    <nav class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
+
+        <!-- Desktop menu -->
+       <ul class="hidden md:flex items-center gap-6 p-4 rounded-2xl">
+          <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
+          <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
+          <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-sky-600">News</a></li>
+          <li><a href="./careers.html" class="hover:text-sky-600">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-sky-600">Contact</a></li>
+        </ul>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
+          <!-- <span class="sr-only">Open Menu</span> -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+     <div id="mobileMenu" 
+     class="hidden md:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
+            py-2 border-t border-slate-200 overflow-auto 
+            transform transition-all duration-300 ease-in-out 
+            origin-top scale-y-0 opacity-0 z-50">
+  <a href="./index.html" class="block px-4 py-2 hover:text-sky-600">Home</a>
+  <a href="./about.html" class="block px-4 py-2 hover:text-sky-600">About Us</a>
+  <a href="./awards.html" class="block px-4 py-2 hover:text-sky-600">Awards</a>
+  <a href="./news.html" class="block px-4 py-2 hover:text-sky-600">News</a>
+  <a href="./careers.html" class="block px-4 py-2 hover:text-sky-600">Career</a>
+  <a href="./contact.html" class="block px-4 py-2 hover:text-sky-600">Contact</a>
+</div>
+
+    </nav>
+  </header>
+
+  <!-- ============================= -->
+  <!-- Banner Video -->
+  <!-- ============================= -->
+ <section id="banner-video" class="text-white w-full">
+  <div class="relative h-full w-full">
+    <img src="./assets/images/web view/Awards page banner  copy.png" class="hidden md:block w-full full"/>
+    <img src="./assets/images/new mobile/Awards page ---mobile.png" class="block md:hidden w-full h-[500px]"/>
+  </div>
+</section>
+
+
+<!-- AOS CSS -->
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<section class="w-full px-4 md:px-12 py-8 md:py-16 bg-gray-50">
+  <!-- Image Modal -->
+<div id="image-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+  <div class="relative max-w-md w-full">
+    <button id="close-modal" class="absolute top-[-25px] right-0 text-white text-3xl font-bold">&times;</button>
+    <img id="modal-img" src="" alt="Award Image" class="w-full h-auto rounded-xl" />
+    <div class="text-center text-white mt-2">
+      <p id="modal-caption" class="text-lg"></p>
+      <p id="modal-by" class="text-md font-semibold"></p>
+    </div>
+  </div>
+</div>
+
+  <!-- Title -->
+  <div class="text-center mb-12">
+    <h2 class="text-xl md:text-3xl font-bold text-gray-800">OUR AWARDS</h2>
+  </div>
+
+  <!-- Image Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
+    <!-- Template for single image -->
+    <template id="project-template">
+  <div class="overflow-hidden rounded-2xl bg-gray-200 pb-4 space-y-3" data-aos="zoom-in">
+    <img src="" alt="Project"
+         loading="lazy"
+         class="w-full md:h-64 object-cover transform hover:scale-110 transition duration-500 cursor-pointer" />
+    <div class="mt-2 px-2 text-center">
+      <p class="caption text-[12px] md:text-sm text-gray-600"></p>
+      <p class="by text-md text-gray-800 text-[12px] md:text-sm  font-semibold"></p>
+      <!-- <button class="read-more text-blue-500 text-sm mt-1 hidden">Read more</button> -->
+    </div>
+  </div>
+</template>
+
+  </div>
+</section>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // awards-modal.js
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalCaption = document.getElementById('modal-caption');
+  const modalBy = document.getElementById('modal-by');
+  const closeBtn = document.getElementById('close-modal');
+
+  // Function to open modal
+  window.openAwardModal = function(imgSrc, caption, by) {
+    modalImg.src = imgSrc;
+    modalCaption.textContent = caption;
+    modalBy.textContent = by || '';
+    modal.classList.remove('hidden');
+  };
+
+  // Close modal
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // Close modal on click outside image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+});
+
+  AOS.init({ duration: 1000, once: true });
+
+  // Replace with your project image URLs
+  const projectImages = [
+    {
+    img:"./assets/images/awards/awards1.jpg",
+    caption: "Awarded as the Property Consultant of the Year 2025 by",
+    by: "ET Realty"
+  },
+   {
+    img:"./assets/images/awards/awards2.png",
+    caption: "Special Jury Recommendation – IPC/Consultant of the Year 2024 by",
+    by: "ET Realty"
+  },
+   {
+    img:"./assets/images/awards/awards3.png",
+    caption: "Special Jury Recommendation – IPC/Consultant of the Year 2024 by",
+    by: "ET Realty"
+  },
+   {
+    img:"./assets/images/awards/awards4.png",
+    caption: "Awarded as the Top Performer in the year of 2023 by",
+    by: "L&T Realty"
+  },
+   {
+    img:"./assets/images/awards/awards5.png",
+    caption: "Awarded as the Top Performer by CNTC | The Presidential Tower in the year of 2023."
+  },
+   {
+    img:"./assets/images/awards/awards6.png",
+    caption: "Awarded as the Top Performer in the year of 2024 by",
+    by: "L&T Realty"
+  },
+   {
+    img:"./assets/images/awards/awards7.jpg",
+    caption: "Awarded as the Top Performer Homes in the year of 2022 by",
+    by: "Total Environment"
+  },
+   
+   {
+    img:"./assets/images/awards/awards9.jpg",
+    caption: "Awarded as the Top Performer by",
+    by: "Phoenix"
+  },
+   {
+    img:"./assets/images/awards/awards10.jpg",
+    caption: "Awarded as the Top Performer in the year of 2022 by",
+    by: "Century"
+  },
+   {
+    img:"./assets/images/awards/awards11.jpg",
+    caption: "Awarded as the Top Performer in the year of 2022 by",
+    by: "Century"
+  },
+   {
+    img:"./assets/images/awards/awards12.jpg",
+    caption: "Awarded as the Top Performer in the year of 2022 by",
+    by: "Century"
+  },
+   {
+    img:"./assets/images/awards/awards13.jpg",
+    caption: "Awarded as the Outstanding Business Achievement 2021–22 by",
+    by: "CREA (India)"
+  },
+   {
+    img:"./assets/images/awards/awards14.jpg",
+    caption: "Awarded as the Top Performer Homes in the year of 2019 by",
+    by: "Total Environment"
+  },
+   {
+    img:"./assets/images/awards/awards15.jpg",
+    caption: "Awarded as the Outstanding Business Achievement 2021–22 by",
+    by: "CREA (India)"
+  },
+
+   {
+    img:"./assets/images/awards/awards16.jpg",
+    caption: "Best Real Estate Consulting Firm (South India) in 2021 by",
+    by: "India Property Awards"
+  },
+   {
+    img:"./assets/images/awards/awards17.jpg",
+    caption: "Recognized as the Most Promising Chanel Partner in FY 2018-19 by",
+    by: "Sobha"
+  },
+   {
+    img:"./assets/images/awards/awards18.jpg",
+    caption: "Awarded as the Top Performer in 2020-21 by",
+    by: "Peninsula Land"
+  },
+   {
+    img:"./assets/images/awards/awards19.jpg",
+    caption: "Awarded as the Outstanding Business Achievement 2016-17 by",
+    by: "CREA (India)"
+  },
+   {
+    img:"./assets/images/awards/awards20.jpg",
+    caption: "Awarded as the Top Performer by",
+    by: "Phoenix | EDGE in 2018"
+  },
+   {
+    img:"./assets/images/awards/awards21.jpg",
+    caption: "Awarded as the Top Performer Homes in the year of 2019 by",
+    by: "Total Environment"
+  },
+   {
+    img:"./assets/images/awards/awards22.jpg",
+    caption: "Awarded as the Star Performer by",
+    by: "Shapoorji Pallonji"
+
+  },
+   {
+    img:"./assets/images/awards/awards23.png",
+    caption: "Awarded as the Star Performer in 2022 by",
+    by: "Birla Estates"
+  },
+
+   {
+    img:"./assets/images/awards/awards24.png",
+    caption: "Recognized as the Preferred Partner in 2017 by",
+    by: "Century"
+  },
+   {
+    img:"./assets/images/awards/awards25.png",
+    caption: "Recognized for Outstanding Performance in 2020-21 by",
+    by: "Peninsula Land"
+  }, {
+    img:"./assets/images/awards/awards26.png",
+    caption: "Awarded as the Outstanding Business Achievement 2017-18 by",
+    by: "CREA (India)"
+  },
+
+   {
+    img:"./assets/images/awards/awards27.png",
+    caption: "Gold Performer Award by",
+    by: "Flow"
+  },
+   {
+    img:"./assets/images/awards/awards28.png",
+    caption: "Recognized for Invaluable Contribution by",
+    by: "Apas"
+  },
+
+   {
+    img:"./assets/images/awards/awards29.png",
+    caption: "Rising Star Award in 2021-22 by",
+    by: "Sobha"
+  },
+   {
+    img:"./assets/images/awards/awards30.png",
+    caption: "Recognized as the Preferred Partner in 2017 by",
+    by: "Century"
+  }, {
+    img:"./assets/images/awards/awards31.png",
+    caption: "Appreciated for Being Preferred Partner of Excellence Homes in 2019 by",
+    by: "Total Environment"
+  },
+
+   {
+    img:"./assets/images/awards/awards32.png",
+    caption: "Appreciated for Outstanding Contribution towards the success of Parkwest 2.0 in 2022 by",
+    by: "Shapoorji Pallonji"
+  },
+
+   {
+    img:"./assets/images/awards/awards33.png",
+    caption: "Awarded as the Outstanding Performer in 2021 by",
+    by: "Puravankara"
+  },
+
+   {
+    img:"./assets/images/awards/awards34.png",
+    caption: "Recognized as the Preferred Partner by",
+    by: "Karle | Infra"
+  },
+
+   {
+    img:"./assets/images/awards/awards35.png",
+    caption: "Awarded as the Top Performer Homes in the year of 2019 by",
+    by: "Total Environment"
+  },
+   {
+    img:"./assets/images/awards/awards36.png",
+    caption: "Excellence Award in 2016 by",
+    by: "Embassy Group"
+  },
+   {
+    img:"./assets/images/awards/awards37.png",
+    caption: "Best Real Estate Consulting Firm (South India) in 2019 by",
+    by: "India Property Awards"
+  },
+   {
+    img:"./assets/images/awards/awards38.png",
+    caption: "Awarded for Excellent Performance by",
+    by: "SNN Estates"
+  },
+   {
+    img:"./assets/images/awards/awards39.png",
+    caption: "Recognized for Valuable Contribution towards Raintree Boulevard in 2023 by",
+    by: "L&T Realty"
+  },
+   {
+    img:"./assets/images/awards/awards40.png",
+    caption: "Awarded as the Outstanding Performer in 2021 by.",
+    by: "Puravankara"
+  },
+   {
+    img:"./assets/images/awards/awards41.png",
+    caption: "Recognized for Valuable Contribution towards Raintree Boulevard in 2023 by",
+    by: "L&T Realty"
+  },
+   {
+    img:"./assets/images/awards/awards42.png",
+    caption: "Awarded as the Star Performer by",
+    by: "Shapoorji Pallonji"
+  },
+   {
+    img:"./assets/images/awards/awards43.png",
+    caption: "Best Real Estate Consulting Firm (South India) by",
+    by: " India Property Awards"
+  },
+   {
+    img:"./assets/images/awards/awards44.png",
+    caption: "Honoured as Outstanding Performer by",
+    by: "Yes Realtor"
+  },
+
+    
+    ];
+
+ const grid = document.querySelector(".grid");
+const template = document.getElementById("project-template");
+
+projectImages.forEach((project, index) => {
+  const clone = template.content.cloneNode(true);
+
+  const img = clone.querySelector("img");
+  const captionEl = clone.querySelector(".caption");
+  const byEl = clone.querySelector(".by");
+
+  img.src = project.img;
+  captionEl.textContent = project.caption;
+  byEl.textContent = project.by || ""; // only show if exists
+
+
+  img.style.cursor = "pointer";
+img.onclick = () => {
+  openAwardModal(project.img, project.caption, project.by);
+};
+  // Optional stagger animation
+  img.setAttribute("data-aos-delay", (index % 6) * 100);
+
+  grid.appendChild(clone);
+});
+
+  
+
+</script>
+
+
+
+  <!-- ============================= -->
+  <!-- Footer -->
+  <!-- ============================= -->
+  <footer id="footer" class="bg-slate-900 text-slate-200">
+    <div class="container mx-auto md:py-8 flex md:flex-row flex-col justify-between gap-8">
+      <div class="bg-white flex flex-col gap-3 items-center justify-center p-4">
+        <!-- <h3 class="font-semibold">About</h3> -->
+        <!-- <p class="mt-3 text-slate-400">Short description about your company.</p> -->
+           <img src="/assets/images/LOGO.png" alt="Company Logo" style="width:120px; height:auto;">
+           <img src="/assets/images/GPTW logo.png" alt="Company Logo" style="width:120px; height:auto;">
+
+      </div>
+      <div class="bg-slate-900 mx-4 space-y-2">
+        <h3 class="font-semibold">Quick Links</h3>
+        <ul class="mt-3 space-y-2 text-slate-400 ">
+          <!-- <li><a href="#properties" class="hover:text-white">Home</a></li> -->
+          <li><a href="./about.html" class="hover:text-white">About US</a></li>
+          <li><a href="./awards.html" class="hover:text-white">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-white">News</a></li>
+          <li><a href="./careers.html" class="hover:text-white">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+        <div class="bg-slate-900 pt-4">
+        <h3 class="font-semibold">Follow Us</h3>
+        <div class="flex space-x-4 mt-4 text-slate-400">
+    <a href="https://www.facebook.com/propertyfirstrealtyofficial" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://www.instagram.com/propertyfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/property-first-realty-llp/posts/?feedView=all" target="_blank" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.youtube.com/@propertyfirstrealtyllp" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+  </div>
+      </div>
+      </div>
+     
+
+     <!-- Font Awesome (include in <head> if not already) -->
+
+<div class="bg-slate-900 mx-4 md:w-[250px] rounded-lg">
+  <h3 class="font-semibold text-lg">Contact</h3>
+  <ul class="mt-3 space-y-3 text-slate-400">
+    <!-- Phone -->
+    <li>
+      <a href="tel:08043700346" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-phone mr-2"></i> 080 43700346
+      </a>
+    </li>
+    <!-- Email -->
+    <li>
+      <a href="mailto:info@property-first.com" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-envelope mr-2"></i>info@property-first.com 
+      </a>
+    </li>
+    <!-- Address -->
+    <li class="">
+      <i class="fa-solid fa-location-dot mr-2 mt-1"></i>
+      <span class="font-semibold"> Bangalore (Corporate Office):</span> Art Arcade, 4th Floor, 80ft Road, Near Sony World, Koramangala, Bengaluru-34
+      
+    </li>
+  </ul>
+</div>
+
+     <div class="bg-gray-800 py-2 md:w-[375px]">
+  <div class="max-w-2xl mx-auto px-4">
+    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Contact Now</h3>
+
+    <form  class="contactForm flex flex-col space-y-2">
+      <input type="text" name="name" placeholder="Enter your name" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input type="email" name="email" placeholder="Enter your email" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input type="tel" name="mobile" placeholder="Enter your phone number" required pattern="[0-9]{10}"
+        class="phone w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <textarea name="message" placeholder="Write your message" required rows="3"
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
+
+     
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container mx-auto px-4 py-6 text-center text-slate-500 text-sm">
+        © <span id="year"></span> Your Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small JS for mobile menu + dynamic year -->
+  
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".scroll-animate img");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("scale-110", "opacity-0");
+        entry.target.classList.add("scale-100", "opacity-100");
+      }
+    });
+  }, { threshold: 0.3 }); // Trigger when 30% visible
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+       duration: 1000, // animation duration in ms
+    easing: 'ease-in-out', // default easing
+    once: false,
+    mirror: true
+    });
+    });
+  </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Element is in view → animate in
+        entry.target.classList.add("visible");
+      } else {
+        // Element is out of view → reset (so it animates again next time)
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".paragraph").forEach(p => {
+    observer.observe(p);
+  });
+
+  const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");  // zoom in
+    } else {
+      entry.target.classList.remove("visible"); // zoom out
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".gallery-img").forEach(img => {
+  imgObserver.observe(img);
+});
+</script>
+<!-- <script src="./script.js" defer></script> -->
+</body>
+</html>

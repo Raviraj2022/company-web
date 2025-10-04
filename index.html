@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property First</title>
+  <link href="/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Tailwind CSS (CDN for quick start) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Felipa&family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Praise&family=Vidaloka&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9ecff',
+              500: '#2563eb',
+              600: '#1d4ed8'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="./script.js" defer></script>
+
+  <style>
+    /* Simple video ratio helper when not using Tailwind aspect-ratio plugin */
+    .video-frame { position: relative; padding: 45% 0 15px 0; }
+    .video-frame > iframe,
+    .video-frame > video { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .autoshow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+  }
+
+  @keyframes autoShowAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.3);
+
+    }to{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+  }
+
+
+  .autoround{
+    animation: autoAnimation;
+    animation-timeline: view();
+  }
+
+  @keyframes autoAnimation {
+    from {
+      transition: rotate(0deg);
+
+    }to{
+      transition: rotate(360deg);
+    }
+    
+  }
+
+  .swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important; /* default is 20-24px */
+}
+ .swiper-button-next-top::after,
+.swiper-button-prev-top::after {
+  font-size: 16px !important; /* default is 20-24px */
+}
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+</head>
+<body class="antialiased text-slate-800 bg-white mb-8 md:mb-0">
+  <!-- Floating Contact Icons -->
+<!-- Desktop Floating Buttons -->
+<div class="hidden md:fixed md:bottom-6 md:right-6 md:flex md:flex-col md:gap-4 md:z-50">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/7899200200" target="_blank" 
+     class="bg-green-500 text-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Phone -->
+  <a href="tel:7899200300" 
+     class="bg-blue-500 text-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+    <i class="fas fa-phone-alt text-2xl"></i>
+  </a>
+</div>
+
+<!-- Mobile Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-sky-500 shadow-md flex items-center md:hidden z-50">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/7899200200" target="_blank" 
+     class="flex-1 flex items-center justify-center gap-2 py-1 text-white">
+    <i class="fab fa-whatsapp"></i>
+    <span class="text-sm">WhatsApp</span>
+  </a>
+
+  <!-- Divider -->
+  <div class="w-px h-8 bg-white"></div>
+
+  <!-- Phone -->
+  <a href="tel:7899200300" 
+     class="flex-1 flex items-center justify-center gap-2 py-1 text-white">
+    <i class="fas fa-phone-alt"></i>
+    <span class="text-sm">Call</span>
+  </a>
+</div>
+
+
+
+
+<!-- Font Awesome -->
+
+
+  <!-- ============================= -->
+  <!-- Navbar -->
+  <!-- ============================= -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/80 backdrop-blur">
+    <nav class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
+
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex items-center gap-6 bg-gray-100 p-4 rounded-2xl">
+          <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
+          <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
+          <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-sky-600">News</a></li>
+          <li><a href="./careers.html" class="hover:text-sky-600">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-sky-600">Contact</a></li>
+         
+        </ul>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
+          <span class="sr-only">Open Menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+     <div id="mobileMenu" 
+     class="hidden md:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
+            py-2 border-t border-slate-200 overflow-auto 
+            transform transition-all duration-300 ease-in-out 
+            origin-top scale-y-0 opacity-0 z-50">
+  <a href="./index.html" class="block px-4 py-2 hover:text-sky-600">Home</a>
+  <a href="./about.html" class="block px-4 py-2 hover:text-sky-600">About Us</a>
+  <a href="./awards.html" class="block px-4 py-2 hover:text-sky-600">Awards</a>
+  <a href="./news.html" class="block px-4 py-2 hover:text-sky-600">News</a>
+  <a href="./careers.html" class="block px-4 py-2 hover:text-sky-600">Career</a>
+  <a href="./contact.html" class="block px-4 py-2 hover:text-sky-600">Contact</a>
+</div>
+
+    </nav>
+  </header>
+
+  <!-- ============================= -->
+  <!-- Banner Video -->
+  <!-- ============================= -->
+<section id="banner-video" class="relative text-white w-full">
+  <div class="relative h-[400px] md:h-[550px] w-full overflow-hidden">
+    <!-- Desktop Video -->
+     
+    <!-- Arrows --> 
+   <!-- Arrows (move them after swiper so they overlay) -->
+  <div class="swiper-button-prev-banner absolute top-1/2 -translate-y-1/2 -left-0
+              bg-gray-100 p-3 rounded-full shadow-md text-black hidden lg:flex 
+              items-center justify-center z-10"> <i class="fa-solid fa-angle-left"></i> </div>
+
+  <div class="swiper-button-next-banner absolute top-1/2 -translate-y-1/2 -right-0 
+              bg-gray-100 p-3 rounded-full shadow-md text-black hidden lg:flex 
+              items-center justify-center z-10"> <i class="fa-solid fa-angle-right"></i></div>
+    <!-- Swiper -->
+    <div class="swiper bannerSwiper w-full">
+      <div class="swiper-wrapper">
+        
+                <!-- Slide 2 -->
+        <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+         
+            <div class="swiper-slide w-full h-full flex items-center justify-center bg-black">
+          <img src="./assets/images/AWARD 2.png" alt="Property 1" class="hidden md:block w-full max-h-full object-cover">
+                    <img src="./assets/images/Mobile view (WEBSITE CREATION) 2.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">    
+        </div>
+         <div class="swiper-slide w-full h-full flex items-center justify-center bg-black">
+          <img src="./assets/images/AWARD 1.png" alt="Property 1" class=" hidden md:block w-full max-h-full object-cover"> 
+           <img src="./assets/images/Mobile view (WEBSITE CREATION) 1.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+        </div>
+          <div class="swiper-slide w-full h-full flex items-center justify-center bg-black">
+          <img src="./assets/images/Untitled design/1.png" alt="Property 1" class="hidden md:block w-full max-h-full object-cover">    
+        <img src="./assets/images/MOBILE/1.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+ 
+        </div>
+        
+        <div class="swiper-slide w-full">
+          <img src="./assets/images/Untitled design/3.png" alt="Property 1" class="hidden md:block w-full h-full object-cover">    
+        <img src="./assets/images/MOBILE/3.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+ 
+        </div>
+         <div class="swiper-slide w-full h-full flex items-center justify-center bg-black">
+          <img src="./assets/images/4.png" alt="Property 1" class="hidden md:block w-full max-h-full object-cover">    
+         <img src="./assets/images/MOBILE/4.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+ 
+        </div>
+        <div class="swiper-slide w-full">
+          <img src="./assets/images/Untitled design/5.png" alt="Property 1" class="hidden md:block w-full h-full object-cover">    
+         <img src="./assets/images/MOBILE/5.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+ 
+        </div>
+           <div class="swiper-slide w-full">
+          <img src="./assets/images/Untitled design/6.png" alt="Property 1" class="hidden md:block w-full h-full object-cover">    
+         <img src="./assets/images/MOBILE/6.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+ 
+        </div>
+      <div class="swiper-slide w-full">
+          <img src="./assets/images/Untitled design/2.png" alt="Property 1" class="hidden md:block w-full h-full object-cover">    
+         <img src="./assets/images/MOBILE/2.png" alt="Property 1" class="block md:hidden w-full max-h-full object-cover">   
+ 
+        </div>
+
+ 
+        
+       
+        
+             
+          <!-- <div class="swiper-slide w-full h-screen">
+          <img src="./assets/images/2 (1).png" alt="Property 1" class="w-full h-full object-cover">    
+        </div> -->
+         
+         
+        
+          <!-- <div class="swiper-slide w-full h-screen">
+          <img src="./assets/images/1 (1).png" alt="Property 1" class="w-full h-full object-cover">    
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination-banner mt-6 !relative !bottom-0 h-4 flex justify-center"></div>
+  </div>
+  
+</section>
+
+
+
+
+
+<section id="our-partner" class="py-12 bg-white shadow-2xl">
+  <div class="container mx-auto px-4">
+    <h2 class="text-xl md:text-3xl font-semibold text-gray-700 text-center">OUR PARTNERS</h2>
+
+    <div class="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-12 gap-4 mt-10 justify-center items-center">
+      <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/1.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/2.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/3.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/4.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/5.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/6.png" alt="Nambiar" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/7.png" alt="Tata" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/8.png" alt="Bhartiya" /></div>
+ 
+      <div class="logo-item animate-zoom delay-0"><img src="./assets/images/LOGOS (1080PX)/9.png" alt="purvankara" /></div>
+      <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/10.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/11.png" alt="TVS" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/12.png" alt="damac" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/13.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/14.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/15.png" alt="NCC_Urban" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/16.png" alt="SNN" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/17.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/18.png" alt="Pheonix" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/19.png" alt="Shobha_Realty" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/20.png" alt="Mantri" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/21.png" alt="Sumadhara" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/22.png" alt="Chaitanya" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/23.png" alt="lodha" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/24.png" alt="binghati" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/25.png" alt="Raheja" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/26.png" alt="Maia Builders" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/27.png" alt="vaswani" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/28.png" alt="radiance" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/29.png" alt="Mana" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/30.png" alt="sowparnika" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/31.png" alt="provident" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/32.png" alt="Urbanise" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/33.png" alt="Mereski" /></div>
+ <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/34.png" alt="Mereski" /></div>
+<div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/35.png" alt="Mereski" /></div> 
+<!-- <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/36.png" alt="Mereski" /></div> -->
+<div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/37.png" alt="Mereski" /></div>
+</div>
+  </div>
+
+  <style>
+    @keyframes zoomInOut {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+  .logo-item {
+  flex: 0 0 auto;
+  min-width: 60px;   /* smaller than 80px */
+  height: 80px;      /* smaller than 100px */
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;  /* slightly reduced */
+  animation: zoomInOut 2s infinite;
+}
+
+.logo-item img {
+  max-height: 50px;  /* reduced */
+  max-width: 70px;   /* reduced */
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .logo-item {
+    min-width: 50px;
+    height: 70px;
+    padding: 0.5rem;
+  }
+  .logo-item img {
+    max-height: 45px;
+    max-width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-item {
+    min-width: 45px;
+    height: 60px;
+    padding: 0.4rem;
+  }
+  .logo-item img {
+    max-height: 40px;
+    max-width: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-item {
+    min-width: 40px;
+    height: 50px;
+    padding: 0.3rem;
+  }
+  .logo-item img {
+    max-height: 35px;
+    max-width: 50px;
+  }
+}
+
+  </style>
+
+  <script>
+    // Apply random animation delays
+    document.querySelectorAll('.logo-item').forEach(logo => {
+      const randomDelay = Math.random() * 5; // 0 to 5 seconds delay
+      logo.style.animationDelay = `${randomDelay}s`;
+    });
+  </script>
+</section>
+
+
+
+<section id="testimonial" class="container bg-white mx-auto px-2 md:px-0">
+   <div class="text-center">
+    <h2 class="text-xl md:text-3xl text-gray-800 font-semibold">TOP TRENDING PROJECTS</h2>
+    <!-- <p class="mt-2 text-slate-600">What our clients say</p> -->
+  </div>
+ <div class="relative">
+    <!-- Arrows -->
+   <!-- Arrows (move them after swiper so they overlay) -->
+  <div class="swiper-button-prev-top absolute top-1/2 -translate-y-1/2 -left-6 
+              bg-gray-100 p-3 rounded-full shadow-md text-black hidden lg:flex 
+              items-center justify-center z-10"><i class="fa-solid fa-angle-left"></i></div>
+
+  <div class="swiper-button-next-top absolute top-1/2 -translate-y-1/2 -right-6 
+              bg-gray-100 p-3 rounded-full shadow-md text-black hidden lg:flex 
+              items-center justify-center z-10"><i class="fa-solid fa-angle-right"></i></div>
+    <!-- Swiper -->
+    <div class="swiper ourSwiper md:px-4 py-4 md:py-6">
+      <div class="swiper-wrapper">
+        
+                <!-- Slide 2 -->
+        <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+          <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class=" rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/elara-celestia.jpg" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold ">L&T REALTY</h3>
+            
+            <p class="text-md md:text-lg font-semibold">Elara Celestia</p>
+           <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>
+  Hebbal, Bangalore
+</p>
+
+            <p class="text-sm md:text-md text-gray-900 font-semibold">3 and 4 BHK Appartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹2.75 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/total.jpg" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">TOTAL ENVIRONMENT</h3>
+            <p class="text-md md:text-lg font-semibold">Pursuit of Radical Rhapsody</p>
+            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Whitefield, Bangalore</p>
+             <p class="text-sm md:text-md text-gray-900 font-semibold">3, 4 and 5 BHK Appartments, Duplex Homes and  Villas</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹6.7 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/green-reserve.webp" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">L&T REALTY</h3>
+                    <p class="text-md md:text-lg font-semibold">Green Reserve</p>
+            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Sector 128, Noida</p>
+             <p class="text-sm md:text-md text-gray-900 font-semibold">Ultra- Luxury 3, 4 and 5 BHK <br> Golf Facing Appartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹6.1 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/pinnacle.png" alt="Property 1" class="w-[340px] h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">BINGHATTI</h3>
+            <p class="text-md md:text-lg font-semibold">Pinnacle</p>
+            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Al Jaddaf, Dubai</p>
+             <p class="text-sm md:text-md text-gray-900 font-semibold">1, 2 and 3 BHK Appartments</p>
+            <p class="text-black text-sm md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> AED 1.3 Million*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/nambiar.webp" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">NAMBIAR BUILDERS</h3>
+            <p class="text-md md:text-lg font-semibold">District 25</p>
+            <p class="inline-block text-sm md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Sarjapur, Bangalore</p>
+             <p class="text-sm md:text-md text-gray-900 font-semibold">2, 3 and 4 BHK Appartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹1.44 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/Total-Environment-Jakkur.jpg" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">TOTAL ENVIRONMENT</h3>
+            <p class="text-md md:text-lg font-semibold">Down By The Water</p>
+            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Jakur, Bangalore</p>
+              <p class="text-sm md:text-md text-gray-900 font-semibold">Lake View 3, 3.5, 4 and 5 BHK Appartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹4.69 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/island-cove.jpg" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">L&T REALTY</h3>
+            <p class="text-md md:text-lg font-semibold">Island Cove</p>
+            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Mahim, Mumbai</p>
+              <p class="text-sm md:text-md text-gray-900 font-semibold">2, 3, and 4 BHK Appartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹3.5 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/binghatti.png" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">BINGHATTI</h3>
+            <p class="text-md md:text-lg font-semibold">Skyblade</p>
+          <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Downtown Dubai, Dubai</p>
+              <p class="text-sm md:text-md text-gray-900 font-semibold">Studio, Premium Studio 1, 2, and 3 BHK Appartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> AED 1.7 Million*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>
+
+           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/Nambiar_elle.webp" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">NAMBIAR BUILDERS</h3>
+            <p class="text-md md:text-lg font-semibold">Elleganza</p>
+          <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Sarjapur Road, Bangalore</p>
+              <p class="text-sm md:text-md text-gray-900 font-semibold">4 and 5 BHK Villas</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹5 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>   
+          <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/godrej.png" alt="Property 1" class="w-[340px] h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">GODREJ PROPERTIES</h3>
+            <p class="text-md text-lg font-semibold">Sanctuary In The City</p>
+           <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Thanisandra, Bangalore</p>
+              <p class="text-sm md:text-md text-gray-900 font-semibold">2 and 3 BHK Apartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹1.62 Crore*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>   
+          <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <img src="./assets/images/DAMAC_District.jpg" alt="Property 1" class="w-[340px] h-48 object-cover">
+          <div class="p-4 space-y-2">
+            <h3 class="text-md md:text-lg font-semibold">DAMAC PROPERTIES</h3>
+            <p class="text-md md:text-lg font-semibold"> District</p>
+          <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
+  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Damac Hills, Dubai</p>
+              <p class="text-sm md:text-md text-gray-900 font-semibold">1 and 2 BHK Apartments</p>
+            <p class="text-black text-[12px] md:text-sm">starting at: </p>
+            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> AED 1.2 Million*</p>
+            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
+              <button class="enquiry-modal bg-sky-500 text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+          </figure>
+        </div>   
+         
+      </div>
+
+
+      <!-- Enquiry Modal -->
+<div id="enquiryModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50 top-12">
+  <div class="bg-white rounded-2xl w-[98%] md:w-[500px] p-2 md:p-6 relative shadow-xl">
+    
+    <!-- Close button -->
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-black font-bold text-xl">✕</button>
+
+    <!-- Project Name -->
+    <h2 id="projectTitle" class="text-xl font-bold text-gray-800 mb-4"></h2>
+
+    <!-- Form -->
+    <form id="enquiryForm" class="space-y-2">
+      <input type="hidden" id="projectNameInput" name="projectName">
+
+      <div>
+        <label class="block text-sm font-semibold">Full Name</label>
+        <input type="text" name="name" class="w-full border p-2 rounded-md" required>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Email</label>
+        <input type="email" name="email" class="w-full border p-2 rounded-md" required>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Phone</label>
+        <input type="tel" name="phone" class="phone w-full border p-2 rounded-md" required>
+        <!-- <input id="" type="tel" name="mobile" placeholder="Enter your phone number" required pattern="[0-9]{10}"
+        class="phone w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" /> -->
+
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Message</label>
+        <textarea name="message" rows="2" class="w-full border p-2 rounded-md"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-sky-500 text-white p-2 rounded-md font-semibold">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("enquiryModal");
+  const closeModal = document.getElementById("closeModal");
+  const projectTitle = document.getElementById("projectTitle");
+  const projectNameInput = document.getElementById("projectNameInput");
+  const form = document.getElementById("enquiryForm");
+  let iti; // store intlTelInput instance globally for this form
+
+  // Open modal on button click
+  document.querySelectorAll(".enquiry-modal").forEach(button => {
+    button.addEventListener("click", function() {
+      const projectName = this.closest(".swiper-slide").querySelector("p.font-semibold").innerText;
+      projectTitle.textContent = "Enquiry for " + projectName;
+      projectNameInput.value = projectName;
+
+      modal.classList.remove("hidden");
+
+      // ✅ Re-initialize intlTelInput when modal opens
+      const phoneInputField = form.querySelector(".phone");
+      if (phoneInputField) {
+        if (iti) {
+          iti.destroy(); // avoid duplicates
+        }
+        iti = window.intlTelInput(phoneInputField, {
+          initialCountry: "in",
+          preferredCountries: ["us", "in", "gb", "au"],
+          separateDialCode: true,
+        });
+      }
+    });
+  });
+
+  // Close modal
+  closeModal.addEventListener("click", () => modal.classList.add("hidden"));
+
+  // ✅ Handle form submit
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+console.log(iti.getNumber());
+    // Use the global `iti` instance
+    if (iti) {
+      formData.set("phone", iti.getNumber()); // full international number with country code
+    }
+
+    const data = Object.fromEntries(formData.entries());
+    console.log("Form submitted:", data);
+
+    // Example send to backend
+    // fetch("/submit-enquiry", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(data),
+    // }).then(res => res.json()).then(resp => {
+    //   alert("Enquiry submitted successfully!");
+    //   form.reset();
+    // });
+  });
+});
+</script>
+
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination-top mt-6 !relative !bottom-0 h-4 flex justify-center"></div>
+  </div>
+</section>
+<section class="container bg-white mx-auto px-2 md:px-0 ">
+  <div class="text-center mb-6">
+    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold"> MEDIA HIGHLIGHTS</h2>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/news/news31.jpg" 
+         alt="News 31" 
+         data-caption="Property First has been featured in renowned newspapers for its achievements." />
+
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/news/news28.jpg" 
+         alt="News 28" 
+         data-caption="Our projects have been consistently recognized by top real estate publications." />
+
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/news/news27.jpg" 
+         alt="News 27" 
+         data-caption="Award-winning real estate strategies delivering customer satisfaction." />
+
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/news/news26.jpg" 
+         alt="News 26" 
+         data-caption="Featured in business magazines for innovation in property management." />
+  </div>
+
+  <div class="text-center mt-8">
+    <a href="./news.html">
+      <button class="md:px-6 px-3 md:py-2 py-1 bg-sky-500 text-white rounded-lg shadow-md hover:bg-sky-700">
+        View More
+      </button>
+    </a>
+  </div>
+
+  <!-- Modal -->
+  <div id="awardsModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50 flex-col p-4">
+    <span id="awards-close-modal" class="absolute top-4 right-8 text-white text-3xl cursor-pointer">&times;</span>
+    <img id="awards-modal-img" class="max-h-[70%] max-w-[90%] rounded-lg shadow-lg mb-4" src="" alt="Modal Image">
+    <p id="awards-modal-caption" class="text-white text-center text-lg max-w-xl"></p>
+  </div>
+</section>
+
+
+
+<section class="container bg-white mx-auto px-2 md:px-0 py-4">
+  <div class="text-center mb-8">
+    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">AWARDS</h2>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/awards/awards1.jpg" 
+         alt="News 31" 
+         data-caption="Property First has been featured in renowned newspapers for its achievements." />
+
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/awards/awards3.png" 
+         alt="News 28" 
+         data-caption="Our projects have been consistently recognized by top real estate publications." />
+
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/awards/awards14.jpg" 
+         alt="News 27" 
+         data-caption="Award-winning real estate strategies delivering customer satisfaction." />
+
+    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+         src="./assets/images/awards/awards13.jpg" 
+         alt="News 26" 
+         data-caption="Featured in business magazines for innovation in property management." />
+  </div>
+
+  <div class="text-center mt-6">
+    <a href="./awards.html">
+      <button class="md:px-6 px-3 md:py-2 py-1 bg-sky-500 text-white rounded-lg shadow-md hover:bg-sky-700">
+        View More
+      </button>
+    </a>
+  </div>
+
+  <!-- Modal -->
+  <div id="awardsmodal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50 flex-col p-4">
+    <span id="awards-close-modal" class="absolute top-4 right-8 text-white text-3xl cursor-pointer">&times;</span>
+    <img id="awards-modal-img" class="max-h-[70%] max-w-[90%] rounded-lg shadow-lg mb-4" src="" alt="Modal Image">
+    <p id="awards-modal-caption" class="text-white text-center text-lg max-w-xl"></p>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- <hr> -->
+  <!-- ============================= -->
+  <!-- Testimonial -->
+  <!-- ============================= -->
+  <section class="container mx-auto px-2 md:px-4 py-4">
+    <div id="video-modal" class="fixed inset-0 hidden z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+  <div class="relative w-full max-w-3xl">
+    <span id="close-video-modal" class="absolute top-[-25px] right-0 text-white text-3xl cursor-pointer">&times;</span>
+    <video id="modal-video" class="w-full h-auto rounded-lg" controls>
+      <source src="" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</div>
+  <!-- Heading -->
+  <div class="text-center mb-6">
+    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">WHY OUR CLIENTS TRUST US?</h2>
+    <!-- <p class="mt-2 text-slate-600">What our clients say</p> -->
+  </div>
+
+  <div id="testimonial" class="w-full px-4 py-4 md:py-12">
+ 
+  <!-- Responsive Grid -->
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+    
+     <!-- Video Card -->
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/THUMBNAILS/7.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573683/Client-Testimonial-1_1_mcglys.mp4')"  
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div> 
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+     
+    <img src="./assets/images/THUMBNAILS/8.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+   
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573568/Client-Testimonial-2_1_aopiq7.mp4')"  
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+   
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/THUMBNAILS/9.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573660/Client-Testimonial-3_1_heufad.mp4')"  
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/THUMBNAILS/10.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573577/Client-Testimonial-4_1_yxwb0r.mp4')"   
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/THUMBNAILS/11.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759574084/Client-Testimonial-5_1_xs1k2w.mp4')"   
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/THUMBNAILS/12.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal(`https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573739/Client-Testimonial-6_1_xe6ivh.mp4`)" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+  </div>
+
+  </div>
+</div>
+
+  <!-- Swiper Container -->
+  <div class="relative">
+    <!-- Arrows -->
+    <div class="swiper-button-prev !left-[-40px] bg-gray-100 p-3 rounded-full shadow-md !text-black hidden lg:flex items-center justify-center"></div>
+<div class="swiper-button-next !right-[-40px] bg-gray-100 p-3 rounded-full shadow-md !text-black hidden lg:flex items-center justify-center"></div>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper md:px-4 py-6">
+      <div class="swiper-wrapper">
+        
+                <!-- Slide 2 -->
+        <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+          <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
+    
+           <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
+  <!-- 4 full stars -->
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i> 
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <!-- half star --> 
+  <i class="fa-solid fa-star"></i>
+</div>
+
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+              “Bhavesh’s firm, Property First, was the intermediary for a real estate transaction that I made in 2019. 
+
+It is rare to meet a professional when dealing with real estate agents but Bhavesh stands apart with his commitment to providing good service. He takes into account your needs as a buyer to provide sound advice and does not hard sell the property in question. 
+
+I have also witnessed first hand his commitment towards continuing to provide services much after the transaction is closed. He helped me with resolving teething issues with the developer and even with introductions to neighbours and other folks in the apartment complex. I would recommend Bhavesh for any services related to real estate as he has been able to gain my trust through his commitment to providing great service.”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Prakhar Sangam</figcaption>
+             <figcaption class="mt-4 text-sm font-bold text-slate-700">CEO, RedBus </figcaption>
+          </figure>
+        </div>
+
+        <!-- Slide 3 -->
+        <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+           <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
+    
+            <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
+  <!-- 4 full stars -->
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <!-- half star -->
+  <i class="fa-solid fa-star"></i>
+</div>
+
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+              “I recently interacted with Property First for a property transaction. They were thorough with his knowledge about the property, gave a detailed comparison with other properties in neighbourhood and helped me in negotiating with the builder. They were a good bridge between me and the builder and my single point of contact, so it saved a lot of my time. They have got a professional approach, yet gives that personal touch required in high end real estate selling. Happy that I worked with them”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Mukund P Thirumalai</figcaption>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Director Asia Automotive After-market Division, 3M Singapore</figcaption>
+      
+          </figure>
+        </div>
+
+         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+          <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
+    
+           <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
+  <!-- 4 full stars -->
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <!-- half star -->
+  <i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+              “We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. 
+Wishing them good luck. We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. Wishing them good luck.”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Deepa Sacheti</figcaption>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Senior Director and Head of APAC, Global Customer Support, Pegasystems</figcaption>
+          </figure>
+        </div>
+
+         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+         <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
+          <figure class="flex flex-col items-center text-center h-full">
+            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
+    
+           <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
+  <!-- 4 full stars -->
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <!-- half star -->
+  <i class="fa-solid fa-star"></i>
+</div>
+
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+              “Working with Property First was a great experience when we bought our house from Total Environment. Their team walked us through the entire process, provided us all the options available with the transaction and had great knowledge of the market and pricing.”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">George Inasu</figcaption>
+             <figcaption class="mt-4 text-sm font-bold text-slate-700">Cheif Operating Officer, Fidelity National Financial India</figcaption>
+          </figure>
+        </div>
+
+         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+           <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center h-full">
+            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
+    
+          <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
+  <!-- 4 full stars -->
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <!-- half star -->
+  <i class="fa-solid fa-star"></i>
+</div>
+
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+              “Property First team was very instrumental and helpful on a property search and even closed a deal in 1 hour. Their expertise in real estate and negotiation skills are very commendable. .”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Suresh Sugumar</figcaption>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Executive Director - R&D, Qualcomm</figcaption>
+          </figure>
+        </div>
+         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+          <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
+       
+           <figure class="flex flex-col items-center text-center h-full">
+            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
+    
+        <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
+  <!-- 4 full stars -->
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <!-- half star -->
+  <i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+              “Bhavesh from Property First has been our go to person through the process of buying the house and even post purchase. He has always been available, prompt and has been very helpful with problem solving at various stages. He took complete responsibility for resolution of all our concerns, during purchase and also went out of his way in connecting us with his previous clients who have purchased the property. This enabled us to clarify a lot of our concerns and also gave us an understanding of the community.”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-bold text-slate-700">Preethi Balan</figcaption>
+             <figcaption class="mt-4 text-sm font-bold text-slate-700">L2 Coach, Unified Mindfulness</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination mt-6 !relative !bottom-0 h-4 flex justify-center"></div>
+  </div>
+</section>
+  <!-- ============================= -->
+  <!-- Gallery -->
+  <!-- ============================= -->
+
+  <!-- ============================= -->
+  <!-- Client Video -->
+  <!-- ============================= -->
+ <section id="av-video" class="container mx-auto py-4 bg-gray-100">
+  <h2 class="text-xl md:text-3xl font-semibold text-center text-gray-800">CORPORATE PROMO VIDEOS</h2>
+  <!-- <p class="mt-2 text-slate-600 text-center">Your company’s AV presentation</p> -->
+
+  <div class="w-full px-4 py-4 md:py-12">
+ 
+  <!-- Responsive Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+    
+     <!-- Video Card -->
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/banner_3.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759574578/AV_ctevpx.mp4')" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+  
+    <p class="text-white bg-sky-500 p-1 md:p-3 text-[10px] md:text-sm text-center">Great Place to Work Certified</p>
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/THUMBNAILS/2.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759570543/ET-AWARDS-2025-1_crwncw.mp4')" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+   
+    <p class="text-white bg-sky-500 p-1 md:p-3 text-[10px] md:text-sm text-center">Property Consultant of the year 2025</p>
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/3rd video- thumbnail.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759570612/PROPERTY-FIRST-AV-4_1_hjgfy4.mp4')" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+   
+    <p class="text-white bg-sky-500 p-1 md:p-3 text-[10px] md:text-sm text-center">Corporate AV</p>
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/4th video- thumbnail.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+     <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759570542/f61fcbb4-0f81-4044-bcec-3911ddd4e0fe_1_ayhgum.mp4')" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+   
+    <p class="text-white bg-sky-500 p-1 md:p-3 text-[10px] md:text-sm text-center">Expo- 2023</p>
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/5th video- thumbnail.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      
+      
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759575301/PROPERTY-MULTIPLIER-EXPO-2.0_1_xnc7ez.mp4')" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+    
+    <p class="text-white bg-sky-500 p-1 md:p-3 text-[10px] md:text-sm text-center">Expo- 2024</p>
+  </div>
+  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+
+    <!-- Thumbnail -->
+    <img src="./assets/images/6th video- thumbnail.png" 
+         alt="Video Thumbnail"
+         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+    
+    <!-- Play Button Overlay -->
+    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759575329/PROPERTY-MULTIPLIER-EXPO-SEASON-3.0-1_1_oe5cvo.mp4')" 
+              class="bg-sky-600 text-white px-6 py-3 rounded-full font-semibold">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Hidden Video -->
+    
+    <p class="text-white bg-sky-500 p-1 md:p-3 text-[10px] md:text-sm text-center">Expo- 2025</p>
+  </div>
+
+  </div>
+</div>
+
+</section>
+  
+<section id="properties" class="hidden lg:block mx-auto px-4 py-12 bg-white">
+  <div class="flex items-end justify-between gap-4">
+   <!-- <div class="mx-auto px-4 py-6 top-0  z-10 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold">Properties</h2>
+      <p class="mt-2 text-slate-600">Featured listings</p>
+    </div> -->
+  </div>
+
+  <div class="horizontal-scroll-section relative h-[100vh] overflow-hidden">
+
+    <div id="horizontal-scroll-track" class="flex">
+
+      <!-- <div class="prop-card min-h-[580px]  w-[100vw] md:w-[1200px] flex-shrink-0 flex flex-col md:flex-row gap-6 items-stretch rounded-none p-2"> -->
+    <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/prop1.jpg" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/bangalore4.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-gray-300">BANGALORE PROPERTIES</h3>
+          <p class="text-gray-300 text-center text-sm">Property First stands as the top channel partner for Bangalore’s real estate, offering premium apartments, luxury villas, and plotted developments. With trusted developer partnerships and expert guidance, we help buyers find their perfect home or investment in the city’s most sought-after locations.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/bangalore5.webp"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/prop4.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>
+      <div class="prop-card min-h-[580px] w-screen bg-white flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/dubai.jpg" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/prop2.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-slate-800">DUBAI PROPERTIES</h3>
+          <p class="text-gray-700 text-center text-sm">Property First is a top channel partner in Dubai’s real estate market, specializing in premium apartments and luxury villas. Through strong developer partnerships and expert advisory, we connect buyers with the city’s finest homes and high-value investment opportunities.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/prop3.jpg"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/dubai1.avif"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/mumbai1.avif" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/mumbai.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-gray-300">MUMBAI PROPERTIES</h3>
+          <p class="text-gray-300 text-center text-sm">Property First serves as a top channel partner for Mumbai real estate, specializing in premium apartments, luxury villas, and plotted developments. Through trusted developer partnerships and expert market insights, we connect buyers with the city’s most sought-after residences and investment opportunities.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/mumbai2.webp"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/mumbai3.webp"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>
+      <div class="prop-card min-h-[580px] w-screen bg-white flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/delhi.webp" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/del.jpeg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-slate-800">DELHI-NCR PROPERTIES</h3>
+          <p class="text-gray-700 text-center text-sm">Property First is a top channel partner for Noida’s real estate, offering premium apartments, luxury villas, and plotted developments. With strong developer associations and expert guidance, we help buyers secure the finest homes and investment opportunities in the city.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/delhi1.jpg"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/delhi2.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/goa.webp" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/goa1.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-gray-300">GOA PROPERTIES</h3>
+          <p class="text-gray-300 text-center text-sm">Property First is a trusted channel partner in Goa’s real estate market, specializing in premium apartments, luxury villas, and plotted developments. Backed by strong developer partnerships and expert advisory, we assist buyers in discovering the region’s most exclusive residences and high-potential investment opportunities.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/goa2.jpg"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/goa3.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>
+      <div class="prop-card min-h-[580px] w-screen bg-white flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/chennai.png" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/chennai.jpeg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-slate-800">CHENNAI PROPERTIES</h3>
+          <p class="text-gray-700 text-center text-sm">Property First serves as a leading channel partner in Chennai's real estate market, offering premium apartments, luxury villas, and plotted developments. Leveraging trusted developer alliances and in-depth expertise, we connect buyers to the city’s most prestigious homes and rewarding investment avenues.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/chennai1.webp"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/chennai2.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>
+
+       <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+       <div class="w-full md:w-1/3 h-full hidden md:block "> 
+  <article class=" h-full overflow-hidden shadow-lg rounded-lg">
+    <img src="./assets/images/properties/hyderabad.webp" 
+         class="w-full h-full object-cover" 
+         alt="Property 1" 
+          loading="lazy">
+
+  </article>
+</div>
+
+         <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
+         <img src="./assets/images/properties/hyderabad1.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+         <div class="flex flex-col justify-center items-center gap-4 mx-auto">
+          <h3 class="text-2xl font-bold text-gray-300">HYDERABAD PROPERTIES</h3>
+          <p class="text-gray-300 text-center text-sm">Property First is a trusted channel partner for Hyderabad’s real estate, with expertise in premium apartments, luxury villas, and plotted developments. Backed by strong developer associations and professional advisory, we assist buyers in finding the city’s most distinguished residences and lucrative investment opportunities.</p>
+         <button class="open-modal bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+        </div>
+        </div>
+        <div class="w-fit md:w-1/3 flex flex-col justify-between">
+          <article class="h-fit overflow-hidden shadow-sm gap-2">
+            <img src="./assets/images/properties/hyderabad2.webp"  loading="lazy" class="w-full h-72 object-cover mb-2 shadow-lg rounded-2xl" alt="Property 1">
+            <img src="./assets/images/properties/hyderabad3.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
+            
+          </article>
+        </div>
+      </div>   
+      </div>
+  </div>
+ <script>
+  gsap.registerPlugin(ScrollTrigger);
+  window.addEventListener("load", () => {
+const scrollContainer = document.querySelector("#horizontal-scroll-track");
+
+  const scrollSection = document.querySelector(".horizontal-scroll-section");
+const totalScrollW = scrollContainer.scrollWidth;
+    const viewportW = window.innerWidth;
+    const scrollDist = totalScrollW - viewportW;
+    // console.log(totalScrollW, viewportW);
+
+  gsap.to(scrollContainer, {
+    x: () => -scrollDist,
+    ease: "none",
+    scrollTrigger: {
+      trigger: scrollSection,
+      start: "top 8%",
+      end: () => `+=${scrollDist}`,
+      pin: true,
+      scrub: true,
+      anticipatePin: 1
+    }
+  });
+});
+
+  
+</script>
+</section>
+<!-- Mobile Section -->
+<section id="properties" class="block lg:hidden px-4 py-8 bg-white">
+  <h2 class="text-xl font-bold text-center text-gray-800 mb-4">PROPERTIES</h2>
+  <!-- <p class="text-gray-600 text-center mb-6">Featured listings</p> -->
+
+  <!-- Example stacked cards -->
+  <div class="space-y-6">
+    <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/bangalore5.webp" class="w-full h-56 object-cover" alt="Property 1">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">BANGALORE PROPERTIES</h3>
+        <p class="text-[12px] text-gray-600 mt-2">Property First stands as the top channel partner for Bangalore’s real estate, offering premium apartments, luxury villas, and plotted developments. With trusted developer partnerships and expert guidance, we help buyers find their perfect home or investment in the city’s most sought-after locations.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+     <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/dubai.jpg" class="w-full h-56 object-cover" alt="Property 1">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">DUBAI PROPERTIES</h3>
+        <p class="text-[12px] text-gray-600 mt-2">Property First is a top channel partner in Dubai’s real estate market, specializing in premium apartments and luxury villas. Through strong developer partnerships and expert advisory, we connect buyers with the city’s finest homes and high-value investment opportunities.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+     <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/mumbai2.webp" class="w-full h-56 object-cover" alt="Property 1">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">MUMBAI PROPERTIES</h3>
+        <p class="text-[12px] text-gray-600 mt-2">Property First serves as a top channel partner for Mumbai real estate, specializing in premium apartments, luxury villas, and plotted developments. Through trusted developer partnerships and expert market insights, we connect buyers with the city’s most sought-after residences and investment opportunities.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+     <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/delhi.webp" class="w-full h-56 object-cover" alt="Property 1">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">DELHI-NCR PROPERTIES</h3>
+        <p class="text-[12px] text-gray-600 mt-2">Property First is a top channel partner for Noida’s real estate, offering premium apartments, luxury villas, and plotted developments. With strong developer associations and expert guidance, we help buyers secure the finest homes and investment opportunities in the city.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+     <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/goa.webp" class="w-full h-56 object-cover" alt="Property 1">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">GOA PROPERTIES</h3>
+        <p class="text-[12px] text-gray-600 mt-2">Property First is a trusted channel partner in Goa’s real estate market, specializing in premium apartments, luxury villas, and plotted developments. Backed by strong developer partnerships and expert advisory, we assist buyers in discovering the region’s most exclusive residences and high-potential investment opportunities.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+     <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/chennai.jpeg" class="w-full h-56 object-cover" alt="Property 1">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">Chennai PROPERTIES</h3>
+        <p class="text-[12px] text-gray-600 mt-2">Property First serves as a leading channel partner in Chennai's real estate market, offering premium apartments, luxury villas, and plotted developments. Leveraging trusted developer alliances and in-depth expertise, we connect buyers to the city’s most prestigious homes and rewarding investment avenues.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+
+    <div class="rounded-2xl shadow-lg overflow-hidden">
+      <img src="./assets/images/properties/hyderabad.webp" class="w-full h-56 object-cover" alt="Plots">
+      <div class="p-4 text-center">
+        <h3 class="text-xl font-semibold">HYDERABAD PROPERTIES</h3>
+        <p class=" text-[12px] text-gray-600 mt-2">Property First is a trusted channel partner for Hyderabad’s real estate, with expertise in premium apartments, luxury villas, and plotted developments. Backed by strong developer associations and professional advisory, we assist buyers in finding the city’s most distinguished residences and lucrative investment opportunities.</p>
+        <button class="open-modal mt-4 bg-sky-500 text-white px-4 py-2 rounded">View All Properties</button>
+      </div>
+    </div>
+
+    <!-- Repeat for Apartments, Villas -->
+  </div>
+</section>
+
+  <!-- ============================= -->
+  <!-- Footer -->
+  <!-- ============================= -->
+ <footer id="footer" class="bg-slate-900 text-slate-200">
+    <div class="container mx-auto lg:py-8 flex lg:flex-row flex-col lg:justify-between gap-8">
+      <div class="bg-white flex flex-col gap-3 items-center justify-center p-4">
+        <!-- <h3 class="font-semibold">About</h3> -->
+        <!-- <p class="mt-3 text-slate-400">Short description about your company.</p> -->
+           <img src="/assets/images/LOGO.png" alt="Company Logo" style="width:120px; height:auto;">
+           <img src="/assets/images/GPTW logo.png" alt="Company Logo" style="width:120px; height:auto;">
+
+      </div>
+      <div class="bg-slate-900 mx-4 space-y-2">
+        <h3 class="font-semibold">Quick Links</h3>
+        <ul class="mt-3 space-y-2 text-slate-400 ">
+          <!-- <li><a href="#properties" class="hover:text-white">Home</a></li> -->
+          <li><a href="./about.html" class="hover:text-white">About US</a></li>
+          <li><a href="./awards.html" class="hover:text-white">Awards</a></li>
+          <li><a href="./news.html" class="hover:text-white">News</a></li>
+          <li><a href="./careers.html" class="hover:text-white">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+        <div class="bg-slate-900 pt-4">
+        <h3 class="font-semibold">Follow Us</h3>
+        <div class="flex space-x-4 mt-4 text-slate-400">
+    <a href="https://www.facebook.com/propertyfirstrealtyofficial" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://www.instagram.com/propertyfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/property-first-realty-llp/posts/?feedView=all" target="_blank" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.youtube.com/@propertyfirstrealtyllp" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+  </div>
+      </div>
+      </div>
+     
+
+     <!-- Font Awesome (include in <head> if not already) -->
+
+<div class="bg-slate-900 mx-4 md:w-[250px] rounded-lg">
+  <h3 class="font-semibold text-lg">Contact</h3>
+  <ul class="mt-3 space-y-3 text-slate-400">
+    <!-- Phone -->
+    <li>
+      <a href="tel:08043700346" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-phone mr-2"></i> 080 43700346
+      </a>
+    </li>
+    <!-- Email -->
+    <li>
+      <a href="mailto:info@property-first.com" class="flex items-center hover:text-white transition">
+        <i class="fa-solid fa-envelope mr-2"></i>info@property-first.com 
+      </a>
+    </li>
+    <!-- Address -->
+    <li class="">
+      <i class="fa-solid fa-location-dot mr-2 mt-1"></i>
+      <span class="font-semibold"> Bangalore (Corporate Office):</span> Art Arcade, 4th Floor, 80ft Road, Near Sony World, Koramangala, Bengaluru-34
+      
+    </li>
+  </ul>
+</div>
+
+     <div class="bg-gray-800 py-2 md:w-[375px]">
+  <div class="max-w-2xl mx-auto px-4">
+    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Contact Now</h3>
+
+    <form class="contactForm flex flex-col space-y-2">
+      <input type="text" name="name" placeholder="Enter your name" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input type="email" name="email" placeholder="Enter your email" required
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <input id="" type="tel" name="mobile" placeholder="Enter your phone number" required pattern="[0-9]{10}"
+        class="phone w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+
+      <textarea name="message" placeholder="Write your message" required rows="3"
+        class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
+
+     
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container mx-auto px-4 py-6 text-center text-slate-500 text-sm">
+        © <span id="year"></span> Your Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+<!-- Global Modal -->
+<!-- Modal -->
+<div id="globalModal" 
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 
+            transition-opacity duration-300 ease-out opacity-0">
+  
+  <!-- Modal Box -->
+  <div class="bg-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative 
+              transform scale-95 opacity-0 transition-all duration-300 ease-out">
+    
+    <!-- Close Button -->
+    <button onclick="closeModal()" 
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">
+      &times;
+    </button>
+
+    <!-- Company Logo -->
+    <div class="flex justify-center mb-4">
+      <img src="./assets/images/logo.png" alt="Company Logo" class="h-16 w-auto">
+    </div>
+
+    <!-- Form -->
+    <!-- <h2 class="text-2xl font-bold mb-4 text-center text-blue-700">Contact Form</h2> -->
+    <form class="contactForm space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" name="name"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" name="email"
+               class="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Mobile</label>
+        <input  type="tel" name="mobile" pattern="[0-9]{10}"
+               class="phone w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition" 
+               placeholder="Enter 10-digit mobile number" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Message</label>
+        <textarea name="message"
+          class="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-300 focus:border-blue-400 transition"
+          placeholder="Your message..." required></textarea>
+      </div>
+
+      <button type="submit" 
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2 rounded-lg hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<style>
+
+
+@keyframes counterspin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.orbit {
+  animation: counterspin 20s linear infinite;
+}
+.spin:hover .orbit {
+  animation-play-state: paused;
+}
+
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  bottom: 100%; /* appear above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+button:hover + .tooltip {
+  opacity: 1;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+button.active {
+  transform: scale(1); /* bigger */
+}
+button.inactive {
+  transform: scale(0.6); /* smaller */
+}
+</style>
+
+
+
+<script>
+
+const buttonAngles = {
+  "banner-video": 0,
+  "properties": 60,
+  "our-partner": 120,
+  "testimonial": 180,
+  "av-video": 240,
+  "client-video": 300
+};
+
+
+const sidebar1 = document.getElementById("sidebar");
+const buttons = document.querySelectorAll("#sidebar button");
+let isDragging = false;
+let startX, startAngle = 0, currentAngle = 0;
+
+sidebar1.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.clientX;
+  sidebar1.style.animation = "none"; // stop auto spin when dragging
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  const deltaX = e.clientX - startX;
+  sidebar1.style.transform = `rotate(${currentAngle + deltaX}deg)`;
+});
+
+document.addEventListener("mouseup", (e) => {
+  if (!isDragging) return;
+  isDragging = false;
+  // console.log(e);
+  const deltaX = e.clientX - startX;
+  // console.log(deltaX);
+  currentAngle += deltaX;
+});
+
+
+
+// Observe sections
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      let activeId = entry.target.id;
+      buttons.forEach(btn => {
+        if (btn.dataset.target === activeId) {
+          btn.classList.add("active");
+          btn.classList.remove("inactive");
+        } else {
+          btn.classList.remove("active");
+          btn.classList.add("inactive");
+        }
+      });
+        if(buttonAngles[activeId] !== undefined){
+    const angle = -buttonAngles[activeId]; 
+        sidebar1.style.transform = `rotate(${angle}deg)`;
+        currentAngle = angle; // keep track for drag
+  }
+    }
+  });
+
+}, { threshold: 0.4 }); // 60% of section visible
+
+// console.log(sectionObserver);
+// Attach observer
+// console.log(buttons);
+document.querySelectorAll("section").forEach(sec => sectionObserver.observe(sec));
+
+// Scroll on click
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // console.log(btn),
+    document.getElementById(btn.dataset.target).scrollIntoView({ behavior: "smooth" });
+  });
+});
+</script>
+
+
+
+
+
+  <!-- Small JS for mobile menu + dynamic year -->
+  <script>
+
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+     slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      },
+      1024: {
+        slidesPerView: 3
+      }
+    }
+  });
+</script>
+
+  <script>
+  const bannerSwiper = new Swiper(".bannerSwiper", {
+    loop: true,
+     slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+     delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-banner",
+      prevEl: ".swiper-button-prev-banner",
+    },
+    // pagination: {
+    //   el: ".swiper-pagination-banner",
+    //   clickable: true,
+    // },
+    breakpoints: {
+      768: {
+        slidesPerView: 1
+      },
+      1024: {
+        slidesPerView: 1
+      }
+    }
+  });
+</script>
+
+ <script>
+  const ourSwiper = new Swiper(".ourSwiper", {
+    loop: true,
+     slidesPerView: 1,
+    spaceBetween: 20,
+     autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-top",
+      prevEl: ".swiper-button-prev-top",
+    },
+    pagination: {
+      el: ".swiper-pagination-top",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      },
+      1024: {
+        slidesPerView: 3
+      }
+    }
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".scroll-animate img");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("scale-110", "opacity-0");
+        entry.target.classList.add("scale-100", "opacity-100");
+      }
+    });
+  }, { threshold: 0.3 }); // Trigger when 30% visible
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+       duration: 1000, // animation duration in ms
+    easing: 'ease-in-out', // default easing
+    once: false,
+    mirror: true
+    });
+    });
+  </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Element is in view → animate in
+        entry.target.classList.add("visible");
+      } else {
+        // Element is out of view → reset (so it animates again next time)
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".paragraph").forEach(p => {
+    observer.observe(p);
+  });
+
+  const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");  // zoom in
+    } else {
+      entry.target.classList.remove("visible"); // zoom out
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".gallery-img").forEach(img => {
+  imgObserver.observe(img);
+});
+</script>
+<script>
+  function playVideo(button) {
+    const card = button.closest(".relative");
+    const video = card.querySelector(".video");
+    const img = card.querySelector(".thumbnail");
+    const overlay = card.querySelector(".overlay");
+//  console.log(img);
+    // Hide thumbnail & overlay
+    img.style.display = "none";
+    overlay.style.display = "none";
+
+    // Show video
+    video.classList.remove("hidden");
+    video.play(); // autoplay when shown
+  }
+</script>
+<!-- <script src="./script.js" defer></script> -->
+<!-- Back to Top Button -->
+<style>
+  /* Custom animation for sliding wiggle */
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(90deg) translateX(0); }
+    25% { transform: rotate(90deg) translateX(5px); }
+    75% { transform: rotate(90deg) translateX(-5px); }
+  }
+  .animate-wiggle {
+    animation: wiggle 1.5s infinite;
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" 
+        class="fixed left-4 bottom-15 bg-sky-500 text-white px-2 py-1 rounded-full shadow-lg hover:bg-sky-700 transition flex items-center gap-2 animate-bounce z-[9999]"
+        title="Back to top">
+  <span class="text-lg">↑</span>
+  <span class="text-sm font-medium">Go Up</span>
+</button>
+
+
+<!-- Enquire Now Button -->
+<button id="enquireNow" 
+        class="open-modal fixed right-[-45px] top-1/2 z-50 bg-sky-500 text-white px-2 py-1 shadow-lg hover:bg-sky-700 transition transform rotate-90 animate-wiggle"
+        title="Enquire Now">
+  Enquire Now
+</button>
+
+
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  // Show button when user scrolls down
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  // Scroll to top when clicked
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Initially hidden
+  backToTop.style.display = "none";
+</script>
+
+
+
+</body>
+</html>
