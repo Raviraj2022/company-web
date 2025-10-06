@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Career - Property First</title>
-  <link href="/style.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -101,7 +101,7 @@
         <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
 
         <!-- Desktop menu -->
-        <ul class="hidden md:flex items-center gap-6 bg-gray-100 p-4 rounded-2xl">
+        <ul class="hidden lg:flex items-center gap-6 bg-gray-100 p-4 rounded-2xl">
                     <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
           <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
           <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
@@ -113,7 +113,7 @@
         </ul>
 
         <!-- Mobile toggle -->
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
+        <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
           <span class="sr-only">Open Menu</span>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -124,7 +124,7 @@
 
       <!-- Mobile menu -->
       <div id="mobileMenu" 
-     class="hidden md:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
+     class="hidden lg:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
             py-2 border-t border-slate-200 overflow-auto 
             transform transition-all duration-300 ease-in-out 
             origin-top scale-y-0 opacity-0 z-50">
@@ -169,7 +169,7 @@
   <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Career Opportunities</h2>
 
 
-  <div class="relative grid grid-cols-1 md:grid-cols-4 gap-6" id="career-grid"></div>
+  <div class="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="career-grid"></div>
   <div id="careerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
   <div class="bg-white rounded-xl p-2 md:p-6 m-4 max-w-4xl w-[900px] h-[100vh] md:h-[600px] overflow-y-auto relative">
 
@@ -264,13 +264,13 @@
     <!-- ============================= -->
   <!-- Footer -->
   <!-- ============================= -->
- <footer id="footer" class="bg-slate-900 text-slate-200">
-    <div class="container mx-auto md:py-8 flex md:flex-row flex-col justify-between gap-8">
+   <footer id="footer" class="bg-slate-900 text-slate-200">
+    <div class="container mx-auto lg:py-8 flex lg:flex-row flex-col justify-between gap-8">
       <div class="bg-white flex flex-col gap-3 items-center justify-center p-4">
         <!-- <h3 class="font-semibold">About</h3> -->
         <!-- <p class="mt-3 text-slate-400">Short description about your company.</p> -->
-           <img src="/assets/images/LOGO.png" alt="Company Logo" style="width:120px; height:auto;">
-           <img src="/assets/images/GPTW logo.png" alt="Company Logo" style="width:120px; height:auto;">
+           <img src="./assets/images/LOGO.png" alt="Company Logo" style="width:120px; height:auto;">
+           <img src="./assets/images/GPTW logo.png" alt="Company Logo" style="width:120px; height:auto;">
 
       </div>
       <div class="bg-slate-900 mx-4 space-y-2">
@@ -298,7 +298,7 @@
 
      <!-- Font Awesome (include in <head> if not already) -->
 
-<div class="bg-slate-900 mx-4 md:w-[250px] rounded-lg">
+<div class="bg-slate-900 mx-4 lg:w-[250px] rounded-lg">
   <h3 class="font-semibold text-lg">Contact</h3>
   <ul class="mt-3 space-y-3 text-slate-400">
     <!-- Phone -->
@@ -322,7 +322,7 @@
   </ul>
 </div>
 
-     <div class="bg-gray-800 py-2 md:w-[375px]">
+     <div class="bg-gray-800 py-2 lg:w-[375px]">
   <div class="max-w-2xl mx-auto px-4">
     <h3 class="text-2xl font-semibold text-white mb-6 text-center">Contact Now</h3>
 
