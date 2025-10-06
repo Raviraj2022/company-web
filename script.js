@@ -383,6 +383,37 @@ document.addEventListener("DOMContentLoaded", function () {
       "Growth opportunities in a dynamic digital team."
     ]
   },
+   {
+    title: "Digital Marketing Manager",
+    department: "Digital Marketing",
+    location: "Bengaluru India",
+    experience: "4-6 years",
+    overview: "We are looking for an experienced Digital Marketing Manager to plan, execute, and optimize online marketing campaigns for our real estate projects. The candidate should have hands-on expertise in lead generation, paid ads, SEO, and social media marketing with proven results in the real estate sector.",
+    responsibilities: [
+      "Develop and implement digital marketing strategies to generate high-quality leads.",
+      "Manage Google Ads, Facebook Ads, and other paid campaigns.",
+      "Optimize campaigns to achieve maximum ROI and lower CPL.",
+      "Plan and execute SEO, SEM, and social media marketing activities.",
+      "Analyze campaign performance and prepare regular reports.",
+      "Coordinate with sales teams to align marketing campaigns with project goals.",
+      "Stay updated with digital trends and competitor activities.",
+
+
+    ],
+    requirements: [
+      "Bachelor’s degree in Marketing or related field.",
+      "4–6 years of experience in performance marketing and team management (preferably in real estate).",
+"Strong knowledge of Google Ads, Facebook Ads, SEO, SEM, and analytics tools.",
+"Excellent communication and analytical skills.",
+"Ability to work in a fast-paced real estate environment.",  
+      
+    ],
+    offer: [
+      "Competitive salary and performance bonuses",
+      "Work on large-scale real estate digital campaigns",
+      "Growth opportunities in a dynamic digital team."
+    ]
+  },
 //     {
 //     title: "Search Engine Optimization(SEO)",
 //     department: "Digital Marketing",
