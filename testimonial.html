@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Awards - Property First</title>
+  <title>Testimonial - Property First</title>
   <link href="./style.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
@@ -84,13 +84,14 @@
   font-size: 16px !important; /* default is 20-24px */
 }
   </style>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
 
-<script src="./script.js" defer></script>
+  <script src="./script.js" defer></script>
 </head>
 
-<body class="antialiased text-slate-800 bg-slate-900">
+<body class="antialiased text-slate-800">
 
   <!-- ============================= -->
   <!-- Navbar -->
@@ -101,18 +102,20 @@
         <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
 
         <!-- Desktop menu -->
-       <ul class="hidden lg:flex items-center gap-6 p-4 rounded-2xl">
-          <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
+        <ul class="hidden lg:flex items-center gap-6 p-4 rounded-2xl">
+                    <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
           <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
           <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
           <li><a href="./news.html" class="hover:text-sky-600">News</a></li>
+          <!-- <li><a href="./contact.html" class="hover:text-brand-600">Contact</a></li> -->
           <li><a href="./careers.html" class="hover:text-sky-600">Career</a></li>
-          <li><a href="./contact.html" class="hover:text-sky-600">Contact</a></li>
+           <li><a href="./contact.html" class="hover:text-sky-600">Contact</a></li>
+         
         </ul>
 
         <!-- Mobile toggle -->
         <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
-          <!-- <span class="sr-only">Open Menu</span> -->
+          <span class="sr-only">Open Menu</span>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16"/>
@@ -121,7 +124,8 @@
       </div>
 
       <!-- Mobile menu -->
-     <div id="mobileMenu" 
+     <!-- Mobile menu -->
+<div id="mobileMenu" 
      class="hidden lg:hidden absolute left-0 right-0 top-full bg-white shadow-lg 
             py-2 border-t border-slate-200 overflow-auto 
             transform transition-all duration-300 ease-in-out 
@@ -134,355 +138,101 @@
   <a href="./contact.html" class="block px-4 py-2 hover:text-sky-600">Contact</a>
 </div>
 
+
     </nav>
   </header>
 
   <!-- ============================= -->
   <!-- Banner Video -->
   <!-- ============================= -->
- <section id="banner-video" class="text-white w-full">
-  <div class="relative h-full w-full">
-    <img src="./assets/images/web view/Awards page banner  copy.png" class="hidden md:block w-full full"/>
-    <img src="./assets/images/new mobile/Awards page ---mobile.png" class="block md:hidden w-full h-[500px]"/>
+ <section id="banner-video" class="text-center w-full">
+  <div class="relative h-full w-full mt-20">
+  <h2 class="text-2xl font-bold">Testimonials</h2> 
+  </div>
+</section>
+
+<section id="testimonials" >
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 p-6 mx-2 lg:mx-36 my-10">
+  <div class="testimonial-card relative bg-white rounded-xl border border-gray-100 p-8 cursor-pointer"
+       data-id="1">
+       <div class="absolute -top-3 -left-3"><img src="./assets/images/1_comma.png" class="w-8 h-auto"/></div>
+    <figcaption class="text-sm text-slate-700">Prakhar Sangam</figcaption>
+    <figcaption class="text-[12px] text-gray-400">CEO, RedBus</figcaption>
+    <blockquote class="text-[13px] text-justify mt-3">
+      “Bhavesh’s firm, Property First, was the intermediary for a real estate transaction that I made in 2019. 
+
+It is rare to meet a professional when dealing with real estate agents but Bhavesh stands apart with his commitment to providing good service. He takes into account your needs as a buyer to provide sound advice and does not hard sell the property in question. 
+
+I have also witnessed first hand his commitment towards continuing to provide services much after the transaction is closed. He helped me with resolving teething issues with the developer and even with introductions to neighbours and other folks in the apartment complex. I would recommend Bhavesh for any services related to real estate as he has been able to gain my trust through his commitment to providing great service.”
+    </blockquote>
+  </div>
+
+  <div class="relative testimonial-card bg-white rounded-xl border border-gray-100 p-8 cursor-pointer"
+       data-id="2">
+        <div class="absolute -top-3 -left-3 "><img src="./assets/images/1_comma.png" class="w-8 h-auto"/></div>
+ 
+    <figcaption class="text-sm text-slate-700">Mukund P Thirumalai</figcaption>
+    <figcaption class="text-[12px] text-gray-400">Director, 3M Singapore</figcaption>
+    <blockquote class="text-justify text-[13px] mt-3">
+      “I recently interacted with Property First for a property transaction. They were thorough with his knowledge about the property, gave a detailed comparison with other properties in neighbourhood and helped me in negotiating with the builder. They were a good bridge between me and the builder and my single point of contact, so it saved a lot of my time. They have got a professional approach, yet gives that personal touch required in high end real estate selling. Happy that I worked with them”
+               </blockquote>
+  </div>
+
+  <div class="testimonial-card relative bg-white rounded-xl border border-gray-100 p-8 cursor-pointer"
+       data-id="3">
+        <div class="absolute -top-3 -left-3 "><img src="./assets/images/1_comma.png" class="w-8 h-auto"/></div>
+ 
+    <figcaption class="text-sm text-slate-700">Deepa Sacheti</figcaption>
+    <figcaption class="text-[12px] text-gray-400">Senior Director, Pegasystems</figcaption>
+    <blockquote class="text-[13px] text-justify mt-3">
+      “We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. 
+Wishing them good luck. We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. Wishing them good luck.”
+     </blockquote>
+  </div>
+  <div class="testimonial-card relative bg-white rounded-xl border border-gray-100 p-8 cursor-pointer"
+       data-id="4">
+        <div class="absolute -top-3 -left-3 "><img src="./assets/images/1_comma.png" class="w-8 h-auto"/></div>
+ 
+    <figcaption class="text-sm text-slate-700">George Inasu</figcaption>
+    <figcaption class="text-[12px] text-gray-400">Cheif Operating Officer, Fidelity National Financial India</figcaption>
+    <blockquote class="text-[13px] text-justify mt-3">
+       “Working with Property First was a great experience when we bought our house from Total Environment. Their team walked us through the entire process, provided us all the options available with the transaction and had great knowledge of the market and pricing.”
+            </blockquote>
+  </div>
+  <div class="testimonial-card relative bg-white rounded-xl border border-gray-100 p-8 cursor-pointer"
+       data-id="5">
+
+        <div class="absolute -top-3 -left-3 "><img src="./assets/images/1_comma.png" class="w-8 h-auto"/></div>
+ 
+    <figcaption class="text-sm text-slate-700">Suresh Sugumar</figcaption>
+    <figcaption class="text-[12px] text-gray-400">Executive Director - R&D, Qualcomm</figcaption>
+    <blockquote class="text-[13px] text-justify mt-3">
+      “Property First team was very instrumental and helpful on a property search and even closed a deal in 1 hour. Their expertise in real estate and negotiation skills are very commendable. .”
+             </blockquote>
+  </div>
+  <div class="testimonial-card relative bg-white rounded-xl border border-gray-100 p-8 cursor-pointer"
+       data-id="6">
+
+        <div class="absolute -top-3 -left-3 "><img src="./assets/images/1_comma.png" class="w-8 h-auto"/></div>
+ 
+    <figcaption class="text-sm text-slate-700">Preethi Balan</figcaption>
+    <figcaption class="text-[12px] text-gray-400">L2 Coach, Unified Mindfulness</figcaption>
+    <blockquote class="text-[13px] text-justify mt-3">
+      “Bhavesh from Property First has been our go to person through the process of buying the house and even post purchase. He has always been available, prompt and has been very helpful with problem solving at various stages. He took complete responsibility for resolution of all our concerns, during purchase and also went out of his way in connecting us with his previous clients who have purchased the property. This enabled us to clarify a lot of our concerns and also gave us an understanding of the community.”
+          </blockquote>
+  </div>
+  </div>
   </div>
 </section>
 
 
-<!-- AOS CSS -->
-<!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-<section class="w-full px-4 md:px-12 py-8 md:py-16 bg-gray-50">
-  <!-- Image Modal -->
-<div id="image-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
-  <div class="relative max-w-md w-full">
-    <button id="close-modal" class="absolute top-[-25px] right-0 text-white text-3xl font-bold">&times;</button>
-    <img id="modal-img" src="" alt="Award Image" class="w-full h-auto rounded-xl" />
-    <div class="text-center text-white mt-2">
-      <p id="modal-caption" class="text-lg"></p>
-      <p id="modal-by" class="text-md font-semibold"></p>
-    </div>
-  </div>
-</div>
-
-  <!-- Title -->
-  <div class="text-center mb-12">
-    <h2 class="text-xl md:text-3xl font-bold text-gray-800">Our Awards</h2>
-  </div>
-
-  <!-- Image Grid -->
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
-    <!-- Template for single image -->
-    <template id="project-template">
-  <div class="overflow-hidden rounded-2xl bg-gray-200 pb-4 space-y-3" data-aos="zoom-in">
-    <img src="" alt="Project"
-         loading="lazy"
-         class="w-full md:h-64 object-cover transform hover:scale-110 transition duration-500 cursor-pointer" />
-    <div class="mt-2 px-2 text-center">
-      <p class="caption text-[12px] md:text-sm text-gray-600"></p>
-      <p class="by text-md text-gray-800 text-[12px] md:text-sm  font-semibold"></p>
-      <!-- <button class="read-more text-blue-500 text-sm mt-1 hidden">Read more</button> -->
-    </div>
-  </div>
-</template>
-
-  </div>
-</section>
-
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  // awards-modal.js
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-img');
-  const modalCaption = document.getElementById('modal-caption');
-  const modalBy = document.getElementById('modal-by');
-  const closeBtn = document.getElementById('close-modal');
-
-  // Function to open modal
-  window.openAwardModal = function(imgSrc, caption, by) {
-    modalImg.src = imgSrc;
-    modalCaption.textContent = caption;
-    modalBy.textContent = by || '';
-    modal.classList.remove('hidden');
-  };
-
-  // Close modal
-  closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
-
-  // Close modal on click outside image
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.add('hidden');
-    }
-  });
-});
-
-  AOS.init({ duration: 1000, once: true });
-
-  // Replace with your project image URLs
-  const projectImages = [
-    {
-    img:"./assets/images/awards/awards1.jpg",
-    caption: "Awarded as the Property Consultant of the Year 2025 by",
-    by: "ET Realty"
-  },
-   {
-    img:"./assets/images/awards/awards2.png",
-    caption: "Special Jury Recommendation – IPC/Consultant of the Year 2024 by",
-    by: "ET Realty"
-  },
-   {
-    img:"./assets/images/awards/awards3.png",
-    caption: "Special Jury Recommendation – IPC/Consultant of the Year 2024 by",
-    by: "ET Realty"
-  },
-   {
-    img:"./assets/images/awards/awards4.png",
-    caption: "Awarded as the Top Performer in the year of 2023 by",
-    by: "L&T Realty"
-  },
-   {
-    img:"./assets/images/awards/awards5.png",
-    caption: "Awarded as the Top Performer by CNTC | The Presidential Tower in the year of 2023."
-  },
-   {
-    img:"./assets/images/awards/awards6.png",
-    caption: "Awarded as the Top Performer in the year of 2024 by",
-    by: "L&T Realty"
-  },
-   {
-    img:"./assets/images/awards/awards7.jpg",
-    caption: "Awarded as the Top Performer Homes in the year of 2022 by",
-    by: "Total Environment"
-  },
-   
-   {
-    img:"./assets/images/awards/awards9.jpg",
-    caption: "Awarded as the Top Performer by",
-    by: "Phoenix"
-  },
-   {
-    img:"./assets/images/awards/awards10.jpg",
-    caption: "Awarded as the Top Performer in the year of 2022 by",
-    by: "Century"
-  },
-   {
-    img:"./assets/images/awards/awards11.jpg",
-    caption: "Awarded as the Top Performer in the year of 2022 by",
-    by: "Century"
-  },
-   {
-    img:"./assets/images/awards/awards12.jpg",
-    caption: "Awarded as the Top Performer in the year of 2022 by",
-    by: "Century"
-  },
-   {
-    img:"./assets/images/awards/awards13.jpg",
-    caption: "Awarded as the Outstanding Business Achievement 2021–22 by",
-    by: "CREA (India)"
-  },
-   {
-    img:"./assets/images/awards/awards14.jpg",
-    caption: "Awarded as the Top Performer Homes in the year of 2019 by",
-    by: "Total Environment"
-  },
-   {
-    img:"./assets/images/awards/awards15.jpg",
-    caption: "Awarded as the Outstanding Business Achievement 2021–22 by",
-    by: "CREA (India)"
-  },
-
-   {
-    img:"./assets/images/awards/awards16.jpg",
-    caption: "Best Real Estate Consulting Firm (South India) in 2021 by",
-    by: "India Property Awards"
-  },
-   {
-    img:"./assets/images/awards/awards17.jpg",
-    caption: "Recognized as the Most Promising Chanel Partner in FY 2018-19 by",
-    by: "Sobha"
-  },
-   {
-    img:"./assets/images/awards/awards18.jpg",
-    caption: "Awarded as the Top Performer in 2020-21 by",
-    by: "Peninsula Land"
-  },
-   {
-    img:"./assets/images/awards/awards19.jpg",
-    caption: "Awarded as the Outstanding Business Achievement 2016-17 by",
-    by: "CREA (India)"
-  },
-   {
-    img:"./assets/images/awards/awards20.jpg",
-    caption: "Awarded as the Top Performer by",
-    by: "Phoenix | EDGE in 2018"
-  },
-   {
-    img:"./assets/images/awards/awards21.jpg",
-    caption: "Awarded as the Top Performer Homes in the year of 2019 by",
-    by: "Total Environment"
-  },
-   {
-    img:"./assets/images/awards/awards22.jpg",
-    caption: "Awarded as the Star Performer by",
-    by: "Shapoorji Pallonji"
-
-  },
-   {
-    img:"./assets/images/awards/awards23.png",
-    caption: "Awarded as the Star Performer in 2022 by",
-    by: "Birla Estates"
-  },
-
-   {
-    img:"./assets/images/awards/awards24.png",
-    caption: "Recognized as the Preferred Partner in 2017 by",
-    by: "Century"
-  },
-   {
-    img:"./assets/images/awards/awards25.png",
-    caption: "Recognized for Outstanding Performance in 2020-21 by",
-    by: "Peninsula Land"
-  }, {
-    img:"./assets/images/awards/awards26.png",
-    caption: "Awarded as the Outstanding Business Achievement 2017-18 by",
-    by: "CREA (India)"
-  },
-
-   {
-    img:"./assets/images/awards/awards27.png",
-    caption: "Gold Performer Award by",
-    by: "Flow"
-  },
-   {
-    img:"./assets/images/awards/awards28.png",
-    caption: "Recognized for Invaluable Contribution by",
-    by: "Apas"
-  },
-
-   {
-    img:"./assets/images/awards/awards29.png",
-    caption: "Rising Star Award in 2021-22 by",
-    by: "Sobha"
-  },
-   {
-    img:"./assets/images/awards/awards30.png",
-    caption: "Recognized as the Preferred Partner in 2017 by",
-    by: "Century"
-  }, {
-    img:"./assets/images/awards/awards31.png",
-    caption: "Appreciated for Being Preferred Partner of Excellence Homes in 2019 by",
-    by: "Total Environment"
-  },
-
-   {
-    img:"./assets/images/awards/awards32.png",
-    caption: "Appreciated for Outstanding Contribution towards the success of Parkwest 2.0 in 2022 by",
-    by: "Shapoorji Pallonji"
-  },
-
-   {
-    img:"./assets/images/awards/awards33.png",
-    caption: "Awarded as the Outstanding Performer in 2021 by",
-    by: "Puravankara"
-  },
-
-   {
-    img:"./assets/images/awards/awards34.png",
-    caption: "Recognized as the Preferred Partner by",
-    by: "Karle | Infra"
-  },
-
-   {
-    img:"./assets/images/awards/awards35.png",
-    caption: "Awarded as the Top Performer Homes in the year of 2019 by",
-    by: "Total Environment"
-  },
-   {
-    img:"./assets/images/awards/awards36.png",
-    caption: "Excellence Award in 2016 by",
-    by: "Embassy Group"
-  },
-   {
-    img:"./assets/images/awards/awards37.png",
-    caption: "Best Real Estate Consulting Firm (South India) in 2019 by",
-    by: "India Property Awards"
-  },
-   {
-    img:"./assets/images/awards/awards38.png",
-    caption: "Awarded for Excellent Performance by",
-    by: "SNN Estates"
-  },
-   {
-    img:"./assets/images/awards/awards39.png",
-    caption: "Recognized for Valuable Contribution towards Raintree Boulevard in 2023 by",
-    by: "L&T Realty"
-  },
-   {
-    img:"./assets/images/awards/awards40.png",
-    caption: "Awarded as the Outstanding Performer in 2021 by.",
-    by: "Puravankara"
-  },
-   {
-    img:"./assets/images/awards/awards41.png",
-    caption: "Recognized for Valuable Contribution towards Raintree Boulevard in 2023 by",
-    by: "L&T Realty"
-  },
-   {
-    img:"./assets/images/awards/awards42.png",
-    caption: "Awarded as the Star Performer by",
-    by: "Shapoorji Pallonji"
-  },
-   {
-    img:"./assets/images/awards/awards43.png",
-    caption: "Best Real Estate Consulting Firm (South India) by",
-    by: " India Property Awards"
-  },
-   {
-    img:"./assets/images/awards/awards44.png",
-    caption: "Honoured as Outstanding Performer by",
-    by: "Yes Realtor"
-  },
-
-    
-    ];
-
- const grid = document.querySelector(".grid");
-const template = document.getElementById("project-template");
-
-projectImages.forEach((project, index) => {
-  const clone = template.content.cloneNode(true);
-
-  const img = clone.querySelector("img");
-  const captionEl = clone.querySelector(".caption");
-  const byEl = clone.querySelector(".by");
-
-  img.src = project.img;
-  captionEl.textContent = project.caption;
-  byEl.textContent = project.by || ""; // only show if exists
-
-
-  img.style.cursor = "pointer";
-img.onclick = () => {
-  openAwardModal(project.img, project.caption, project.by);
-};
-  // Optional stagger animation
-  img.setAttribute("data-aos-delay", (index % 6) * 100);
-
-  grid.appendChild(clone);
-});
-
-  
-
-</script>
 
 
 
-  <!-- ============================= -->
+
+
+
   <!-- Footer -->
   <!-- ============================= -->
    <footer id="footer" class="bg-slate-900 text-slate-200">
@@ -561,7 +311,7 @@ img.onclick = () => {
         class="w-full p-2 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea> -->
 
       <button type="submit"
-        class="w-full bg-gradient-to-r from-[#3B82F6] to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-md">
         Send Message
       </button>
     </form>
@@ -576,10 +326,14 @@ img.onclick = () => {
       </div>
     </div>
   </footer>
-
   <!-- Small JS for mobile menu + dynamic year -->
-  
-  
+  <script>
+   
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".scroll-animate img");
@@ -639,6 +393,23 @@ document.querySelectorAll(".gallery-img").forEach(img => {
   imgObserver.observe(img);
 });
 </script>
+
+<!-- <script>
+  const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible"); // reset when leaving
+      }
+    });
+  }, { threshold: 0.2 }); // adjust sensitivity
+
+  const gallerySection = document.querySelector("#gallery");
+  if (gallerySection) {
+    galleryObserver.observe(gallerySection);
+  }
+</script> -->
 <!-- <script src="./script.js" defer></script> -->
 </body>
 </html>

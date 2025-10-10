@@ -464,9 +464,9 @@ const modalDescription = document.getElementById("modalDescription");
 // Render cards
 profiles.forEach((profile, index) => {
   const card = document.createElement("div");
-  card.className = "bg-white shadow-lg rounded-xl p-6 cursor-pointer hover:shadow-2xl transition";
+  card.className = "bg-white border-2 border-gray-100 rounded-xl p-6 cursor-pointer";
   card.innerHTML = `
-    <h3 class="text-lg font-semibold text-gray-800">${profile.title}</h3>
+    <h3 class="text-md font-semibold text-gray-800">${profile.title}</h3>
     <p class="text-sm text-gray-600">${profile.location}</p>
     <p class="text-sm text-gray-600">${profile.experience}</p>
   `;
@@ -589,7 +589,6 @@ console.log(phoneInputField);
         name: form.name?.value || "",
         email: form.email?.value || "",
         mobile: mobileNumber,
-        message: form.message?.value || ""
       };
 
       console.log("Form Data from:", formData);
@@ -639,7 +638,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
+  
 
 
 document.addEventListener("DOMContentLoaded", ()=>{

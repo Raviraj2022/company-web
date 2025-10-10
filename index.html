@@ -84,7 +84,7 @@
 
   .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 16px !important; /* default is 20-24px */
+  font-size: 12px !important; /* default is 20-24px */
 }
  .swiper-button-next-top::after,
 .swiper-button-prev-top::after {
@@ -148,7 +148,7 @@
         <a href="#" class="font-semibold text-lg tracking-tight"><img src="./assets/images/LOGO.png" class="autoround w-28 h-14"/></a>
 
         <!-- Desktop menu -->
-        <ul class="hidden lg:flex items-center gap-6 bg-gray-100 p-4 rounded-2xl">
+        <ul class="hidden lg:flex items-center gap-6 p-4 rounded-2xl">
           <li><a href="./index.html" class="hover:text-sky-600">Home</a></li>
           <li><a href="./about.html" class="hover:text-sky-600">About Us</a></li> 
           <li><a href="./awards.html" class="hover:text-sky-600">Awards</a></li>
@@ -275,9 +275,10 @@
 
 
 
-<section id="our-partner" class="py-12 bg-white shadow-2xl">
+<section id="our-partner" class="pt-16 pb-8 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-xl md:text-3xl font-semibold text-gray-700 text-center">OUR PARTNERS</h2>
+    <h2 class="text-xl md:text-3xl font-semibold text-gray-700 text-center">Trusted By Industry Leaders</h2>
+    <p class="mt-2 text-slate-600 text-center text-sm">Our Esteemed Partners</p> 
 
     <div class="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-12 gap-4 mt-10 justify-center items-center">
       <div class="logo-item animate-zoom delay-11"><img src="./assets/images/LOGOS (1080PX)/1.png" alt="Mantri" /></div>
@@ -389,7 +390,7 @@
   <script>
     // Apply random animation delays
     document.querySelectorAll('.logo-item').forEach(logo => {
-      const randomDelay = Math.random() * 5; // 0 to 5 seconds delay
+      const randomDelay = Math.random() * 2; // 0 to 5 seconds delay
       logo.style.animationDelay = `${randomDelay}s`;
     });
   </script>
@@ -397,12 +398,13 @@
 
 
 
-<section id="testimonial" class="container bg-white mx-auto px-2 md:px-0">
+<section id="Trending-projects" class=" bg-white px-2 md:px-0 pt-12">
    <div class="text-center">
-    <h2 class="text-xl md:text-3xl text-gray-800 font-semibold">TOP TRENDING PROJECTS</h2>
+    <h2 class="text-xl md:text-3xl text-gray-800 font-semibold">Top Trending Projects</h2>
     <!-- <p class="mt-2 text-slate-600">What our clients say</p> -->
+     <p class="mt-2 text-slate-600 text-sm">Property First's Featured Picks</p>
   </div>
- <div class="relative">
+ <div class="relative container mx-auto">
     <!-- Arrows -->
    <!-- Arrows (move them after swiper so they overlay) -->
   <div class="swiper-button-prev-top absolute top-1/2 -translate-y-1/2 -left-6 
@@ -420,231 +422,326 @@
         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class=" rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/elara-celestia.jpg" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold ">L&T REALTY</h3>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold">L&T REALTY</h3>
             
-            <p class="text-md md:text-lg font-semibold">Elara Celestia</p>
-           <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>
+            <p class="text-[12px] md:text-md font-semibold">Elara Celestia</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 mt-1 rounded">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
   Hebbal, Bangalore
 </p>
 
-            <p class="text-sm md:text-md text-gray-900 font-semibold">3 and 4 BHK Appartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹2.75 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">3 and 4 BHK <br> Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹2.75 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/total.jpg" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">TOTAL ENVIRONMENT</h3>
-            <p class="text-md md:text-lg font-semibold">Pursuit of Radical Rhapsody</p>
-            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Whitefield, Bangalore</p>
-             <p class="text-sm md:text-md text-gray-900 font-semibold">3, 4 and 5 BHK Appartments, Duplex Homes and  Villas</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-sky-500 mt-1"> ₹6.7 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">TOTAL ENVIRONMENT</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Pursuit of Radical Rhapsody</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+  Whitefield, Bangalore
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">3, 4 and 5 BHK Apartments, Duplex Homes and  Villas</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹6.7 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/green-reserve.webp" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">L&T REALTY</h3>
-                    <p class="text-md md:text-lg font-semibold">Green Reserve</p>
-            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Sector 128, Noida</p>
-             <p class="text-sm md:text-md text-gray-900 font-semibold">Ultra- Luxury 3, 4 and 5 BHK <br> Golf Facing Appartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹6.1 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">L&T REALTY</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Green Reserve</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+  Sector 128, Noida
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">Ultra- Luxury 3, 4 and 5 BHK Golf Facing Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹6.1 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/pinnacle.png" alt="Property 1" class="w-[340px] h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">BINGHATTI</h3>
-            <p class="text-md md:text-lg font-semibold">Pinnacle</p>
-            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Al Jaddaf, Dubai</p>
-             <p class="text-sm md:text-md text-gray-900 font-semibold">1, 2 and 3 BHK Appartments</p>
-            <p class="text-black text-sm md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> AED 1.3 Million*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">BINGHATTI</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Pinnacle</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+  Al Jaddaf, Dubai
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">1, 2 and 3 BHK<br> Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> AED 1.3 Million*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
-          <img src="./assets/images/nambiar.webp" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">NAMBIAR BUILDERS</h3>
-            <p class="text-md md:text-lg font-semibold">District 25</p>
-            <p class="inline-block text-sm md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Sarjapur, Bangalore</p>
-             <p class="text-sm md:text-md text-gray-900 font-semibold">2, 3 and 4 BHK Appartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹1.44 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
+          <img src="./assets/images/nambiar.jpg" alt="Property 1" class="w-full h-48 object-cover">
+          <div class="p-4 rounded-xl  absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">NAMBIAR BUILDERS</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">District 25</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+Sarjapur, Bangalore
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">2, 3 and 4 BHK<br> Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹1.44 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/Total-Environment-Jakkur.jpg" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">TOTAL ENVIRONMENT</h3>
-            <p class="text-md md:text-lg font-semibold">Down By The Water</p>
-            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Jakur, Bangalore</p>
-              <p class="text-sm md:text-md text-gray-900 font-semibold">Lake View 3, 3.5, 4 and 5 BHK Appartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹4.69 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">TOTAL ENVIRONMENT</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Down By The Water</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+ Jakur, Bangalore
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">Lake View 3, 3.5, 4 and 5 BHK Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹4.69 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
-          <img src="./assets/images/island-cove.jpg" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">L&T REALTY</h3>
-            <p class="text-md md:text-lg font-semibold">Island Cove</p>
-            <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Mahim, Mumbai</p>
-              <p class="text-sm md:text-md text-gray-900 font-semibold">2, 3, and 4 BHK Appartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹3.5 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
+          <img src="./assets/images/island-cove.jpg" alt="Property 1" class="w-[340px] h-48 object-cover">
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">L&T REALTY</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Island Cove</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+  Mahim, Mumbai
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">2, 3 and 4 BHK<br> Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹3.5 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
-          <img src="./assets/images/binghatti.png" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">BINGHATTI</h3>
-            <p class="text-md md:text-lg font-semibold">Skyblade</p>
-          <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Downtown Dubai, Dubai</p>
-              <p class="text-sm md:text-md text-gray-900 font-semibold">Studio, Premium Studio 1, 2, and 3 BHK Appartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> AED 1.7 Million*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
+          <img src="./assets/images/binghatti.png" alt="Property 1" class="w-[340px] h-48 object-cover">
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">BINGHATTI</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Skyblade</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+  Downtown Dubai, Dubai
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">Studio, Premium Studio 1, 2, and 3 BHK Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1">AED 1.7 Million*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
         </div>
-
-           <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/Nambiar_elle.webp" alt="Property 1" class="w-full h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">NAMBIAR BUILDERS</h3>
-            <p class="text-md md:text-lg font-semibold">Elleganza</p>
-          <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Sarjapur Road, Bangalore</p>
-              <p class="text-sm md:text-md text-gray-900 font-semibold">4 and 5 BHK Villas</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹5 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">NAMBIAR BUILDERS</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Elleganza</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+Sarjapur Road, Bangalore
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">4 and 5 BHK<br> Villas</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹5 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
-        </div>   
-          <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+        </div>
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/godrej.png" alt="Property 1" class="w-[340px] h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">GODREJ PROPERTIES</h3>
-            <p class="text-md text-lg font-semibold">Sanctuary In The City</p>
-           <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Thanisandra, Bangalore</p>
-              <p class="text-sm md:text-md text-gray-900 font-semibold">2 and 3 BHK Apartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> ₹1.62 Crore*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">GODREJ PROPERTIES</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold">Sanctuary In The City</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+Thanisandra, Bangalore
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">2 and 3 BHK<br> Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> ₹1.62 Crore*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
-        </div>   
-          <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+        </div>
+
        
-          <figure class="flex flex-col items-center text-center h-full">
-            <div class="rounded-xl shadow-md overflow-hidden h-[460px] md:h-[510px]">
+         <div class="swiper-slide bg-white rounded-2xl p-4 sm:p-6 flex flex-col">
+       
+          <figure class="flex flex-col items-center text-center">
+            <div class=" rounded-xl overflow-hidden h-full relative">
           <img src="./assets/images/DAMAC_District.jpg" alt="Property 1" class="w-[340px] h-48 object-cover">
-          <div class="p-4 space-y-2">
-            <h3 class="text-md md:text-lg font-semibold">DAMAC PROPERTIES</h3>
-            <p class="text-md md:text-lg font-semibold"> District</p>
-          <p class="inline-block text-[12px] md:text-sm bg-gray-800 text-gray-100 px-3 py-1 rounded">
-  <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i>Damac Hills, Dubai</p>
-              <p class="text-sm md:text-md text-gray-900 font-semibold">1 and 2 BHK Apartments</p>
-            <p class="text-black text-[12px] md:text-sm">starting at: </p>
-            <p class="text-xl md:text-2xl font-bold text-[#3B82F6] mt-1"> AED 1.2 Million*</p>
-            <div class="flex justify-center items-center text-[12px] md:text-sm text-gray-500 mt-3">
-              <button class="enquiry-modal bg-[#3B82F6] text-white font-semibold rounded-2xl p-2 text-md">Enquire Now</button>
+          <div class="p-4 rounded-xl absolute bg-gray-100 top-[40%] left-[30px] w-[80%]">
+            <!-- <div class="p-4 space-y-2 absolute bg-gray-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+
+            <h3 class="text-sm md:text-md font-semibold ">DAMAC PROPERTIES</h3>
+            
+            <p class="text-[12px] md:text-md font-semibold"> District</p>
+           <p class="inline-block text-[10px] bg-gray-800 text-gray-100 px-3 py-1 rounded mt-1">
+  <!-- <i class="fa-solid fa-location-dot mr-2 text-gray-100"></i> -->
+Damac Hills, Dubai
+</p>
+
+            <p class="text-[10px] md:text-[12px] text-gray-900 mt-1">1 and 2 BHK<br> Apartments</p>
+            <div class="flex items-center justify-center">
+            <!-- <p class="text-black text-[10px]">starting at: </p> -->
+            <p class="text-sm md:text-md font-bold text-[#3B82F6] mt-1"> AED 1.2 Million*</p> <p class="text-black text-[10px]">Onwards </p>
             </div>
+          </div>
+          <div class="flex justify-center items-center text-[12px] text-gray-500 mt-32">
+              <button class="enquiry-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">Enquire Now</button>
           </div>
         </div>
           </figure>
-        </div>   
+        </div>
+         
+       
+         
+         
+       
+
+          
+
+       
+        
+        
          
       </div>
 
@@ -755,84 +852,130 @@ console.log(iti.getNumber());
     </div>
 
     <!-- Pagination -->
-    <div class="swiper-pagination-top mt-6 !relative !bottom-0 h-4 flex justify-center"></div>
+    <!-- <div class="swiper-pagination-top mt-6 !relative !bottom-0 h-4 flex justify-center"></div> -->
   </div>
-</section>
-<section class="container bg-white mx-auto px-2 md:px-0 ">
-  <div class="text-center mb-6">
-    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold"> MEDIA HIGHLIGHTS</h2>
-  </div>
+<section class="px-2 md:px-8 py-8">
+  <div class="text-center mb-8">
+    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">Media Highlights</h2>
+        <p class="mt-2 text-slate-600 text-sm">Making Headlines For All The Right Reasons</p>
 
-  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+  </div>
+  <div class="container mx-auto bg-gray-100 flex relative rounded-3xl h-[300px] ">
+    
+ <div>
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 p-4 md:mx-10 lg:mx-0">
+    <div class="h-32 lg:h-64 flex justify-center items-center">
+    <img class="h-full awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
          src="./assets/images/news/news31.jpg" 
          alt="News 31" 
          data-caption="Property First has been featured in renowned newspapers for its achievements." />
-
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+</div>
+<div class="h-32 lg:h-64 flex justify-center items-center sm:block hidden">
+    <img class="h-full awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
          src="./assets/images/news/news28.jpg" 
          alt="News 28" 
          data-caption="Our projects have been consistently recognized by top real estate publications." />
-
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+</div> 
+<div class="h-32 lg:h-64 flex justify-center items-center">
+    <img class="h-full awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
          src="./assets/images/news/news27.jpg" 
          alt="News 27" 
          data-caption="Award-winning real estate strategies delivering customer satisfaction." />
-
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
+</div>
+<div class="h-32 lg:h-64 flex justify-center items-center  sm:block hidden">
+    <img class="h-full awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
          src="./assets/images/news/news26.jpg" 
          alt="News 26" 
          data-caption="Featured in business magazines for innovation in property management." />
   </div>
+  </div>
+</div>
+ <div class="absolute bottom-2 md:right-32 lg:right-24 right-6"><img src="./assets/images/bk sir png.png" class="w-full h-[320px] md:h-[325px] lg:h-[350px]" /></div>
+  </div>
 
-  <div class="text-center mt-8">
-    <a href="./news.html">
-      <button class="md:px-6 px-3 md:py-2 py-1 bg-[#3B82F6] text-white rounded-lg shadow-md hover:bg-sky-700">
+  <div class="text-center mt-20">
+    <a href="./awards.html">
+      <button class="border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">
         View More
       </button>
     </a>
   </div>
-
-  <!-- Modal -->
-  <div id="awardsModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50 flex-col p-4">
+   <div id="awardsModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50 flex-col p-4">
     <span id="awards-close-modal" class="absolute top-4 right-8 text-white text-3xl cursor-pointer">&times;</span>
     <img id="awards-modal-img" class="max-h-[70%] max-w-[90%] rounded-lg shadow-lg mb-4" src="" alt="Modal Image">
     <p id="awards-modal-caption" class="text-white text-center text-lg max-w-xl"></p>
   </div>
+
 </section>
 
 
 
-<section class="container bg-white mx-auto px-2 md:px-0 py-4">
-  <div class="text-center mb-8">
-    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">AWARDS</h2>
+
+
+<section class="container bg-white mx-auto px-2 md:px-0 py-8">
+  <div class="text-center mb-16">
+    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">Awards That Reflect Our Commitment</h2>
+      <p class="mt-2 text-slate-600 text-sm">Proud Moments That Define Our Journey</p>
+
   </div>
 
-  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
-         src="./assets/images/awards/awards1.jpg" 
-         alt="News 31" 
-         data-caption="Property First has been featured in renowned newspapers for its achievements." />
-
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
-         src="./assets/images/awards/awards3.png" 
-         alt="News 28" 
-         data-caption="Our projects have been consistently recognized by top real estate publications." />
-
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
-         src="./assets/images/awards/awards14.jpg" 
-         alt="News 27" 
-         data-caption="Award-winning real estate strategies delivering customer satisfaction." />
-
-    <img class="awards-gallery-img cursor-pointer rounded-2xl shadow-lg" 
-         src="./assets/images/awards/awards13.jpg" 
-         alt="News 26" 
-         data-caption="Featured in business magazines for innovation in property management." />
+ <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 md:mx-24">
+  <!-- Left Tall Image -->
+  <div class="h-full md:h-72 w-full">
+    <img 
+      class="h-full w-full object-cover awards-gallery-img cursor-pointer  rounded-xl shadow-lg" 
+      src="./assets/images/landscape.png" 
+      alt="News 31" 
+      data-caption="Property First has been featured in renowned newspapers for its achievements." 
+    />
   </div>
 
-  <div class="text-center mt-6">
+  <!-- Right 2 Small Images (Stacked Vertically) -->
+  <div class="grid grid-cols-2 gap-2 ">
+    <img 
+      class="h-full md:h-72 w-full object-cover awards-gallery-img cursor-pointer rounded-xl shadow-lg" 
+      src="./assets/images/Untitled-1.png" 
+      alt="News 28" 
+      data-caption="Our projects have been consistently recognized by top real estate publications." 
+    />
+    <img 
+      class="h-full md:h-72 w-full object-cover awards-gallery-img cursor-pointer rounded-xl shadow-lg" 
+      src="./assets/images/Untitled design.png" 
+      alt="News 29" 
+      data-caption="Our projects have been consistently recognized by top real estate publications." 
+    />
+  </div>
+
+  <!-- Left 2 Small Images (Stacked Vertically) -->
+  <div class="grid grid-cols-2 gap-2">
+    <img 
+      class="h-full md:h-72 w-full object-cover awards-gallery-img cursor-pointer rounded-xl shadow-lg" 
+      src="./assets/images/2 (2).png" 
+      alt="News 30" 
+      data-caption="Recognized by global real estate awards for excellence." 
+    />
+    <img 
+      class="h-full md:h-72 w-full object-cover awards-gallery-img cursor-pointer rounded-xl shadow-lg" 
+      src="./assets/images/1 (2).png" 
+      alt="News 31" 
+      data-caption="Recognized by global real estate awards for excellence." 
+    />
+  </div>
+
+  <!-- Right Tall Image -->
+  <div class="h-48 md:h-72 w-full">
+    <img 
+      class="h-full w-full object-cover awards-gallery-img cursor-pointer rounded-xl shadow-lg" 
+      src="./assets/images/awards/awards7.jpg" 
+      alt="News 32" 
+      data-caption="Award-winning real estate strategies delivering customer satisfaction." 
+    />
+  </div>
+</div>
+
+  <div class="text-center mt-20">
     <a href="./awards.html">
-      <button class="md:px-6 px-3 md:py-2 py-1 bg-[#3B82F6] text-white rounded-lg shadow-md hover:bg-sky-700">
+      <button class="border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">
         View More
       </button>
     </a>
@@ -856,7 +999,7 @@ console.log(iti.getNumber());
   <!-- ============================= -->
   <!-- Testimonial -->
   <!-- ============================= -->
-  <section class="container mx-auto px-2 md:px-4 py-4">
+  <section class="container mx-auto px-2 md:px-4 py-8">
     <div id="video-modal" class="fixed inset-0 hidden z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
   <div class="relative w-full max-w-3xl">
     <span id="close-video-modal" class="absolute top-[-25px] right-0 text-white text-3xl cursor-pointer">&times;</span>
@@ -867,116 +1010,163 @@ console.log(iti.getNumber());
   </div>
 </div>
   <!-- Heading -->
-  <div class="text-center mb-6">
-    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">WHY OUR CLIENTS TRUST US?</h2>
-    <!-- <p class="mt-2 text-slate-600">What our clients say</p> -->
+  <div class="text-center mb-4">
+    <h2 class="text-xl md:text-3xl text-slate-800 font-semibold">We Deliver What We Promise</h2>
+    <p class="mt-2 text-slate-600 text-sm">Why Our Clients Trust Us?</p>
   </div>
 
   <div id="testimonial" class="w-full px-4 py-4 md:py-12">
  
   <!-- Responsive Grid -->
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+  <div class="grid grid-cols-2 lg:grid-cols-6 gap-2">
     
      <!-- Video Card -->
-  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-
-    <!-- Thumbnail -->
-    <img src="./assets/images/THUMBNAILS/7.png" 
+ <div class="flex flex-col items-center">
+  <!-- Circle Container -->
+  <div class="relative overflow-hidden rounded-full h-32 w-32 md:w-48 md:h-48">
+    <!-- Circular Image -->
+    <img src="./assets/images/THUMBNAILS/7.png"
          alt="Video Thumbnail"
-         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-    
-    <!-- Play Button Overlay -->
-    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573683/Client-Testimonial-1_1_mcglys.mp4')"  
-              class="bg-[#3B82F6] text-white px-6 py-3 rounded-full font-semibold">
-        ▶ Play
-      </button>
-    </div> 
-  </div>
-  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+         class="w-full h-full object-cover rounded-full border border-gray-200 shadow-md">
 
-    <!-- Thumbnail -->
-     
-    <img src="./assets/images/THUMBNAILS/8.png" 
-         alt="Video Thumbnail"
-         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-   
-    <!-- Play Button Overlay -->
-    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573568/Client-Testimonial-2_1_aopiq7.mp4')"  
-              class="bg-[#3B82F6] text-white px-6 py-3 rounded-full font-semibold">
-        ▶ Play
-      </button>
+    <!-- Inner Circle Outline -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-28 h-28 lg:w-44 lg:h-44 rounded-full border-4 border-opacity-50 border-gray-50 flex items-center justify-center">
+        <!-- Play Button -->
+        <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573683/Client-Testimonial-1_1_mcglys.mp4')"
+                class="flex items-center justify-center text-[60px] text-white hover:scale-105 transition-transform duration-300">
+          <img src="./assets/images/Polygon 1.png" />
+        </button>
+      </div>
     </div>
-
-    <!-- Hidden Video -->
-   
   </div>
-  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
 
-    <!-- Thumbnail -->
-    <img src="./assets/images/THUMBNAILS/9.png" 
-         alt="Video Thumbnail"
-         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-    
-    <!-- Play Button Overlay -->
-    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573660/Client-Testimonial-3_1_heufad.mp4')"  
-              class="bg-[#3B82F6] text-white px-6 py-3 rounded-full font-semibold">
-        ▶ Play
+  <!-- Text Below Circle -->
+  <div class="text-center mt-3">
+    <p class="text-black font-semibold">Name</p>
+    <p class="text-gray-600 text-sm">Designation</p>
+  </div>
+</div>
+
+<div class="flex flex-col items-center">
+ <div class="relative overflow-hidden rounded-full h-32 w-32 md:w-48 md:h-48">
+  <!-- Circular Image -->
+  <img src="./assets/images/THUMBNAILS/8.png"
+       alt="Video Thumbnail"
+       class="w-full h-full object-cover rounded-full border border-gray-200 shadow-md">
+
+  <!-- Inner Circle Outline -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-28 h-28 lg:w-44 lg:h-44 rounded-full border-4 border-opacity-50 border-gray-100 flex items-center justify-center">
+      <!-- Play Button -->
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573568/Client-Testimonial-2_1_aopiq7.mp4')"
+              class="flex items-center justify-center text-[60px] text-gray-100 rounded-full hover:scale-105 transition-transform duration-300">
+        <img src="./assets/images/Polygon 1.png"/>
       </button>
     </div>
   </div>
-  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+</div>
+ <div class="text-center mt-3">
+    <p class="text-black font-semibold">Name</p>
+    <p class="text-gray-600 text-sm">Designation</p>
+  </div>
+</div>
+<div class="flex flex-col items-center">
 
-    <!-- Thumbnail -->
-    <img src="./assets/images/THUMBNAILS/10.png" 
-         alt="Video Thumbnail"
-         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-    
-    <!-- Play Button Overlay -->
-    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573577/Client-Testimonial-4_1_yxwb0r.mp4')"   
-              class="bg-[#3B82F6] text-white px-6 py-3 rounded-full font-semibold">
-        ▶ Play
+ <div class="relative overflow-hidden rounded-full h-32 w-32 md:w-48 md:h-48 ">
+  <!-- Circular Image -->
+  <img src="./assets/images/THUMBNAILS/9.png"
+       alt="Video Thumbnail"
+       class="w-full h-full object-cover rounded-full border border-gray-200 shadow-md">
+
+  <!-- Inner Circle Outline -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-28 h-28 lg:w-44 lg:h-44 rounded-full border-4 border-opacity-50 border-gray-100 flex items-center justify-center">
+      <!-- Play Button -->
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573660/Client-Testimonial-3_1_heufad.mp4')"
+              class="flex items-center justify-center text-[60px] text-gray-100 rounded-full hover:scale-105 transition-transform duration-300">
+      <img src="./assets/images/Polygon 1.png"/>
       </button>
     </div>
-
   </div>
-  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+</div>
+<div class="text-center mt-3">
+    <p class="text-black font-semibold">Name</p>
+    <p class="text-gray-600 text-sm">Designation</p>
+  </div>
+</div>
+<div class="flex flex-col items-center">
+ <div class="relative overflow-hidden rounded-full h-32 w-32 md:w-48 md:h-48 flex ">
+  <!-- Circular Image -->
+  <img src="./assets/images/THUMBNAILS/10.png"
+       alt="Video Thumbnail"
+       class="w-full h-full object-cover rounded-full border border-gray-200 shadow-md">
 
-    <!-- Thumbnail -->
-    <img src="./assets/images/THUMBNAILS/11.png" 
-         alt="Video Thumbnail"
-         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-    
-    <!-- Play Button Overlay -->
-    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759574084/Client-Testimonial-5_1_xs1k2w.mp4')"   
-              class="bg-[#3B82F6] text-white px-6 py-3 rounded-full font-semibold">
-        ▶ Play
+  <!-- Inner Circle Outline -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-28 h-28 lg:w-44 lg:h-44 rounded-full border-4 border-opacity-50 border-gray-100 flex items-center justify-center">
+      <!-- Play Button -->
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573577/Client-Testimonial-4_1_yxwb0r.mp4')"
+              class="flex items-center justify-center text-[60px] text-gray-100 rounded-full hover:scale-105 transition-transform duration-300">
+        <img src="./assets/images/Polygon 1.png"/>
       </button>
     </div>
-
-    
   </div>
-  <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+</div>
+<div class="text-center mt-3">
+    <p class="text-black font-semibold">Name</p>
+    <p class="text-gray-600 text-sm">Designation</p>
+  </div>
+</div>
+<div class="flex flex-col items-center">
+ <div class="relative overflow-hidden rounded-full h-32 w-32 md:w-48 md:h-48 ">
+  <!-- Circular Image -->
+  <img src="./assets/images/THUMBNAILS/11.png"
+       alt="Video Thumbnail"
+       class="w-full h-full object-cover rounded-full border border-gray-200 shadow-md">
 
-    <!-- Thumbnail -->
-    <img src="./assets/images/THUMBNAILS/12.png" 
-         alt="Video Thumbnail"
-         class="thumbnail w-full md:h-60 h-auto lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-    
-    <!-- Play Button Overlay -->
-    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-      <button onclick="openVideoModal(`https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573739/Client-Testimonial-6_1_xe6ivh.mp4`)" 
-              class="bg-[#3B82F6] text-white px-6 py-3 rounded-full font-semibold">
-        ▶ Play
+  <!-- Inner Circle Outline -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-28 h-28 lg:w-44 lg:h-44 rounded-full border-4 border-opacity-50 border-gray-100 flex items-center justify-center">
+      <!-- Play Button -->
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759574084/Client-Testimonial-5_1_xs1k2w.mp4')"
+              class="flex items-center justify-center text-[60px] text-gray-100 rounded-full hover:scale-105 transition-transform duration-300">
+       <img src="./assets/images/Polygon 1.png"/>
       </button>
     </div>
-
-    <!-- Hidden Video -->
   </div>
+</div>
+<div class="text-center mt-3">
+    <p class="text-black font-semibold">Name</p>
+    <p class="text-gray-600 text-sm">Designation</p>
+  </div>
+</div>
+<div class="flex flex-col items-center">
+ <div class="relative overflow-hidden rounded-full h-32 w-32 md:w-48 md:h-48 ">
+  <!-- Circular Image -->
+  <img src="./assets/images/THUMBNAILS/12.png"
+       alt="Video Thumbnail"
+       class="w-full h-full object-cover rounded-full border border-gray-200 shadow-md">
+
+  <!-- Inner Circle Outline -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-28 h-28 lg:w-44 lg:h-44 rounded-full border-4 border-opacity-50 border-gray-100 flex items-center justify-center">
+      <!-- Play Button -->
+      <button onclick="openVideoModal('https://res.cloudinary.com/dl77qe8ls/video/upload/v1759573739/Client-Testimonial-6_1_xe6ivh.mp4')"
+              class="flex items-center justify-center text-[60px] text-gray-100 rounded-full hover:scale-105 transition-transform duration-300">
+         <img src="./assets/images/Polygon 1.png"/>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="text-center mt-3">
+    <p class="text-black font-semibold">Name</p>
+    <p class="text-gray-600 text-sm">Designation</p>
+  </div>
+</div>
+
+
+ 
 
   </div>
 </div>
@@ -984,161 +1174,96 @@ console.log(iti.getNumber());
   <!-- Swiper Container -->
   <div class="relative">
     <!-- Arrows -->
-    <div class="swiper-button-prev !left-[-40px] bg-gray-100 p-3 rounded-full shadow-md !text-black hidden lg:flex items-center justify-center"></div>
-<div class="swiper-button-next !right-[-40px] bg-gray-100 p-3 rounded-full shadow-md !text-black hidden lg:flex items-center justify-center"></div>
+    <div class="swiper-button-prev !left-[-40px] p-3 rounded-full hover:!text-sky-500 !text-black hidden lg:flex items-center justify-center"></div>
+<div class="swiper-button-next !right-[-40px] p-3 rounded-full hover:!text-sky-500 !text-black hidden lg:flex items-center justify-center"></div>
 
     <!-- Swiper -->
     <div class="swiper mySwiper md:px-4 py-6">
       <div class="swiper-wrapper">
         
-                <!-- Slide 2 -->
-        <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
-          <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
-       
-          <figure class="flex flex-col items-center text-center h-full">
-            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
-    
-           <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
-  <!-- 4 full stars -->
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i> 
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <!-- half star --> 
-  <i class="fa-solid fa-star"></i>
-</div>
-
-            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
-              “Bhavesh’s firm, Property First, was the intermediary for a real estate transaction that I made in 2019. 
+         <div data-id="1" class="swiper-slide bg-white rounded-xl border-[1px] border-gray-100 p-4 sm:p-6 h-[200px] md:h-[220px] flex flex-col cursor-pointer">
+       <div class="absolute top-7 right-8"> <img src="./assets/images/1_comma.png" class="w-10 h-10"/></div>
+           <figure class="flex flex-col h-full">
+          
+              <figcaption class="mt-4 text-sm font-bold text-slate-700">Prakhar Sangam</figcaption>
+             <figcaption class="mt-2 text-[13px] text-gray-300">CEO,<br> RedBus </figcaption>
+   
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-left line-clamp-2 mt-4">
+            “Bhavesh’s firm, Property First, was the intermediary for a real estate transaction that I made in 2019. 
 
 It is rare to meet a professional when dealing with real estate agents but Bhavesh stands apart with his commitment to providing good service. He takes into account your needs as a buyer to provide sound advice and does not hard sell the property in question. 
 
-I have also witnessed first hand his commitment towards continuing to provide services much after the transaction is closed. He helped me with resolving teething issues with the developer and even with introductions to neighbours and other folks in the apartment complex. I would recommend Bhavesh for any services related to real estate as he has been able to gain my trust through his commitment to providing great service.”
-            </blockquote>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Prakhar Sangam</figcaption>
-             <figcaption class="mt-4 text-sm font-bold text-slate-700">CEO, RedBus </figcaption>
-          </figure>
+I have also witnessed first hand his commitment towards continuing to provide services much after the transaction is closed. He helped me with resolving teething issues with the developer and even with introductions to neighbours and other folks in the apartment complex. I would recommend Bhavesh for any services related to real estate as he has been able to gain my trust through his commitment to providing great service.”   </blockquote>
+                  </figure>
         </div>
-
-        <!-- Slide 3 -->
-        <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
-           <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
-       
-          <figure class="flex flex-col items-center text-center h-full">
-            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
-    
-            <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
-  <!-- 4 full stars -->
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <!-- half star -->
-  <i class="fa-solid fa-star"></i>
-</div>
-
-            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
-              “I recently interacted with Property First for a property transaction. They were thorough with his knowledge about the property, gave a detailed comparison with other properties in neighbourhood and helped me in negotiating with the builder. They were a good bridge between me and the builder and my single point of contact, so it saved a lot of my time. They have got a professional approach, yet gives that personal touch required in high end real estate selling. Happy that I worked with them”
-            </blockquote>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Mukund P Thirumalai</figcaption>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Director Asia Automotive After-market Division, 3M Singapore</figcaption>
-      
-          </figure>
+         <div data-id="2" class="swiper-slide bg-white rounded-xl border-[1px] border-gray-100 p-4 sm:p-6 h-[200px] md:h-[220px] flex flex-col cursor-pointer">
+       <div class="absolute top-7 right-8"> <img src="./assets/images/1_comma.png" class="w-10 h-10"/></div>
+        
+           <figure class="flex flex-col h-full">
+          
+              <figcaption class="mt-4 text-sm font-bold text-slate-700">Mukund P Thirumalai</figcaption>
+             <figcaption class="mt-2 text-[13px] text-gray-300">Director Asia Automotive After-market Division,<br> 3M Singapore</figcaption>
+   
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-left line-clamp-2 mt-4">
+               “I recently interacted with Property First for a property transaction. They were thorough with his knowledge about the property, gave a detailed comparison with other properties in neighbourhood and helped me in negotiating with the builder. They were a good bridge between me and the builder and my single point of contact, so it saved a lot of my time. They have got a professional approach, yet gives that personal touch required in high end real estate selling. Happy that I worked with them”
+              </blockquote>
+                  </figure>
         </div>
-
-         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
-          <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
-       
-          <figure class="flex flex-col items-center text-center h-full">
-            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
-    
-           <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
-  <!-- 4 full stars -->
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <!-- half star -->
-  <i class="fa-solid fa-star-half-stroke"></i>
-</div>
-
-            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
-              “We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. 
+         <div data-id="3" class="swiper-slide bg-white rounded-xl border-[1px] border-gray-100 p-4 sm:p-6 h-[200px] md:h-[220px] flex flex-col cursor-pointer">
+       <div class="absolute top-7 right-8"> <img src="./assets/images/1_comma.png" class="w-10 h-10"/></div>
+        
+           <figure class="flex flex-col h-full">
+          
+              <figcaption class="mt-4 text-sm font-bold text-slate-700">Deepa Sacheti</figcaption>
+             <figcaption class="mt-2 text-[13px] text-gray-300">Senior Director and Head of APAC,<br> Global Customer Support, Pegasystems</figcaption>
+   
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-left line-clamp-2 mt-4">
+             “We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. 
 Wishing them good luck. We interacted with Property First recently for purchasing a Property. The interaction was very smooth, they helped us in getting quite a lot of choices and negotiated well on our behalf. They had a good knowledge of the property we were looking at and gave us a lot of info, pros and cons and neutral opinion on the shortlisted apartment. Would highly recommend them. Wishing them good luck.”
             </blockquote>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Deepa Sacheti</figcaption>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Senior Director and Head of APAC, Global Customer Support, Pegasystems</figcaption>
-          </figure>
+                  </figure>
         </div>
-
-         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
-         <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
-          <figure class="flex flex-col items-center text-center h-full">
-            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
-    
-           <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
-  <!-- 4 full stars -->
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <!-- half star -->
-  <i class="fa-solid fa-star"></i>
-</div>
-
-            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+         <div data-id="4" class="swiper-slide bg-white rounded-xl border-[1px] border-gray-100 p-4 sm:p-6 h-[200px] md:h-[220px] flex flex-col cursor-pointer">
+       <div class="absolute top-7 right-8"> <img src="./assets/images/1_comma.png" class="w-10 h-10"/></div>
+        
+           <figure class="flex flex-col h-full">
+          
+              <figcaption class="mt-4 text-sm font-bold text-slate-700">George Inasu</figcaption>
+             <figcaption class="mt-2 text-[13px] text-gray-300">Cheif Operating Officer, <br>Fidelity National Financial India</figcaption>
+   
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-left line-clamp-2 mt-4">
               “Working with Property First was a great experience when we bought our house from Total Environment. Their team walked us through the entire process, provided us all the options available with the transaction and had great knowledge of the market and pricing.”
             </blockquote>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">George Inasu</figcaption>
-             <figcaption class="mt-4 text-sm font-bold text-slate-700">Cheif Operating Officer, Fidelity National Financial India</figcaption>
-          </figure>
+                  </figure>
         </div>
-
-         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
-           <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
-       
-          <figure class="flex flex-col items-center text-center h-full">
-            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
-    
-          <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
-  <!-- 4 full stars -->
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <!-- half star -->
-  <i class="fa-solid fa-star"></i>
-</div>
-
-            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+          <div data-id="5" class="swiper-slide bg-white rounded-xl border-[1px] border-gray-100 p-4 sm:p-6 h-[200px] md:h-[220px] flex flex-col cursor-pointer">
+          <div class="absolute top-7 right-8"> <img src="./assets/images/1_comma.png" class="w-10 h-10"/></div>
+        
+           <figure class="flex flex-col h-full">
+          
+              <figcaption class="mt-4 text-sm font-bold text-slate-700">Suresh Sugumar</figcaption>
+             <figcaption class="mt-2 text-[13px] text-gray-300">Executive Director - R&D,<br> Qualcomm</figcaption>
+   
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-left line-clamp-2 mt-4">
               “Property First team was very instrumental and helpful on a property search and even closed a deal in 1 hour. Their expertise in real estate and negotiation skills are very commendable. .”
-            </blockquote>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Suresh Sugumar</figcaption>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Executive Director - R&D, Qualcomm</figcaption>
-          </figure>
+              </blockquote>
+                  </figure>
         </div>
-         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
-          <div class="swiper-slide bg-white shadow-xl rounded-2xl p-4 sm:p-6 h-[600px] flex flex-col">
-       
-           <figure class="flex flex-col items-center text-center h-full">
-            <img src="./assets/images/profile-icon-9 (1).png" loading="lazy" alt="Client" class="w-20 h-20 border border-slate-200 rounded-lg mb-4"/>
-    
-        <div class="flex items-center justify-start mb-3 text-yellow-400 space-x-1 text-sm">
-  <!-- 4 full stars -->
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <i class="fa-solid fa-star"></i>
-  <!-- half star -->
-  <i class="fa-solid fa-star-half-stroke"></i>
-</div>
+      
 
-            <blockquote class="text-slate-700 text-[12px] md:text-sm text-center">
+         <!-- <div class="swiper-slide h-[610px] bg-white shadow-xl rounded-2xl p-6"> -->
+          <div data-id="6" class="swiper-slide bg-white rounded-xl border-[1px] border-gray-100 p-4 sm:p-6 h-[200px] md:h-[220px] flex flex-col cursor-pointer">
+       <div class="absolute top-7 right-8"> <img src="./assets/images/1_comma.png" class="w-10 h-10"/></div>
+        
+           <figure class="flex flex-col h-full">
+            
+              <figcaption class="mt-4 text-sm font-bold text-slate-700">Preethi Balan</figcaption>
+             <figcaption class="mt-2 text-[13px] text-gray-300">L2 Coach, <br>Unified Mindfulness</figcaption>
+   
+            <blockquote class="text-slate-700 text-[12px] md:text-sm text-left line-clamp-2 mt-4">
               “Bhavesh from Property First has been our go to person through the process of buying the house and even post purchase. He has always been available, prompt and has been very helpful with problem solving at various stages. He took complete responsibility for resolution of all our concerns, during purchase and also went out of his way in connecting us with his previous clients who have purchased the property. This enabled us to clarify a lot of our concerns and also gave us an understanding of the community.”
             </blockquote>
-            <figcaption class="mt-4 text-sm font-bold text-slate-700">Preethi Balan</figcaption>
-             <figcaption class="mt-4 text-sm font-bold text-slate-700">L2 Coach, Unified Mindfulness</figcaption>
-          </figure>
+                  </figure>
         </div>
 
       </div>
@@ -1147,6 +1272,19 @@ Wishing them good luck. We interacted with Property First recently for purchasin
     <!-- Pagination -->
     <div class="swiper-pagination mt-6 !relative !bottom-0 h-4 flex justify-center"></div>
   </div>
+  <script>
+  // Select all slides
+  const slides = document.querySelectorAll('.swiper-slide');
+
+  // Add click listener to each slide
+  slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      const id = slide.getAttribute('data-id'); // get slide id
+      window.location.href = `testimonial.html?id=${id}`; // redirect to page
+    });
+  });
+</script>
+
 </section>
   <!-- ============================= -->
   <!-- Gallery -->
@@ -1155,11 +1293,11 @@ Wishing them good luck. We interacted with Property First recently for purchasin
   <!-- ============================= -->
   <!-- Client Video -->
   <!-- ============================= -->
- <section id="av-video" class="container mx-auto py-4 bg-gray-100">
-  <h2 class="text-xl md:text-3xl font-semibold text-center text-gray-800">CORPORATE PROMO VIDEOS</h2>
+ <section id="av-video" class="w-full py-12 bg-gray-100">
+  <h2 class="text-xl md:text-3xl font-semibold text-center text-gray-800">Stories That Inspire Trust</h2>
   <!-- <p class="mt-2 text-slate-600 text-center">Your company’s AV presentation</p> -->
-
-  <div class="w-full px-4 py-4 md:py-12">
+<p class="mt-2 text-slate-600 text-center text-sm">Corporate Promo Videos</p>
+  <div class="container mx-auto  px-4 py-4 md:py-12">
  
   <!-- Responsive Grid -->
   <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -1182,7 +1320,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
 
     <!-- Hidden Video -->
   
-    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[9px] md:text-sm text-center">Great Place to Work Certified</p>
+    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[8px] md:text-[12px] text-center">Great Place to Work Certified</p>
   </div>
   <div class="group relative overflow-hidden rounded-2xl shadow-lg">
 
@@ -1201,7 +1339,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
 
     <!-- Hidden Video -->
    
-    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[9px] md:text-sm text-center">Property Consultant of the year 2025</p>
+    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[8px] md:text-[12px] text-center">Property Consultant of the year 2025</p>
   </div>
   <div class="group relative overflow-hidden rounded-2xl shadow-lg">
 
@@ -1220,7 +1358,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
 
     <!-- Hidden Video -->
    
-    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[10px] md:text-sm text-center">Corporate AV</p>
+    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[8px] md:text-[12px] text-center">Corporate AV</p>
   </div>
   <div class="group relative overflow-hidden rounded-2xl shadow-lg">
 
@@ -1239,7 +1377,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
 
     <!-- Hidden Video -->
    
-    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[10px] md:text-sm text-center">Expo- 2023</p>
+    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[8px] md:text-[12px] text-center">Expo- 2023</p>
   </div>
   <div class="group relative overflow-hidden rounded-2xl shadow-lg">
 
@@ -1260,7 +1398,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
 
     <!-- Hidden Video -->
     
-    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[10px] md:text-sm text-center">Expo- 2024</p>
+    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[8px] md:text-[12px] text-center">Expo- 2024</p>
   </div>
   <div class="group relative overflow-hidden rounded-2xl shadow-lg">
 
@@ -1279,7 +1417,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
 
     <!-- Hidden Video -->
     
-    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[10px] md:text-sm text-center">Expo- 2025</p>
+    <p class="text-white bg-[#3B82F6] p-1 md:p-3 text-[8px] md:text-[12px] text-center">Expo- 2025</p>
   </div>
 
   </div>
@@ -1300,7 +1438,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
     <div id="horizontal-scroll-track" class="flex">
 
       <!-- <div class="prop-card min-h-[580px]  w-[100vw] md:w-[1200px] flex-shrink-0 flex flex-col md:flex-row gap-6 items-stretch rounded-none p-2"> -->
-    <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+    <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/prop1.jpg" 
@@ -1314,9 +1452,9 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
          <img src="./assets/images/properties/bangalore4.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
-          <h3 class="text-2xl font-bold text-gray-300">BANGALORE PROPERTIES</h3>
-          <p class="text-gray-300 text-center text-sm">Property First stands as the top channel partner for Bangalore’s real estate, offering premium apartments, luxury villas, and plotted developments. With trusted developer partnerships and expert guidance, we help buyers find their perfect home or investment in the city’s most sought-after locations.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <h3 class="text-2xl font-bold text-gray-800">BANGALORE PROPERTIES</h3>
+          <p class="text-gray-700 text-justify text-[13px] mx-4">Property First stands as the top channel partner for Bangalore’s real estate, offering premium apartments, luxury villas, and plotted developments. With trusted developer partnerships and expert guidance, we help buyers find their perfect home or investment in the city’s most sought-after locations.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1327,7 +1465,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
           </article>
         </div>
       </div>
-      <div class="prop-card min-h-[580px] w-screen bg-white flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/dubai.jpg" 
@@ -1342,8 +1480,8 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <img src="./assets/images/properties/prop2.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
           <h3 class="text-2xl font-bold text-slate-800">DUBAI PROPERTIES</h3>
-          <p class="text-gray-700 text-center text-sm">Property First is a top channel partner in Dubai’s real estate market, specializing in premium apartments and luxury villas. Through strong developer partnerships and expert advisory, we connect buyers with the city’s finest homes and high-value investment opportunities.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <p class="text-gray-700 text-center text-justify text-[13px] mx-4">Property First is a top channel partner in Dubai’s real estate market, specializing in premium apartments and luxury villas. Through strong developer partnerships and expert advisory, we connect buyers with the city’s finest homes and high-value investment opportunities.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1354,7 +1492,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
           </article>
         </div>
       </div>
-      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/mumbai1.avif" 
@@ -1368,9 +1506,9 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
          <img src="./assets/images/properties/mumbai.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
-          <h3 class="text-2xl font-bold text-gray-300">MUMBAI PROPERTIES</h3>
-          <p class="text-gray-300 text-center text-sm">Property First serves as a top channel partner for Mumbai real estate, specializing in premium apartments, luxury villas, and plotted developments. Through trusted developer partnerships and expert market insights, we connect buyers with the city’s most sought-after residences and investment opportunities.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <h3 class="text-2xl font-bold text-gray-800">MUMBAI PROPERTIES</h3>
+          <p class="text-gray-700 text-center text-justify text-[13px] mx-4">Property First serves as a top channel partner for Mumbai real estate, specializing in premium apartments, luxury villas, and plotted developments. Through trusted developer partnerships and expert market insights, we connect buyers with the city’s most sought-after residences and investment opportunities.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1381,7 +1519,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
           </article>
         </div>
       </div>
-      <div class="prop-card min-h-[580px] w-screen bg-white flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/delhi.webp" 
@@ -1396,8 +1534,8 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <img src="./assets/images/properties/del.jpeg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
           <h3 class="text-2xl font-bold text-slate-800">DELHI-NCR PROPERTIES</h3>
-          <p class="text-gray-700 text-center text-sm">Property First is a top channel partner for Noida’s real estate, offering premium apartments, luxury villas, and plotted developments. With strong developer associations and expert guidance, we help buyers secure the finest homes and investment opportunities in the city.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <p class="text-gray-700 text-center text-justify text-[13px] mx-4">Property First is a top channel partner for Noida’s real estate, offering premium apartments, luxury villas, and plotted developments. With strong developer associations and expert guidance, we help buyers secure the finest homes and investment opportunities in the city.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1408,7 +1546,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
           </article>
         </div>
       </div>
-      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/goa.webp" 
@@ -1422,9 +1560,9 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
          <img src="./assets/images/properties/goa1.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
-          <h3 class="text-2xl font-bold text-gray-300">GOA PROPERTIES</h3>
-          <p class="text-gray-300 text-center text-sm">Property First is a trusted channel partner in Goa’s real estate market, specializing in premium apartments, luxury villas, and plotted developments. Backed by strong developer partnerships and expert advisory, we assist buyers in discovering the region’s most exclusive residences and high-potential investment opportunities.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <h3 class="text-2xl font-bold text-gray-800">GOA PROPERTIES</h3>
+          <p class="text-gray-700 text-center text-justify text-[13px] mx-4">Property First is a trusted channel partner in Goa’s real estate market, specializing in premium apartments, luxury villas, and plotted developments. Backed by strong developer partnerships and expert advisory, we assist buyers in discovering the region’s most exclusive residences and high-potential investment opportunities.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1435,7 +1573,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
           </article>
         </div>
       </div>
-      <div class="prop-card min-h-[580px] w-screen bg-white flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
+      <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/chennai.png" 
@@ -1450,8 +1588,8 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <img src="./assets/images/properties/chennai.jpeg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
           <h3 class="text-2xl font-bold text-slate-800">CHENNAI PROPERTIES</h3>
-          <p class="text-gray-700 text-center text-sm">Property First serves as a leading channel partner in Chennai's real estate market, offering premium apartments, luxury villas, and plotted developments. Leveraging trusted developer alliances and in-depth expertise, we connect buyers to the city’s most prestigious homes and rewarding investment avenues.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <p class="text-gray-700 text-center text-justify text-[13px] mx-4">Property First serves as a leading channel partner in Chennai's real estate market, offering premium apartments, luxury villas, and plotted developments. Leveraging trusted developer alliances and in-depth expertise, we connect buyers to the city’s most prestigious homes and rewarding investment avenues.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1463,7 +1601,7 @@ Wishing them good luck. We interacted with Property First recently for purchasin
         </div>
       </div>
 
-       <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch bg-slate-900 rounded-none p-8">
+       <div class="prop-card min-h-[580px] w-screen flex-shrink-0 flex flex-col md:flex-row gap-2 items-stretch rounded-none p-8">
        <div class="w-full md:w-1/3 h-full hidden md:block "> 
   <article class=" h-full overflow-hidden shadow-lg rounded-lg">
     <img src="./assets/images/properties/hyderabad.webp" 
@@ -1477,9 +1615,9 @@ Wishing them good luck. We interacted with Property First recently for purchasin
          <div class="w-full md:w-1/3 flex flex-col-reverse md:flex-col h-full gap-4">
          <img src="./assets/images/properties/hyderabad1.jpg"  loading="lazy" class="w-full h-72 object-cover shadow-lg rounded-2xl" alt="Property 1">
          <div class="flex flex-col justify-center items-center gap-4 mx-auto">
-          <h3 class="text-2xl font-bold text-gray-300">HYDERABAD PROPERTIES</h3>
-          <p class="text-gray-300 text-center text-sm">Property First is a trusted channel partner for Hyderabad’s real estate, with expertise in premium apartments, luxury villas, and plotted developments. Backed by strong developer associations and professional advisory, we assist buyers in finding the city’s most distinguished residences and lucrative investment opportunities.</p>
-         <button class="open-modal bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+          <h3 class="text-2xl font-bold text-gray-800">HYDERABAD PROPERTIES</h3>
+          <p class="text-gray-700 text-center text-justify text-[13px] mx-4">Property First is a trusted channel partner for Hyderabad’s real estate, with expertise in premium apartments, luxury villas, and plotted developments. Backed by strong developer associations and professional advisory, we assist buyers in finding the city’s most distinguished residences and lucrative investment opportunities.</p>
+         <button class="open-modal border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
         </div>
         </div>
         <div class="w-fit md:w-1/3 flex flex-col justify-between">
@@ -1530,58 +1668,58 @@ const totalScrollW = scrollContainer.scrollWidth;
     <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/bangalore5.webp" class="w-full h-56 object-cover" alt="Property 1">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">BANGALORE PROPERTIES</h3>
-        <p class="text-[12px] text-gray-600 mt-2">Property First stands as the top channel partner for Bangalore’s real estate, offering premium apartments, luxury villas, and plotted developments. With trusted developer partnerships and expert guidance, we help buyers find their perfect home or investment in the city’s most sought-after locations.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">BANGALORE PROPERTIES</h3>
+        <p class="text-[12px] text-justify text-gray-600 mt-2">Property First stands as the top channel partner for Bangalore’s real estate, offering premium apartments, luxury villas, and plotted developments. With trusted developer partnerships and expert guidance, we help buyers find their perfect home or investment in the city’s most sought-after locations.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
      <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/dubai.jpg" class="w-full h-56 object-cover" alt="Property 1">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">DUBAI PROPERTIES</h3>
-        <p class="text-[12px] text-gray-600 mt-2">Property First is a top channel partner in Dubai’s real estate market, specializing in premium apartments and luxury villas. Through strong developer partnerships and expert advisory, we connect buyers with the city’s finest homes and high-value investment opportunities.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">DUBAI PROPERTIES</h3>
+        <p class="text-[12px] text-justify text-gray-600 mt-2">Property First is a top channel partner in Dubai’s real estate market, specializing in premium apartments and luxury villas. Through strong developer partnerships and expert advisory, we connect buyers with the city’s finest homes and high-value investment opportunities.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
      <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/mumbai2.webp" class="w-full h-56 object-cover" alt="Property 1">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">MUMBAI PROPERTIES</h3>
-        <p class="text-[12px] text-gray-600 mt-2">Property First serves as a top channel partner for Mumbai real estate, specializing in premium apartments, luxury villas, and plotted developments. Through trusted developer partnerships and expert market insights, we connect buyers with the city’s most sought-after residences and investment opportunities.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">MUMBAI PROPERTIES</h3>
+        <p class="text-[12px] text-justify text-gray-600 mt-2">Property First serves as a top channel partner for Mumbai real estate, specializing in premium apartments, luxury villas, and plotted developments. Through trusted developer partnerships and expert market insights, we connect buyers with the city’s most sought-after residences and investment opportunities.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
      <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/delhi.webp" class="w-full h-56 object-cover" alt="Property 1">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">DELHI-NCR PROPERTIES</h3>
-        <p class="text-[12px] text-gray-600 mt-2">Property First is a top channel partner for Noida’s real estate, offering premium apartments, luxury villas, and plotted developments. With strong developer associations and expert guidance, we help buyers secure the finest homes and investment opportunities in the city.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">DELHI-NCR PROPERTIES</h3>
+        <p class="text-[12px] text-justify text-gray-600 mt-2">Property First is a top channel partner for Noida’s real estate, offering premium apartments, luxury villas, and plotted developments. With strong developer associations and expert guidance, we help buyers secure the finest homes and investment opportunities in the city.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
      <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/goa.webp" class="w-full h-56 object-cover" alt="Property 1">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">GOA PROPERTIES</h3>
-        <p class="text-[12px] text-gray-600 mt-2">Property First is a trusted channel partner in Goa’s real estate market, specializing in premium apartments, luxury villas, and plotted developments. Backed by strong developer partnerships and expert advisory, we assist buyers in discovering the region’s most exclusive residences and high-potential investment opportunities.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">GOA PROPERTIES</h3>
+        <p class="text-[12px] text-justify text-gray-600 mt-2">Property First is a trusted channel partner in Goa’s real estate market, specializing in premium apartments, luxury villas, and plotted developments. Backed by strong developer partnerships and expert advisory, we assist buyers in discovering the region’s most exclusive residences and high-potential investment opportunities.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
      <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/chennai.jpeg" class="w-full h-56 object-cover" alt="Property 1">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">Chennai PROPERTIES</h3>
-        <p class="text-[12px] text-gray-600 mt-2">Property First serves as a leading channel partner in Chennai's real estate market, offering premium apartments, luxury villas, and plotted developments. Leveraging trusted developer alliances and in-depth expertise, we connect buyers to the city’s most prestigious homes and rewarding investment avenues.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">CHENNAI PROPERTIES</h3>
+        <p class="text-[12px] text-justify text-gray-600 mt-2">Property First serves as a leading channel partner in Chennai's real estate market, offering premium apartments, luxury villas, and plotted developments. Leveraging trusted developer alliances and in-depth expertise, we connect buyers to the city’s most prestigious homes and rewarding investment avenues.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
 
     <div class="rounded-2xl shadow-lg overflow-hidden">
       <img src="./assets/images/properties/hyderabad.webp" class="w-full h-56 object-cover" alt="Plots">
       <div class="p-4 text-center">
-        <h3 class="text-xl font-semibold">HYDERABAD PROPERTIES</h3>
-        <p class=" text-[12px] text-gray-600 mt-2">Property First is a trusted channel partner for Hyderabad’s real estate, with expertise in premium apartments, luxury villas, and plotted developments. Backed by strong developer associations and professional advisory, we assist buyers in finding the city’s most distinguished residences and lucrative investment opportunities.</p>
-        <button class="open-modal mt-4 bg-[#3B82F6] text-white px-4 py-2 rounded">View All Properties</button>
+        <h3 class="text-lg font-semibold">HYDERABAD PROPERTIES</h3>
+        <p class=" text-[12px] text-justify text-gray-600 mt-2">Property First is a trusted channel partner for Hyderabad’s real estate, with expertise in premium apartments, luxury villas, and plotted developments. Backed by strong developer associations and professional advisory, we assist buyers in finding the city’s most distinguished residences and lucrative investment opportunities.</p>
+        <button class="open-modal mt-4 border border-[#3B82F6] text-[#3B82F6] font-semibold rounded-md px-6 py-2 text-[10px] hover:bg-[#3B82F6] hover:text-white">View All Properties</button>
       </div>
     </div>
 
@@ -1945,10 +2083,10 @@ buttons.forEach(btn => {
     loop: true,
      slidesPerView: 1,
     spaceBetween: 20,
-     autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    //  autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     navigation: {
       nextEl: ".swiper-button-next-top",
       prevEl: ".swiper-button-prev-top",

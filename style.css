@@ -3,9 +3,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'poppins', sans-serif;
 }
-
 
 #scrollContainer {
     scroll-snap-type: y mandatory;
@@ -78,4 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 .iti__flag-box, .iti__country-name {
     /* margin-right: 6px; */
     color: darkslateblue;
+}
+.iti{
+  width: 100%;
 }
