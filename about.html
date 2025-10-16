@@ -213,11 +213,11 @@ Our goal is to make property investment simple, safe, and rewarding.
 </div>
 
   
-<div id="stats" class="grid grid-cols-1 md:grid-cols-3 mx-8 md:mx-36 my-20 gap-4 relative text-center border-2 border-gray-100">
+<div id="stats" class="grid grid-cols-1 md:grid-cols-4 mx-8 md:mx-36 my-20 gap-4 relative text-center border-2 border-gray-100">
 
     <!-- Box 1 -->
     <div class=" p-6 rounded-xl relative ">
-      <h2 class="mb-3 font-bold mt-1 text-3xl counter" data-target="500">0+</h2>
+      <h2 class="mb-3 font-bold mt-1 text-xl md:text-2xl counter" data-target="8000">0+</h2>
       <p class="text-[12px] text-gray-700">Customers</p>
 
       <!-- Right divider line (hide on last child) -->
@@ -226,8 +226,8 @@ Our goal is to make property investment simple, safe, and rewarding.
 
     <!-- Box 2 -->
     <div class=" p-6 rounded-xl relative">
-      <h2 class="mb-3 font-bold mt-1 text-3xl counter" data-target="100">0+</h2>
-      <p class="text-[12px] text-gray-700">Happy Clients</p>
+      <h2 class="mb-3 font-bold mt-1 text-xl md:text-2xl counter" data-target="40">0%</h2>
+      <p class="text-[12px] text-gray-700">Referrals</p>
 
       <!-- Right divider line -->
       <div class="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 h-2/3 border-r border-gray-300"></div>
@@ -235,9 +235,18 @@ Our goal is to make property investment simple, safe, and rewarding.
 
     <!-- Box 3 -->
     <div class=" p-6 rounded-xl relative">
-      <h2 class="mb-3 font-bold mt-1 text-3xl counter" data-target="10">0+</h2>
+      <h2 class="mb-3 font-bold mt-1 text-xl md:text-2xl counter" data-target="200">0+</h2>
       <p class="text-[12px] text-gray-700">Projects</p>
+        <div class="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 h-2/3 border-r border-gray-300"></div>
+
     </div>
+
+      <div class=" p-6 rounded-xl relative ">
+      <h2 class="mb-3 font-bold mt-1 text-xl md:text-2xl counter" data-target="7">0+</h2>
+      <p class="text-[12px] text-gray-700">Cities</p>
+
+      <!-- Right divider line (hide on last child) -->
+        </div>
 
   </div>
 </div>
@@ -254,13 +263,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let start = 0;
     const target = +counter.getAttribute("data-target");
     const increment = Math.ceil(target / speed);
+    const isPercentage = counter.dataset.target.includes("40"); // identify percentage counter
+
     const updateCount = () => {
       start += increment;
       if (start < target) {
-        counter.innerText = start + "+";
+        counter.innerText = start + (isPercentage ? "%" : "+");
         requestAnimationFrame(updateCount);
       } else {
-        counter.innerText = target + "+";
+        counter.innerText = target + (isPercentage ? "%" : "+");
       }
     };
     updateCount();
@@ -272,8 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           counters.forEach((counter) => {
-            // Reset to 0 each time it enters view
-            counter.innerText = "0+";
+            counter.innerText = "0" + (counter.dataset.target.includes("40") ? "%" : "+");
             startCounting(counter);
           });
         }
@@ -285,6 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.querySelector("#stats"));
 });
 </script>
+
 
 </section>
 
