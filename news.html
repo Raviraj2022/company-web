@@ -246,6 +246,12 @@
   // Array of news items
   const newsItems = [
     {
+     img: "./assets/images/news/Article 11.png",
+      caption: "Our Founder & CEO, Mr. Bhavesh Kothari, shares his insights in The Times of India’s Times Property Edition, highlighting how the festive season continues to inspire homebuyers and strengthen confidence in India’s real estate market.",
+    // link: "https://www.constructionweekonline.in/people/real-estate-portfolio",
+  date: "2025-10-15",
+  },
+    {
      img: "./assets/images/news/news_new2.PNG",
       caption: "Our Founder & CEO, Mr. Bhavesh Kothari, shares his insights on evolving dynamics of Indian real estate sector.",
     link: "https://www.constructionweekonline.in/people/real-estate-portfolio",
@@ -814,22 +820,6 @@ document.querySelectorAll(".gallery-img").forEach(img => {
 });
 </script>
 
-<!-- <script>
-  const galleryObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      } else {
-        entry.target.classList.remove("visible"); // reset when leaving
-      }
-    });
-  }, { threshold: 0.2 }); // adjust sensitivity
 
-  const gallerySection = document.querySelector("#gallery");
-  if (gallerySection) {
-    galleryObserver.observe(gallerySection);
-  }
-</script> -->
-<!-- <script src="./script.js" defer></script> -->
 </body>
 </html>
