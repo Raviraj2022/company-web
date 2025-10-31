@@ -561,7 +561,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   contactForms.forEach(form => {
     const phoneInputField = form.querySelector(".phone");
-
+  
     if (phoneInputField) {
       // Attach intlTelInput instance directly to the input element
       const iti = window.intlTelInput(phoneInputField, {
@@ -569,26 +569,34 @@ document.addEventListener("DOMContentLoaded", function () {
         preferredCountries: ["us", "in", "gb", "au"],
         separateDialCode: true,
       });
-console.log(phoneInputField);
+
       // Save the instance so we can get it later
       phoneInputField._iti = iti;
+    console.log("✅ Phone input initialized:", phoneInputField);
+    } else {
+      console.log("⚠️ No phone input found for this form:", form);
     }
 
+    console.log(phoneInputField);
+console.log(form);
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
+ 
       // Always read from this form’s phone input
-      const phoneInputField = form.querySelector(".phone");
-
-      let mobileNumber = phoneInputField?.value || "";
-      if (phoneInputField && phoneInputField._iti) {
-        mobileNumber = phoneInputField._iti.getNumber(); // ✅ correct instance
+     const name = form.querySelector('[name="name"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+     const phoneField = form.querySelector('[name="mobile"]').value.trim(); // ✅ get the element (not its value)
+      // console.log(phoneField, );
+       let mobileNumber = "";
+      // let mobileNumber = phoneField?.value || "";
+      if (phoneField && phoneField._iti) {
+        mobileNumber = phoneField._iti.getNumber(); // ✅ correct instance
       }
-
+console.log(mobileNumber);
       const formData = {
-        name: form.name?.value || "",
-        email: form.email?.value || "",
-        mobile: mobileNumber,
+        name,
+        email,
+        phoneField,
       };
 
       console.log("Form Data from:", formData);
